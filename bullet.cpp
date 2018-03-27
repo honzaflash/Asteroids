@@ -10,7 +10,7 @@
 #include "bullet.h" 
 #include "uiDraw.h"
 
-#define BULLET_SPEED 10.0
+#define BULLET_SPEED 5.0
 #define M_PI 3.14159265358979323846
 
 /***********************************************************************
@@ -18,6 +18,7 @@
 ***********************************************************************/
 Bullet :: Bullet()
 {
+   //TODO: need to check health and how it is setup (dying to early????)
    health = 40;
 }
 
@@ -30,12 +31,13 @@ void Bullet :: draw()
 }
 
 /***********************************************************************
- * 
+ * Fire the bullet
 ***********************************************************************/
-void Bullet :: fire(Point point, float angle)
+void Bullet :: fire(Point point, float angle, Velocity velocity)
 {
-   float dx = BULLET_SPEED * (-cos(M_PI / 180.0 * angle));
-   float dy = BULLET_SPEED * (sin(M_PI / 180.0 * angle));
+   float dx = BULLET_SPEED * (cos(M_PI / 180.0 * (angle + 90))) + velocity.getDx();
+   float dy = BULLET_SPEED * (sin(M_PI / 180.0 * (angle  + 90))) + velocity.getDy();
+
    setPoint(point);
    setVelocity(dx, dy);
 }

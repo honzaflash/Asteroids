@@ -21,7 +21,7 @@ class Bullet: public FlyingObject
    // constructors
    Bullet();
    void draw();
-   void fire(Point point, float angle);
+   void fire(Point point, float angle, Velocity velocity);
    void setStartingDx();
    int getHealth();
    void setHealth();

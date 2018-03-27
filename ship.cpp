@@ -29,7 +29,9 @@ Ship :: Ship()
 ***********************************************************************/
 void Ship :: draw()
 {
-   drawShip(currentPoint, 200);
+      drawShip(currentPoint, orientation, thrust);
+      thrust = false;
+   
 }
 
 /***********************************************************************
@@ -51,13 +53,46 @@ float Ship :: getOrientation()
 //TODO: checks for if under 0 or over 360
 void Ship :: moveLeft()
 {
-   orientation += ROTATE_AMOUNT;
+   if (orientation < 0)
+   {
+      orientation = 359;
+   }
+   else if (orientation > 360)
+   {
+      orientation = 0;
+   }
+   else
+   {
+      orientation += ROTATE_AMOUNT;
+   }
+   
 
 }
 
 
 void Ship :: moveRight()
 {
-   orientation -= ROTATE_AMOUNT;
+   if (orientation < 0)
+   {
+      orientation = 359;
+   }
+   else if (orientation > 360)
+   {
+      orientation = 0;
+   }
+   else
+   {
+      orientation -= ROTATE_AMOUNT;
+   }
    
+}
+
+void Ship :: moveUp()
+{
+   thrust = true;
+   float angle = getOrientation();
+   float dx = velocity.getDx() + ( 0.1 * (cos(M_PI / 180.0 * (angle + 90))) );
+   float dy = velocity.getDy() + ( 0.1 * (sin(M_PI / 180.0 * (angle  + 90))) );
+   velocity.setDx(dx);
+   velocity.setDy(dy);
 }

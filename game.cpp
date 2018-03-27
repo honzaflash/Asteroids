@@ -262,24 +262,31 @@ void Game :: cleanUpZombies()
  ***************************************/
 void Game :: handleInput(const Interface & ui)
 {
-   // Change the direction of the ship
+   // Change the direction of the ship left
    if (ui.isLeft())
    {
       ship->moveLeft();
    }
    
+   // Change the direction of the ship right
    if (ui.isRight())
    {
       ship->moveRight();
    }
 
-   // Check for "Spacebar
+   // Check for "up" key
+   if (ui.isUp())
+   {
+      ship->moveUp();
+   }
+
+   // Check for "Spacebar"
    if (ui.isSpace())
    {
       Bullet newBullet;
 
       //change to get ship angle and fire from there
-      newBullet.fire(ship->getPoint(), ship->getOrientation());
+      newBullet.fire(ship->getPoint(), ship->getOrientation(), ship->getVelocity());
       
       bullets.push_back(newBullet);
    }

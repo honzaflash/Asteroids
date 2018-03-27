@@ -41,18 +41,20 @@ class Ship: public FlyingObject
     *****************/
    void moveLeft();
    void moveRight();
+   void moveUp();
 
    protected:
 
    private:
-      float orientation;
+
       Point point;
+      bool thrust;
 
        /**********************************************************
        * angle - The angle of the ship in degrees.
        *  Assumes that straight right is 0 degrees and up is 90.
        **********************************************************/
-      float angle;
+      float orientation;
 };
 
 
