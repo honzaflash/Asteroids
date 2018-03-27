@@ -75,7 +75,7 @@ private:
    void advanceAsteroid();
    void advanceShip();
    void createAsteroid();
-   void createShip();
+   Ship* createShip();
    
    void handleCollisions();
    void cleanUpZombies();

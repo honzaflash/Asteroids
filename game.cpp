@@ -67,7 +67,7 @@ Game :: Game(Point tl, Point br)
    // Set up the initial conditions of the game
    bStartGame = false;
 
-   // ship = NULL;
+   ship = NULL;
 
 }
 
@@ -87,11 +87,11 @@ Game :: ~Game()
       it = asteroids.erase(it);
    }
 
-// if (ship) // ensures not dereferencing NULL
-//    {
-//       delete ship;
-//       ship = NULL;
-//    }
+if (ship) // ensures not dereferencing NULL
+   {
+      delete ship;
+      ship = NULL;
+   }
 
 }
 
@@ -107,7 +107,7 @@ void Game :: advance()
    {
    advanceBullets();
    advanceAsteroid();
-   // advanceShip();
+   advanceShip();
 
    handleCollisions();
    cleanUpZombies();
@@ -178,23 +178,23 @@ void Game :: advanceAsteroid()
  **************************************************************************/
 void Game :: advanceShip()
 { 
-   // if (ship == NULL) // create asteroids if none
-   // {
-   //    createShip();
-   // }
-   // else
-   // {
-   //    // we have a ship, make sure it's alive
-   //    if (ship->isAlive())
-   //    {
-   //       // move it forward
-   //       ship->advance();
+   if (ship == NULL) // create ship if none
+   {
+      ship = createShip();
+   }
+   else
+   {
+      // we have a ship, make sure it's alive
+      if (ship->isAlive())
+      {
+         // move it forward
+         ship->advance();
 
-   //    }
+      }
 
-   //    //TODO: Should there be an else here???
+      //TODO: Should there be an else here???
               
-   // }
+   }
 
 }
 
@@ -216,12 +216,15 @@ void Game :: createAsteroid()
  * GAME :: CREATE Ship
  * Create an ship according to the rules of the game.
  **************************************************************************/
-// void Game :: createShip()
-// {
+Ship* Game :: createShip()
+{
 
-//    ship = new Ship();
+   Ship* ship = NULL;
+   ship = new Ship();
+
+   return ship;
    
-// }
+}
 
 /**************************************************************************
  * GAME :: IS ON SCREEN
@@ -301,15 +304,18 @@ void Game :: draw(const Interface & ui)
          (*it)->draw();
 
    // draw the ship
-   // ship->draw();
+   ship->draw();
    
    // draw the bullets, if they are alive
+   //TODO: Change bullets to vectors
    for (int i = 0; i < bullets.size(); i++)
    {
       if (bullets[i].isAlive())
       {
          bullets[i].draw();
+         bullets[i].setHealth();
       }
+
    }
 
 }

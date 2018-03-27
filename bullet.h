@@ -24,7 +24,8 @@ class Bullet: public FlyingObject
    void fire(Point point, float angle);
    void setStartingDx();
    int getHealth();
-   void setHealth(int health);
+   void setHealth();
+
    
    protected:
 
