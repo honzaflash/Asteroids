@@ -101,6 +101,8 @@ Game :: ~Game()
  ***************************************/
 void Game :: advance()
 {
+   //TODO: remove this for production
+   bStartGame = true;
    if (bStartGame)
    {
    advanceBullets();

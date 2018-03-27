@@ -27,8 +27,11 @@ Asteroid :: Asteroid()
    currentPoint.setX(random(-180,180));
    currentPoint.setY(random(-180,180));
    setPoint(currentPoint);
-   velocity.setDx(random(-1,1));
-   velocity.setDy(random(-1,1));
+
+//TODO: change random angle , and ensure asteroid is moving at 1px per
+//frame per the instructions
+   velocity.setDx(random(-1.0,1.0));
+   velocity.setDy(random(-1.0,1.0));
    setRotation(random(-180,180));
 
 }

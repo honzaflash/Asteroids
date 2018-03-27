@@ -28,6 +28,7 @@ class FlyingObject
    Velocity getVelocity() const;
    bool isAlive() const;
    void setPoint(Point point);
+   void setPoint(float x, float y);
    void setVelocity(Velocity velocity);
    void setVelocity(float dx, float dy);
    void advance();
@@ -48,6 +49,8 @@ class FlyingObject
       float startingDx;
       float startingDy;
       int rotation;
+      bool isWrapX;
+      bool isWrapY;
 
    private:
 
