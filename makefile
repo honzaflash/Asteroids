@@ -1,11 +1,16 @@
 ###############################################################
 # Program:
-#     Milestone 10, Asteroids
+#     Milestone 12, Asteroids
 #     Brother Alvey, CS165
 # Author:
 #     Jason Halverson
 # Summary:
-#     Put your summary code here... 
+#     For this milestone you should have:
+#	Collisions between bullets and rocks
+#	Collisions between the ship and rocks
+#	Rocks correctly breaking apart when hit
+#Memory correctly cleaned up when rocks and/or bullets are destroyed
+#
 # Above and Beyond
 #     When you submit your final project (not for milestones),
 #     list anything here that you did to go above and beyond

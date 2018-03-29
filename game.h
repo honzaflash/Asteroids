@@ -57,15 +57,20 @@ public:
    void draw(const Interface & ui);
    
 private:
+   // function provided for collision distance
+   float getClosestDistance(const FlyingObject &obj1, const FlyingObject &obj2) const;
    // The coordinates of the screen
    Point topLeft;
    Point bottomRight;
    
-   Ship* ship;
-   std::vector<Bullet> bullets;
 
-   //TODO: declare asteroids here ex Asteroid * asteroid;
-   
+   // declare Ship and bullets
+   Ship* ship;
+   vector<Bullet*> bullets;
+
+   //declare asteroids here ex Asteroid * asteroid;
+   list<Asteroid*> asteroids; // list for all asteroids
+
    /*************************************************
     * Private methods to help with the game logic.
     *************************************************/
@@ -76,10 +81,12 @@ private:
    void advanceShip();
    void createAsteroid();
    Ship* createShip();
+   void createBullet();
    
    void handleCollisions();
+   bool getCollision(const FlyingObject &obj1, const FlyingObject &obj2, int radius);
    void cleanUpZombies();
-   list<Asteroid*> asteroids; // list for all asteroids
+
    /*************************************************
     * Private value to check if user want to play
     *************************************************/

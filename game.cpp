@@ -24,12 +24,7 @@ using namespace std;
 
 // You may find this function helpful...
 
-/**********************************************************
- * Function: getClosestDistance
- * Description: Determine how close these two objects will
- *   get in between the frames.
- **********************************************************/
-/*
+
 float Game :: getClosestDistance(const FlyingObject &obj1, const FlyingObject &obj2) const
 {
    // find the maximum distance traveled
@@ -56,7 +51,7 @@ float Game :: getClosestDistance(const FlyingObject &obj1, const FlyingObject &o
    
    return sqrt(distMin);
 }
-*/
+
 
 /***************************************
  * GAME CONSTRUCTOR
@@ -128,15 +123,15 @@ void Game :: advanceBullets()
    // Move each of the bullets forward if it is alive
    for (int i = 0; i < bullets.size(); i++)
    {
-      if (bullets[i].isAlive())
+      if (bullets[i]->isAlive())
       {
          // this bullet is alive, so tell it to move forward
-         bullets[i].advance();
+         bullets[i]->advance();
          
-         if (!isOnScreen(bullets[i].getPoint()))
+         if (!isOnScreen(bullets[i]->getPoint()))
          {
             // the bullet has left the screen
-            bullets[i].kill();
+            bullets[i]->kill();
          }
          
       }
@@ -227,6 +222,20 @@ Ship* Game :: createShip()
 }
 
 /**************************************************************************
+ * GAME :: CREATE Bullet
+ * Create an bullet according to the rules of the game.
+ **************************************************************************/
+void Game :: createBullet()
+{
+   // Bullet * newBullet;
+   // newBullet = new Bullet();
+   // //change to get ship angle and fire from there
+   // newBullet->fire(ship->getPoint(), ship->getOrientation(), ship->getVelocity());
+   
+   bullets.push_back(new Bullet(ship->getPoint(), ship->getOrientation(), ship->getVelocity()));
+}
+
+/**************************************************************************
  * GAME :: IS ON SCREEN
  * Determines if a given point is on the screen.
  **************************************************************************/
@@ -239,12 +248,40 @@ bool Game :: isOnScreen(const Point & point)
 }
 
 /**************************************************************************
+ * GAME :: GETCOLLISION
+ * Determines if a 2 given points have collided
+ **************************************************************************/
+bool Game :: getCollision(const FlyingObject &obj1, const FlyingObject &obj2, int radius)
+{
+   bool isHit = false;
+
+   if (getClosestDistance(obj1, obj2) < 0.4)
+   {
+      isHit = true;
+   }
+
+   return isHit;
+}
+
+/**************************************************************************
  * GAME :: HANDLE COLLISIONS
  * Check for a collision between a bird and a bullet.
  **************************************************************************/
 void Game :: handleCollisions()
 {
+   // loop through asteroids
+   // for (list<Asteroid*>::iterator it = asteroids.begin();
+   //       it != asteroids.end();)
+   // {
+   //    // check if asteroid has been hit by bullet
+   //    for (list<Bullet*>::iterator it2 = bullets.begin();
+   //          it2 != bullets.end(); )
+   //    {
 
+   //    }
+   // }
+   // get locations of objects
+   //compare points and if closetDistance is less than .04 destroy
 }
 
 /**************************************************************************
@@ -281,14 +318,10 @@ void Game :: handleInput(const Interface & ui)
    }
 
    // Check for "Spacebar"
+   //TODO : Change this to create bullet method and move
    if (ui.isSpace())
    {
-      Bullet newBullet;
-
-      //change to get ship angle and fire from there
-      newBullet.fire(ship->getPoint(), ship->getOrientation(), ship->getVelocity());
-      
-      bullets.push_back(newBullet);
+      createBullet();
    }
 
    // Check for "Y" press
@@ -314,13 +347,12 @@ void Game :: draw(const Interface & ui)
    ship->draw();
    
    // draw the bullets, if they are alive
-   //TODO: Change bullets to vectors
    for (int i = 0; i < bullets.size(); i++)
    {
-      if (bullets[i].isAlive())
+      if (bullets[i]->isAlive())
       {
-         bullets[i].draw();
-         bullets[i].setHealth();
+         bullets[i]->draw();
+         bullets[i]->setHealth();
       }
 
    }

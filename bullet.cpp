@@ -18,8 +18,13 @@
 ***********************************************************************/
 Bullet :: Bullet()
 {
-   //TODO: need to check health and how it is setup (dying to early????)
    health = 40;
+}
+
+Bullet :: Bullet(Point shipPoint, float shipOrientation, Velocity shipVelocity)
+{
+   health = 40;
+   fire(shipPoint, shipOrientation, shipVelocity);
 }
 
 /***********************************************************************

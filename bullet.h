@@ -20,6 +20,7 @@ class Bullet: public FlyingObject
 
    // constructors
    Bullet();
+   Bullet(Point shipPoint, float shipOrientation, Velocity shipVelocity);
    void draw();
    void fire(Point point, float angle, Velocity velocity);
    void setStartingDx();
