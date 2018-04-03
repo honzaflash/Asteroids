@@ -93,6 +93,7 @@ LargeAsteroid :: LargeAsteroid()
 {
    //TODO set function for random rotation
    setRotation(random(-180,180));
+   radius = 16;
 }
 
 void LargeAsteroid :: setStartingDx()

@@ -82,10 +82,10 @@ Game :: ~Game()
       it = asteroids.erase(it);
    }
 
-if (ship) // ensures not dereferencing NULL
-   {
-      delete ship;
-      ship = NULL;
+   if (ship) // ensures not dereferencing NULL
+      {
+         delete ship;
+         ship = NULL;
    }
 
 }
@@ -227,11 +227,6 @@ Ship* Game :: createShip()
  **************************************************************************/
 void Game :: createBullet()
 {
-   // Bullet * newBullet;
-   // newBullet = new Bullet();
-   // //change to get ship angle and fire from there
-   // newBullet->fire(ship->getPoint(), ship->getOrientation(), ship->getVelocity());
-   
    bullets.push_back(new Bullet(ship->getPoint(), ship->getOrientation(), ship->getVelocity()));
 }
 
@@ -254,8 +249,8 @@ bool Game :: isOnScreen(const Point & point)
 bool Game :: getCollision(const FlyingObject &obj1, const FlyingObject &obj2, int radius)
 {
    bool isHit = false;
-
-   if (getClosestDistance(obj1, obj2) < 0.4)
+   //TODO: change 20.0 to a non magic number (radius of large asteroid)
+   if (getClosestDistance(obj1, obj2) < 16)
    {
       isHit = true;
    }
@@ -270,16 +265,31 @@ bool Game :: getCollision(const FlyingObject &obj1, const FlyingObject &obj2, in
 void Game :: handleCollisions()
 {
    // loop through asteroids
-   // for (list<Asteroid*>::iterator it = asteroids.begin();
-   //       it != asteroids.end();)
-   // {
-   //    // check if asteroid has been hit by bullet
-   //    for (list<Bullet*>::iterator it2 = bullets.begin();
-   //          it2 != bullets.end(); )
-   //    {
+   for (list<Asteroid *>::iterator it = asteroids.begin();
+         it != asteroids.end(); it++)
+   {
+      // check if asteroid has been hit by bullet
 
-   //    }
-   // }
+      for (vector<Bullet *>::iterator it2 = bullets.begin() ; it2 != bullets.end(); ++it2)
+      {
+         // check if hit
+         //TODO: change 10 to radius of rock
+         if (getCollision(**it, **it2, (*it)->radius))
+         {
+            //check what type of rock is hit, by radius LRG = 16 MED = 8 SMLL = 4
+
+            //If large asteroid call create meduim asteroids delete large asteroid
+            //If medium asteroid call create small asteroids delete medium asteroid
+            //If small asteroid delete
+               Point center;
+               char userPrompt[] = "Hit";
+               center.setX(-50);
+               center.setY(0);
+               drawText(center, userPrompt);
+
+         }
+      }
+   }
    // get locations of objects
    //compare points and if closetDistance is less than .04 destroy
 }
@@ -318,7 +328,6 @@ void Game :: handleInput(const Interface & ui)
    }
 
    // Check for "Spacebar"
-   //TODO : Change this to create bullet method and move
    if (ui.isSpace())
    {
       createBullet();
@@ -337,7 +346,7 @@ void Game :: handleInput(const Interface & ui)
  *********************************************/
 void Game :: draw(const Interface & ui)
 {
-
+   //TODO: create method to draw aster
    // draw the asteroids
   for (list<Asteroid *> :: iterator it = asteroids.begin();
            it != asteroids.end(); ++it)

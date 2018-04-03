@@ -38,7 +38,8 @@ class FlyingObject
    virtual void setStartingDy();
    int getRotation();
    void setRotation(int rotation);
-
+   int radius;
+   
    protected:
       bool alive;
       Point currentPoint;
