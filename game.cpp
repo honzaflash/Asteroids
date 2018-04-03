@@ -207,6 +207,17 @@ void Game :: createAsteroid()
    
 }
 
+void Game :: createMediumAsteroid(Point point, Velocity velocity)
+{
+   Velocity posVelocity, negVelocity;
+   posVelocity = velocity;
+   negVelocity = velocity;
+
+   posVelocity.setDy(posVelocity.getDy() + 1.0);
+   negVelocity.setDy(posVelocity.getDy() + 1.0);
+   asteroids.push_back(new MediumAsteroid(point, posVelocity));
+}
+
 /**************************************************************************
  * GAME :: CREATE Ship
  * Create an ship according to the rules of the game.
@@ -250,7 +261,7 @@ bool Game :: getCollision(const FlyingObject &obj1, const FlyingObject &obj2, in
 {
    bool isHit = false;
    //TODO: change 20.0 to a non magic number (radius of large asteroid)
-   if (getClosestDistance(obj1, obj2) < 16)
+   if (getClosestDistance(obj1, obj2) < radius)
    {
       isHit = true;
    }
@@ -277,15 +288,21 @@ void Game :: handleCollisions()
          if (getCollision(**it, **it2, (*it)->radius))
          {
             //check what type of rock is hit, by radius LRG = 16 MED = 8 SMLL = 4
-
+            switch ((*it)->radius)
+            {
+               case 16:
+                  (*it2)->kill();
+                  explodeLarge(*it);
+                  break;
+               case 8:
+                  break;
+               case 5:
+                  break;
+            }
             //If large asteroid call create meduim asteroids delete large asteroid
             //If medium asteroid call create small asteroids delete medium asteroid
             //If small asteroid delete
-               Point center;
-               char userPrompt[] = "Hit";
-               center.setX(-50);
-               center.setY(0);
-               drawText(center, userPrompt);
+               
 
          }
       }
@@ -294,13 +311,54 @@ void Game :: handleCollisions()
    //compare points and if closetDistance is less than .04 destroy
 }
 
+//If large asteroid call create meduim asteroids delete large asteroid
+//If medium asteroid call create small asteroids delete medium asteroid
+//If small asteroid delete
+
+/**************************************************************************
+ * GAME :: explodeLarge
+ * Kills a large asteroid and creates 2 medium and 1 small asteroids
+ **************************************************************************/
+void Game :: explodeLarge(Asteroid *asteroid)
+{
+   createMediumAsteroid(asteroid->getPoint(), asteroid->getVelocity());
+   Point center;
+               char userPrompt[] = "Hit";
+               center.setX(-50);
+               center.setY(0);
+               drawText(center, userPrompt);
+}
+
 /**************************************************************************
  * GAME :: CLEAN UP ZOMBIES
- * Remove any dead objects (take bullets out of the list, deallocate bird)
+ * Remove any dead objects (take bullets out of the list, deallocate asteroids)
  **************************************************************************/
 void Game :: cleanUpZombies()
 {
-  
+   
+   // Look for dead bullets
+   vector<Bullet *>::iterator bulletIt = bullets.begin();
+   while (bulletIt != bullets.end())
+   {
+      Bullet* pBullet = *bulletIt;
+      // Asteroids Hint:
+      // If we had a list of pointers, we would need this line instead:
+      //Bullet* pBullet = *bulletIt;
+      
+      if (!pBullet->isAlive())
+      {
+         // If we had a list of pointers, we would need to delete the memory here...
+         delete pBullet;
+         pBullet = NULL;
+         
+         // remove from list and advance
+         bulletIt = bullets.erase(bulletIt);
+      }
+      else
+      {
+         bulletIt++; // advance
+      }
+   }
 }
 
 /***************************************
@@ -346,7 +404,6 @@ void Game :: handleInput(const Interface & ui)
  *********************************************/
 void Game :: draw(const Interface & ui)
 {
-   //TODO: create method to draw aster
    // draw the asteroids
   for (list<Asteroid *> :: iterator it = asteroids.begin();
            it != asteroids.end(); ++it)

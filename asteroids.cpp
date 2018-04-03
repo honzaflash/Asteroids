@@ -92,7 +92,7 @@ void Asteroid :: split(bool hit)
 LargeAsteroid :: LargeAsteroid()
 {
    //TODO set function for random rotation
-   setRotation(random(-180,180));
+   setRotation(2);
    radius = 16;
 }
 
@@ -131,9 +131,16 @@ void LargeAsteroid :: draw()
 ***********************************************************************/
 MediumAsteroid :: MediumAsteroid()
 {
-
+   setRotation(5);
+   radius = 8;
 }
 
+MediumAsteroid :: MediumAsteroid(Point point, Velocity Velocity)
+{
+   radius = 8;
+   setPoint(point);
+   setVelocity(velocity);
+}
 /***********************************************************************
  * 
 ***********************************************************************/
@@ -145,9 +152,11 @@ void MediumAsteroid :: split(bool hit)
 /***********************************************************************
  * 
 ***********************************************************************/
-void MediumAsteroid :: draw(Point point, int rotation)
+void MediumAsteroid :: draw()
 {
-
+   rotation += MEDIUM_ROCK_SPIN;
+   drawMediumAsteroid(currentPoint, rotation);
+   
 }
 
 /***********************************************************************
