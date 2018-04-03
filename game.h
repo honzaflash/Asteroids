@@ -86,8 +86,11 @@ private:
    void handleCollisions();
    bool getCollision(const FlyingObject &obj1, const FlyingObject &obj2, int radius);
    void cleanUpZombies();
-   void explodeLarge(Asteroid *asteroid);
+   void explodeLarge(Asteroid *asteroid, Bullet *bullet);
    void createMediumAsteroid(Point point, Velocity velocity);
+   void explodeMedium(Asteroid *asteroid, Bullet *bullet);
+   void createSmallAsteroid(Point point, Velocity velocity);
+
    /*************************************************
     * Private value to check if user want to play
     *************************************************/

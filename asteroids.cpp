@@ -171,6 +171,12 @@ SmallAsteroid :: SmallAsteroid()
 
 }
 
+SmallAsteroid :: SmallAsteroid(Point point, Velocity Velocity)
+{
+   radius = 4;
+   setPoint(point);
+   setVelocity(velocity);
+}
 /***********************************************************************
  * 
 ***********************************************************************/
@@ -182,7 +188,8 @@ void SmallAsteroid :: split(bool hit)
 /***********************************************************************
  * 
 ***********************************************************************/
-void SmallAsteroid :: draw(Point point, int rotation)
+void SmallAsteroid :: draw()
 {
-
+   rotation += SMALL_ROCK_SPIN;
+   drawSmallAsteroid(currentPoint, rotation);
 }

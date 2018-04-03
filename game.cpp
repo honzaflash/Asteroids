@@ -209,16 +209,25 @@ void Game :: createAsteroid()
 
 void Game :: createMediumAsteroid(Point point, Velocity velocity)
 {
-   Velocity posVelocity, negVelocity;
+   Velocity posVelocity, negVelocity, neutralVelocity;
    posVelocity = velocity;
    negVelocity = velocity;
+   neutralVelocity = velocity;
 
-   posVelocity.setDy(posVelocity.getDx() + 1.0);
-   negVelocity.setDy(posVelocity.getDx() - 1.0);
+   //TODO: more elegant solution , If positive or negative make positive or negative???
+   posVelocity.setDy(posVelocity.getDy() + 1.0);
+   negVelocity.setDy(posVelocity.getDy() - 1.0);
+   neutralVelocity.setDx(neutralVelocity.getDx() + 1);
+
    asteroids.push_back(new MediumAsteroid(point, posVelocity));
    asteroids.push_back(new MediumAsteroid(point, negVelocity));
+   asteroids.push_back(new SmallAsteroid(point, neutralVelocity));
 }
 
+void Game :: createSmallAsteroid(Point point, Velocity velocity)
+{
+   asteroids.push_back(new SmallAsteroid(point, velocity));
+}
 /**************************************************************************
  * GAME :: CREATE Ship
  * Create an ship according to the rules of the game.
@@ -292,11 +301,10 @@ void Game :: handleCollisions()
             switch ((*it)->radius)
             {
                case 16:
-                  (*it2)->kill();
-                  explodeLarge(*it);
-                  (*it)->kill();
+                  explodeLarge(*it, *it2);
                   break;
                case 8:
+                  explodeMedium(*it, *it2);
                   break;
                case 5:
                   break;
@@ -321,16 +329,34 @@ void Game :: handleCollisions()
  * GAME :: explodeLarge
  * Kills a large asteroid and creates 2 medium and 1 small asteroids
  **************************************************************************/
-void Game :: explodeLarge(Asteroid *asteroid)
+void Game :: explodeLarge(Asteroid *asteroid, Bullet *bullet)
 {
    createMediumAsteroid(asteroid->getPoint(), asteroid->getVelocity());
-   Point center;
-               char userPrompt[] = "Hit";
-               center.setX(-50);
-               center.setY(0);
-               drawText(center, userPrompt);
+   bullet->kill();
+   asteroid->kill();
 }
 
+/**************************************************************************
+ * GAME :: explodeMedium
+ * Kills a mediuim asteroid and creates 2 small asteroids
+ **************************************************************************/
+void Game :: explodeMedium(Asteroid *asteroid, Bullet *bullet)
+{
+   Velocity posVelocity, negVelocity;
+   posVelocity = asteroid->getVelocity();
+   negVelocity = posVelocity;
+
+   //TODO: more elegant solution , If positive or negative make positive or negative???
+   posVelocity.setDy(posVelocity.getDy() + 3);
+   negVelocity.setDy(negVelocity.getDy() - 3);
+
+   createSmallAsteroid(asteroid->getPoint() , posVelocity);
+   createSmallAsteroid(asteroid->getPoint() , negVelocity);
+
+   bullet->kill();
+   asteroid->kill();
+
+}
 /**************************************************************************
  * GAME :: CLEAN UP ZOMBIES
  * Remove any dead objects (take bullets out of the list, deallocate asteroids)

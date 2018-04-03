@@ -91,8 +91,9 @@ class SmallAsteroid: public Asteroid
 {
    public:
       SmallAsteroid();
+      SmallAsteroid(Point point, Velocity Velocity);
       void split(bool hit);
-      void draw(Point point, int rotation);
+      void draw();
       
    protected:
 
