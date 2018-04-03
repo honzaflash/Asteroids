@@ -213,9 +213,10 @@ void Game :: createMediumAsteroid(Point point, Velocity velocity)
    posVelocity = velocity;
    negVelocity = velocity;
 
-   posVelocity.setDy(posVelocity.getDy() + 1.0);
-   negVelocity.setDy(posVelocity.getDy() + 1.0);
+   posVelocity.setDy(posVelocity.getDx() + 1.0);
+   negVelocity.setDy(posVelocity.getDx() - 1.0);
    asteroids.push_back(new MediumAsteroid(point, posVelocity));
+   asteroids.push_back(new MediumAsteroid(point, negVelocity));
 }
 
 /**************************************************************************
@@ -293,6 +294,7 @@ void Game :: handleCollisions()
                case 16:
                   (*it2)->kill();
                   explodeLarge(*it);
+                  (*it)->kill();
                   break;
                case 8:
                   break;
@@ -359,6 +361,27 @@ void Game :: cleanUpZombies()
          bulletIt++; // advance
       }
    }
+
+   //look for dead asteroids
+   list<Asteroid *>::iterator asteroidIt = asteroids.begin();
+   while (asteroidIt != asteroids.end())
+   {
+      Asteroid* pAsteroid = *asteroidIt;
+    
+      if (!pAsteroid->isAlive())
+      {
+         // If we had a list of pointers, we would need to delete the memory here...
+         delete pAsteroid;
+         pAsteroid = NULL;
+         
+         // remove from list and advance
+         asteroidIt = asteroids.erase(asteroidIt);
+      }
+      else
+      {
+         asteroidIt++; // advance
+      }
+   }
 }
 
 /***************************************
@@ -407,7 +430,13 @@ void Game :: draw(const Interface & ui)
    // draw the asteroids
   for (list<Asteroid *> :: iterator it = asteroids.begin();
            it != asteroids.end(); ++it)
-         (*it)->draw();
+           {
+              if ((*it)->isAlive())
+              {
+                 (*it)->draw();
+              }
+           }
+         
 
    // draw the ship
    ship->draw();
