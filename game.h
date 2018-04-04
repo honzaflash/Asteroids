@@ -88,6 +88,7 @@ private:
    void cleanUpZombies();
    void explodeLarge(Asteroid *asteroid, Bullet *bullet);
    void createMediumAsteroid(Point point, Velocity velocity);
+   void explodeSmall(Asteroid *asteroid, Bullet *bullet);
    void explodeMedium(Asteroid *asteroid, Bullet *bullet);
    void createSmallAsteroid(Point point, Velocity velocity);
 

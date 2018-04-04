@@ -63,6 +63,7 @@ Game :: Game(Point tl, Point br)
    bStartGame = false;
 
    ship = NULL;
+   ship = createShip();
 
 }
 
@@ -80,6 +81,14 @@ Game :: ~Game()
       if (*it) // DO NOT dereference NULL
          delete (*it);
       it = asteroids.erase(it);
+   }
+
+   for (vector<Bullet*>::iterator it = bullets.begin();
+        it != bullets.end();)
+   {
+      if (*it) // DO NOT dereference NULL
+         delete (*it);
+      it = bullets.erase(it);
    }
 
    if (ship) // ensures not dereferencing NULL
@@ -169,16 +178,13 @@ void Game :: advanceAsteroid()
  *
  * 1. If there are no ship, create it
  * 2. If there is an ship and it's alive, advance it
- * 3. Check if the shiphas gone of the screen, and if so, wrap it
+ * 3. Check if the ship has gone of the screen, and if so, wrap it
  **************************************************************************/
 void Game :: advanceShip()
 { 
-   if (ship == NULL) // create ship if none
+   if (ship != NULL) // if ship exists advance
    {
-      ship = createShip();
-   }
-   else
-   {
+
       // we have a ship, make sure it's alive
       if (ship->isAlive())
       {
@@ -186,7 +192,6 @@ void Game :: advanceShip()
          ship->advance();
 
       }
-
       //TODO: Should there be an else here???
               
    }
@@ -281,7 +286,7 @@ bool Game :: getCollision(const FlyingObject &obj1, const FlyingObject &obj2, in
 
 /**************************************************************************
  * GAME :: HANDLE COLLISIONS
- * Check for a collision between a bird and a bullet.
+ * Check for a collision between an asteroid and a bullet / ship
  **************************************************************************/
 void Game :: handleCollisions()
 {
@@ -306,16 +311,22 @@ void Game :: handleCollisions()
                case 8:
                   explodeMedium(*it, *it2);
                   break;
-               case 5:
+               case 4:
+                  explodeSmall(*it, *it2);
                   break;
-            }
-            //If large asteroid call create meduim asteroids delete large asteroid
-            //If medium asteroid call create small asteroids delete medium asteroid
-            //If small asteroid delete
-               
-
+            }             
          }
       }
+
+      // check if ship has been hit
+      if(ship != NULL && ship->isAlive())
+      {
+         if (getCollision(**it, *ship, (*it)->radius))
+         {
+            ship->kill();
+         }
+      }
+
    }
    // get locations of objects
    //compare points and if closetDistance is less than .04 destroy
@@ -357,13 +368,33 @@ void Game :: explodeMedium(Asteroid *asteroid, Bullet *bullet)
    asteroid->kill();
 
 }
+
+/**************************************************************************
+ * GAME :: explodeSmall
+ * Kills a small asteroid and deletes the asteroid / bullet
+ **************************************************************************/
+void Game :: explodeSmall(Asteroid *asteroid, Bullet *bullet)
+{
+   bullet->kill();
+   asteroid->kill();
+}
+
 /**************************************************************************
  * GAME :: CLEAN UP ZOMBIES
  * Remove any dead objects (take bullets out of the list, deallocate asteroids)
  **************************************************************************/
 void Game :: cleanUpZombies()
 {
-   
+   // Look for dead ship
+    if (ship != NULL && !ship->isAlive())
+   {
+      // the ship is dead, but the memory is not freed up yet
+
+      delete ship;
+      ship = NULL;
+
+   }
+
    // Look for dead bullets
    vector<Bullet *>::iterator bulletIt = bullets.begin();
    while (bulletIt != bullets.end())
@@ -416,35 +447,39 @@ void Game :: cleanUpZombies()
  ***************************************/
 void Game :: handleInput(const Interface & ui)
 {
-   // Change the direction of the ship left
-   if (ui.isLeft())
+   if (ship != NULL && ship->isAlive())
    {
-      ship->moveLeft();
+      // Change the direction of the ship left
+      if (ui.isLeft())
+      {
+         ship->moveLeft();
+      }
+      
+      // Change the direction of the ship right
+      if (ui.isRight())
+      {
+         ship->moveRight();
+      }
+
+      // Check for "up" key
+      if (ui.isUp())
+      {
+         ship->moveUp();
+      }
+
+      // Check for "Spacebar"
+      if (ui.isSpace())
+      {
+         createBullet();
+      }
+
+      // Check for "Y" press
+      if (ui.isY())
+      {
+         bStartGame = true;
+      }
    }
    
-   // Change the direction of the ship right
-   if (ui.isRight())
-   {
-      ship->moveRight();
-   }
-
-   // Check for "up" key
-   if (ui.isUp())
-   {
-      ship->moveUp();
-   }
-
-   // Check for "Spacebar"
-   if (ui.isSpace())
-   {
-      createBullet();
-   }
-
-   // Check for "Y" press
-   if (ui.isY())
-   {
-      bStartGame = true;
-   }
 }
 
 /*********************************************
@@ -465,7 +500,10 @@ void Game :: draw(const Interface & ui)
          
 
    // draw the ship
-   ship->draw();
+   if (ship != NULL && ship->isAlive()) 
+   {
+      ship->draw();
+   }
    
    // draw the bullets, if they are alive
    for (int i = 0; i < bullets.size(); i++)
