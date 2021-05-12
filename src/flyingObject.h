@@ -10,7 +10,7 @@
 #ifndef flyingObject_H
 #define flyingObject_H
 
-#include "point.h"
+#include "uiDraw/point.h"
 #include "velocity.h"
 
 /***********************************************************************
@@ -19,8 +19,7 @@
 
 class FlyingObject
 {
-   public:
-
+public:
    // Constructor
    FlyingObject();
 
@@ -39,23 +38,19 @@ class FlyingObject
    int getRotation();
    void setRotation(int rotation);
    int radius;
-   
-   protected:
-      bool alive;
-      Point currentPoint;
-      Velocity velocity;
-      Point startingPoint;
-      // gets random number for starting point
-      float startingX;
-      float startingDx;
-      float startingDy;
-      int rotation;
-      bool isWrapX;
-      bool isWrapY;
 
-   private:
-
-
+protected:
+   bool alive;
+   Point currentPoint;
+   Velocity velocity;
+   Point startingPoint;
+   // gets random number for starting point
+   float startingX;
+   float startingDx;
+   float startingDy;
+   int rotation;
+   bool isWrapX;
+   bool isWrapY;
 };
 
 #endif

@@ -20,7 +20,7 @@ Ship :: Ship()
    setOrientation(0);
    currentPoint.setX(0);
    currentPoint.setY(0);
-   setPoint(currentPoint);
+   // setPoint(currentPoint); !! setting currentPoint to currentPoint
    draw();
 }
 
@@ -29,9 +29,8 @@ Ship :: Ship()
 ***********************************************************************/
 void Ship :: draw()
 {
-      drawShip(currentPoint, orientation, thrust);
-      thrust = false;
-   
+   drawShip(currentPoint, orientation, thrust);
+   thrust = false;
 }
 
 /***********************************************************************
@@ -50,7 +49,6 @@ float Ship :: getOrientation()
    return orientation;
 }
 
-//TODO: checks for if under 0 or over 360
 void Ship :: moveLeft()
 {
    if (orientation < 0)
@@ -65,8 +63,6 @@ void Ship :: moveLeft()
    {
       orientation += ROTATE_AMOUNT;
    }
-   
-
 }
 
 

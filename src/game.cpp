@@ -7,9 +7,9 @@
 
 #include "game.h"
 #include <string>
-#include "uiDraw.h"
-#include "uiInteract.h"
-#include "point.h"
+#include "uiDraw/uiDraw.h"
+#include "uiDraw/uiInteract.h"
+#include "uiDraw/point.h"
 #include <vector>
 
 // These are needed for the getClosestDistance function...
@@ -17,14 +17,13 @@
 #include <algorithm>
 using namespace std;
 
-//TODO: possibly remove this.
 
 #define OFF_SCREEN_BORDER_AMOUNT 5
 #define BEGGINNING_ASTEROID_COUNT 5
 
 // You may find this function helpful...
-
-
+// !! checks for collision between where 2 objects are now
+// !! and where they will be next frame
 float Game :: getClosestDistance(const FlyingObject &obj1, const FlyingObject &obj2) const
 {
    // find the maximum distance traveled
@@ -44,7 +43,7 @@ float Game :: getClosestDistance(const FlyingObject &obj1, const FlyingObject &o
       float xDiff = point1.getX() - point2.getX();
       float yDiff = point1.getY() - point2.getY();
       
-      float distSquared = (xDiff * xDiff) +(yDiff * yDiff);
+      float distSquared = (xDiff * xDiff) + (yDiff * yDiff);
       
       distMin = min(distMin, distSquared);
    }
@@ -92,9 +91,9 @@ Game :: ~Game()
    }
 
    if (ship) // ensures not dereferencing NULL
-      {
-         delete ship;
-         ship = NULL;
+   {
+      delete ship;
+      ship = NULL;
    }
 
 }
@@ -105,16 +104,14 @@ Game :: ~Game()
  ***************************************/
 void Game :: advance()
 {
-   //TODO: remove this for production
-   bStartGame = true;
    if (bStartGame)
    {
-   advanceBullets();
-   advanceAsteroid();
-   advanceShip();
+      advanceBullets();
+      advanceAsteroids();
+      advanceShip();
 
-   handleCollisions();
-   cleanUpZombies();
+      handleCollisions();
+      cleanUpZombies();
    }
 
    else
@@ -154,11 +151,11 @@ void Game :: advanceBullets()
  * 2. If there is an Asteroid, and it's alive, advance it
  * 3. Check if the Asteroid has gone of the screen, and if so, wrap it
  **************************************************************************/
-void Game :: advanceAsteroid()
+void Game :: advanceAsteroids()
 { 
    if (!asteroids.size()) // create asteroids if none
    {
-      createAsteroid();
+      createAsteroids();
    }
    else
    {
@@ -170,7 +167,6 @@ void Game :: advanceAsteroid()
             }
          
    }
-
 }
 
 /**************************************************************************
@@ -182,30 +178,20 @@ void Game :: advanceAsteroid()
  **************************************************************************/
 void Game :: advanceShip()
 { 
-   if (ship != NULL) // if ship exists advance
+   if (ship != NULL && ship->isAlive())
    {
-
-      // we have a ship, make sure it's alive
-      if (ship->isAlive())
-      {
-         // move it forward
-         ship->advance();
-
-      }
-      //TODO: Should there be an else here???
-              
+      // move it forward
+      ship->advance();
    }
-
 }
 
 /**************************************************************************
  * GAME :: CREATE Asteroid
  * Create an Asteroid according to the rules of the game.
  **************************************************************************/
-void Game :: createAsteroid()
+void Game :: createAsteroids()
 {
-   //TODO: get rid of magic number
-    for (int i = 0; i < 5; i++)
+   for (int i = 0; i < BEGGINNING_ASTEROID_COUNT; i++)
    {
       asteroids.push_back(new LargeAsteroid());
    }
@@ -239,12 +225,10 @@ void Game :: createSmallAsteroid(Point point, Velocity velocity)
  **************************************************************************/
 Ship* Game :: createShip()
 {
-
    Ship* ship = NULL;
    ship = new Ship();
 
    return ship;
-   
 }
 
 /**************************************************************************
@@ -274,14 +258,7 @@ bool Game :: isOnScreen(const Point & point)
  **************************************************************************/
 bool Game :: getCollision(const FlyingObject &obj1, const FlyingObject &obj2, int radius)
 {
-   bool isHit = false;
-   //TODO: change 20.0 to a non magic number (radius of large asteroid)
-   if (getClosestDistance(obj1, obj2) < radius)
-   {
-      isHit = true;
-   }
-
-   return isHit;
+   return getClosestDistance(obj1, obj2) < radius;
 }
 
 /**************************************************************************
@@ -291,15 +268,12 @@ bool Game :: getCollision(const FlyingObject &obj1, const FlyingObject &obj2, in
 void Game :: handleCollisions()
 {
    // loop through asteroids
-   for (list<Asteroid *>::iterator it = asteroids.begin();
-         it != asteroids.end(); it++)
+   for (list<Asteroid *>::iterator it = asteroids.begin(); it != asteroids.end(); it++)
    {
       // check if asteroid has been hit by bullet
-
       for (vector<Bullet *>::iterator it2 = bullets.begin() ; it2 != bullets.end(); ++it2)
       {
          // check if hit
-         //TODO: change 10 to radius of rock
          if (getCollision(**it, **it2, (*it)->radius))
          {
             //check what type of rock is hit, by radius LRG = 16 MED = 8 SMLL = 4
@@ -366,7 +340,6 @@ void Game :: explodeMedium(Asteroid *asteroid, Bullet *bullet)
 
    bullet->kill();
    asteroid->kill();
-
 }
 
 /**************************************************************************
@@ -389,10 +362,8 @@ void Game :: cleanUpZombies()
     if (ship != NULL && !ship->isAlive())
    {
       // the ship is dead, but the memory is not freed up yet
-
       delete ship;
       ship = NULL;
-
    }
 
    // Look for dead bullets
@@ -400,9 +371,6 @@ void Game :: cleanUpZombies()
    while (bulletIt != bullets.end())
    {
       Bullet* pBullet = *bulletIt;
-      // Asteroids Hint:
-      // If we had a list of pointers, we would need this line instead:
-      //Bullet* pBullet = *bulletIt;
       
       if (!pBullet->isAlive())
       {
@@ -489,15 +457,15 @@ void Game :: handleInput(const Interface & ui)
 void Game :: draw(const Interface & ui)
 {
    // draw the asteroids
-  for (list<Asteroid *> :: iterator it = asteroids.begin();
-           it != asteroids.end(); ++it)
-           {
-              if ((*it)->isAlive())
-              {
-                 (*it)->draw();
-              }
-           }
-         
+   for (list<Asteroid *> :: iterator it = asteroids.begin(); it != asteroids.end(); ++it)
+   {
+      // !! is this even necessary?
+      // !! advance() calls cleanUpZombies() at the end
+      if ((*it)->isAlive())
+      {
+         (*it)->draw();
+      }
+   }
 
    // draw the ship
    if (ship != NULL && ship->isAlive()) 
@@ -513,7 +481,6 @@ void Game :: draw(const Interface & ui)
          bullets[i]->draw();
          bullets[i]->setHealth();
       }
-
    }
 
 }

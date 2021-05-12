@@ -59,7 +59,6 @@ void Asteroid :: setAngle(float angle)
 /***********************************************************************
  * this will get if an asteroid is hit by bullet
 ***********************************************************************/
-//TODO: return richer data
 bool Asteroid :: getHit()
 {
    return hit;

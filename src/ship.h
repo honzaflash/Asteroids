@@ -45,16 +45,16 @@ class Ship: public FlyingObject
 
    protected:
 
-   private:
+private:
 
-      Point point;
-      bool thrust;
+   Point point; // !! seems unused
+   bool thrust;
 
-       /**********************************************************
-       * angle - The angle of the ship in degrees.
-       *  Assumes that straight right is 0 degrees and up is 90.
-       **********************************************************/
-      float orientation;
+      /**********************************************************
+      * angle - The angle of the ship in degrees.
+      *  Assumes that straight right is 0 degrees and up is 90.
+      **********************************************************/
+   float orientation;
 };
 
 

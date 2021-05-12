@@ -12,7 +12,7 @@
 
 #include "uiDraw/uiDraw.h"
 #include "uiDraw/uiInteract.h"
-#include "point.h"
+#include "uiDraw/point.h"
 #include "velocity.h"
 
 #include "asteroids.h"
@@ -77,9 +77,9 @@ private:
 
    bool isOnScreen(const Point & point);
    void advanceBullets();
-   void advanceAsteroid();
+   void advanceAsteroids();
    void advanceShip();
-   void createAsteroid();
+   void createAsteroids();
    Ship* createShip();
    void createBullet();
    

@@ -11,12 +11,12 @@
 #define BULLET_H
 
 #include "velocity.h"
-#include "point.h"
+#include "uiDraw/point.h"
 #include "flyingObject.h"
 
 class Bullet: public FlyingObject 
 {
-   public:
+public:
 
    // constructors
    Bullet();
@@ -27,11 +27,8 @@ class Bullet: public FlyingObject
    int getHealth();
    void setHealth();
 
-   
-   protected:
-
-   private:
-      int health;
+private:
+   int health;
 };
 
 #endif

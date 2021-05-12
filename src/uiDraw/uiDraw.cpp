@@ -480,89 +480,6 @@ void drawDot(const Point & point)
    glEnd();
 }
 
-/************************************************************************
- * DRAW Tough Bird
- * Draw a tough bird on the screen
- *  INPUT point   The position of the sacred
- *        radius  The size of the bird
- *        hits    How many its remaining to kill the bird 
- *************************************************************************/
-void drawToughBird(const Point & center, float radius, int hits)
-{
-   assert(radius > 1.0);
-   const double increment = M_PI / 6.0;
-   
-   // begin drawing
-   glBegin(GL_TRIANGLES);   
-
-   // three points: center, pt1, pt2
-   Point pt1(false /*check*/);
-   pt1.setX(center.getX() + (radius * cos(0.0)));
-   pt1.setY(center.getY() + (radius * sin(0.0)));   
-   Point pt2(pt1);
-
-   // go around the circle
-   for (double radians = increment;
-        radians <= M_PI * 2.0 + .5;
-        radians += increment)
-   {
-      pt2.setX(center.getX() + (radius * cos(radians)));
-      pt2.setY(center.getY() + (radius * sin(radians)));
-
-      glVertex2f(center.getX(), center.getY());
-      glVertex2f(pt1.getX(),    pt1.getY()   );
-      glVertex2f(pt2.getX(),    pt2.getY()   );
-      
-      pt1 = pt2;
-   }
-      
-   // complete drawing
-   glEnd();   
-
-   // draw the score in the center
-   if (hits > 0 && hits < 10)
-   {
-      glColor3f(0.0 /* red % */, 0.0 /* green % */, 0.0 /* blue % */);
-      glRasterPos2f(center.getX() - 4, center.getY() - 3);
-      glutBitmapCharacter(GLUT_BITMAP_8_BY_13, (char)(hits + '0'));
-      glColor3f(1.0, 1.0, 1.0); // reset to white
-   }
-}
-
-/************************************************************************
- * DRAW Sacred Bird
- * Draw a sacred bird on the screen
- *  INPUT point   The position of the sacred
- *        radius  The size of the bird
- *************************************************************************/
-void drawSacredBird(const Point & center, float radius)
-{
-   // handle auto-rotation
-   static float rotation = 0.0;   
-   rotation += 5.0;
-
-   
-   // begin drawing
-   glBegin(GL_LINE_LOOP);
-   glColor3f(1.0 /* red % */, 0.0 /* green % */, 0.0 /* blue % */);
-
-   
-   //loop around a circle the given number of times drawing a line from
-   //one point to the next
-   for (int i = 0; i < 5; i++)
-   {
-      Point temp(false /*check*/);
-      float radian = (float)i * (M_PI * 2.0) * 0.4;
-      temp.setX(center.getX() + (radius * cos(radian)));
-      temp.setY(center.getY() + (radius * sin(radian)));
-      rotate(temp, center, rotation);
-      glVertex2f(temp.getX(), temp.getY());
-   }
-   
-   // complete drawing
-   glColor3f(1.0, 1.0, 1.0); // reset to white
-   glEnd();   
-}
 
 /**********************************************************************
  * DRAW SMALL ASTEROID
@@ -576,8 +493,8 @@ void drawSmallAsteroid( const Point & center, int rotation)
       int y;
    } points[] = 
    {
-      {-5, 9},  {4, 8},   {8, 4},   
-      {8, -5},  {-2, -8}, {-2, -3}, 
+      {-5, 9},  {4, 8},   {8, 4},
+      {8, -5},  {-2, -8}, {-2, -3},
       {-8, -4}, {-8, 4},  {-5, 10}
    };
    

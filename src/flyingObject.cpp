@@ -16,8 +16,8 @@ FlyingObject :: FlyingObject()
 {
    // Set alive and default rotation to 0
    alive = true;
-   isWrapX = false;
-   isWrapY = false;
+   isWrapX = false; //!! unnecessary
+   isWrapY = false; //!! unnecessary
    setRotation(0);
 }
 
@@ -38,9 +38,7 @@ bool FlyingObject :: isAlive() const
 
 void FlyingObject :: setPoint(Point point)
 {
-
    this->currentPoint = point;
-   
 }
 
 void FlyingObject :: setPoint(float x, float y)
@@ -60,26 +58,27 @@ void FlyingObject :: setVelocity(float dx, float dy)
    velocity.setDy(dy);
 }
 
+// !! wraps the object, isWrap should become unnecessary if
+// if '=' is omitted from comparisons
 void FlyingObject :: advance()
 {
    //TODO: clean up logic
    // Checks if the flyingObject needs to wrap around 
    // the screen
    if (!isWrapX && (currentPoint.getX() >= 200))
-      {
-         currentPoint.setX(-200);
-         currentPoint.addX(velocity.getDx());
-         currentPoint.addY(velocity.getDy());
-         isWrapX = true;
-      }
-
+   {
+      currentPoint.setX(-200);
+      currentPoint.addX(velocity.getDx());
+      currentPoint.addY(velocity.getDy());
+      isWrapX = true;
+   }
    else if (!isWrapX && currentPoint.getX() <= -200)
-      {
-         currentPoint.setX(200);
-         currentPoint.addX(velocity.getDx());
-         currentPoint.addY(velocity.getDy());
-         isWrapX = true;
-      }
+   {
+      currentPoint.setX(200);
+      currentPoint.addX(velocity.getDx());
+      currentPoint.addY(velocity.getDy());
+      isWrapX = true;
+   }
    else if (!isWrapY && currentPoint.getY() >= 200)
    {
       currentPoint.setY(-200);
@@ -88,12 +87,12 @@ void FlyingObject :: advance()
       isWrapY = true;
    }
    else if (!isWrapY && currentPoint.getY() <= -200)
-      {
-         currentPoint.setY(200);
-         currentPoint.addX(velocity.getDx());
-         currentPoint.addY(velocity.getDy());
-         isWrapY = true;
-      }
+   {
+      currentPoint.setY(200);
+      currentPoint.addX(velocity.getDx());
+      currentPoint.addY(velocity.getDy());
+      isWrapY = true;
+   }
    else
    {
       currentPoint.addX(velocity.getDx());
@@ -101,7 +100,6 @@ void FlyingObject :: advance()
       isWrapX = false;
       isWrapY = false;
    }
-   
 }
 
 void FlyingObject :: kill()

@@ -8,7 +8,7 @@
  *************************************************************/
 #include <cmath> // used for sin, cos, and M_PI
 #include "bullet.h" 
-#include "uiDraw.h"
+#include "uiDraw/uiDraw.h"
 
 #define BULLET_SPEED 5.0
 #define M_PI 3.14159265358979323846
@@ -74,6 +74,4 @@ void Bullet :: setHealth()
    {
       kill();
    }
-   
-
 }

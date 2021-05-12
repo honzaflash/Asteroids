@@ -11,7 +11,7 @@
 #define asteroids_h
 
 #include "flyingObject.h"
-#include "point.h"
+#include "uiDraw/point.h"
 #include "uiDraw/uiDraw.h"
 
 #define BIG_ROCK_SIZE 16
@@ -42,8 +42,6 @@ class Asteroid: public FlyingObject
       float angle;
       int rotation;
       bool hit;
-
-   private:
 };
 
 /***********************************************************************
