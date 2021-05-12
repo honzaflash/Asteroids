@@ -274,8 +274,6 @@ void drawLander(const Point & point)
 
    // complete drawing
    glEnd();
-   
-   
 }
 
 

@@ -10,8 +10,8 @@
 #include <vector>
 #include <list>
 
-#include "uiDraw.h"
-#include "uiInteract.h"
+#include "uiDraw/uiDraw.h"
+#include "uiDraw/uiInteract.h"
 #include "point.h"
 #include "velocity.h"
 

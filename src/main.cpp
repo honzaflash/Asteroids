@@ -1,5 +1,5 @@
 /*****************************************************
- * File: Driver.cpp
+ * File: Driver.cpp !!(renamed to main.cpp)
  * Author: Br. Burton
  *
  * Description: This file contains the main function
@@ -8,7 +8,7 @@
  *  called each time through the game loop.
  ******************************************************/
 #include "game.h"
-#include "uiInteract.h"
+#include "uiDraw/uiInteract.h"
 
 /*************************************
  * All the interesting work happens here, when

@@ -12,7 +12,7 @@
 
 #include "flyingObject.h"
 #include "point.h"
-#include "uiDraw.h"
+#include "uiDraw/uiDraw.h"
 
 #define BIG_ROCK_SIZE 16
 #define MEDIUM_ROCK_SIZE 8

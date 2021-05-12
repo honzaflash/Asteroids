@@ -5,7 +5,8 @@
             "includePath": [
                 "/usr/include",
                 "/usr/local/include",
-                "${workspaceRoot}"
+                "${workspaceRoot}",
+                "${workspaceRoot}/src/uiDraw"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
@@ -35,7 +36,8 @@
                 "/usr/lib/gcc/x86_64-unknown-linux/6.2.0/include",
                 "/usr/lib/gcc/x86_64-unknown-linux/6.2.0/include-fixed",
                 "/usr/include",
-                "${workspaceRoot}"
+                "${workspaceRoot}",
+                "${workspaceRoot}/src/uiDraw"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
@@ -60,7 +62,8 @@
             "name": "Win32",
             "includePath": [
                 "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include",
-                "${workspaceRoot}"
+                "${workspaceRoot}/src",
+                "${workspaceRoot}/src/uiDraw"
             ],
             "defines": [
                 "_DEBUG",

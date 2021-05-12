@@ -2,7 +2,7 @@
 
 This is a "read-only" branch with file structure reorganization
 and subtle refactoring for better understandability.
-It won't compile.
+It might not compile.
 
 # Original readme
 
