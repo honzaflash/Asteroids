@@ -1,9 +1,17 @@
-# Asteroids
+# Asteroids Organized
+
+This is a "read-only" branch with file structure reorganization
+and subtle refactoring for better understandability.
+It won't compile.
+
+# Original readme
+
+## Asteroids
 
 Introduced by Atari in 1979, Asteroids was one of the most successful of the first generation of arcade games and was highly influential on the video game landscape for the next decade. The basic premise of the game is that a ship moves around the screen shooting asteroids while trying not to get hit by them.
 This program is written using simplified OpenGL libraries . OpenGL will have to be installed and enabled on your machine for this program to work.
 
-<h2>Game Rules and Specification</h2>
+### Game Rules and Specification
 
 <ol>
   <li>Ship</li>
@@ -60,5 +68,5 @@ This program is written using simplified OpenGL libraries . OpenGL will have to 
     </ul>
 </ol>
 
-<h2>Architectural Design</h2>
+### Architectural Design
 The entire program is implemented using the principles of encapsulation. The principles of inheritance and polymorphism. 
