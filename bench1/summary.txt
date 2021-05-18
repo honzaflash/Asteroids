@@ -1,0 +1,5 @@
+compied with -gp no optimizations
+
+time ellapsed: 10289ms (cpu time:7412ms)
+frames rendered: 414
+

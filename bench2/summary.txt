@@ -1,0 +1,4 @@
+After compiling with optimizations -O
+
+time ellapsed: 10080ms (cpu time:3680ms)
+frames rendered: 460

@@ -1,0 +1,1495 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 39.20      0.58     0.58  1767476     0.00     0.00  Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const
+ 10.14      0.73     0.15 40453079     0.00     0.00  FlyingObject::getVelocity() const
+  6.08      0.82     0.09                             Point::Point(float, float)
+  5.75      0.91     0.09 33391128     0.00     0.00  FlyingObject::getPoint() const
+  5.07      0.98     0.08                             Velocity::getDy() const
+  4.06      1.04     0.06                             Point::setX(float)
+  3.38      1.09     0.05                             Velocity::getDx() const
+  2.70      1.13     0.04  8345603     0.00     0.00  float const& std::min<float>(float const&, float const&)
+  2.70      1.17     0.04      491     0.08     2.16  Game::handleCollisions()
+  2.37      1.21     0.04 40568045     0.00     0.00  Point::getX() const
+  2.03      1.24     0.03 40567789     0.00     0.00  Point::getY() const
+  2.03      1.27     0.03   972325     0.00     0.00  rotate(Point&, Point const&, int)
+  2.03      1.30     0.03                             Point::setY(float)
+  1.35      1.32     0.02  3928490     0.00     0.00  __gnu_cxx::__aligned_membuf<Asteroid*>::_M_ptr()
+  1.35      1.34     0.02  3927222     0.00     0.00  std::_List_iterator<Asteroid*>::operator*() const
+  1.35      1.36     0.02   319579     0.00     0.00  FlyingObject::isAlive() const
+  1.01      1.37     0.02  1776708     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::end()
+  0.68      1.38     0.01  7069904     0.00     0.00  std::abs(float)
+  0.68      1.39     0.01  3928490     0.00     0.00  __gnu_cxx::__aligned_membuf<Asteroid*>::_M_addr()
+  0.68      1.40     0.01  1767476     0.00     0.00  Game::getCollision(FlyingObject const&, FlyingObject const&, int)
+  0.68      1.41     0.01  1767476     0.00     0.00  std::sqrt(float)
+  0.68      1.42     0.01   393635     0.00     0.00  std::operator!=(std::_List_iterator<Asteroid*> const&, std::_List_iterator<Asteroid*> const&)
+  0.68      1.43     0.01   293437     0.00     0.00  std::_List_iterator<Asteroid*>::operator++(int)
+  0.68      1.44     0.01   105763     0.00     0.00  FlyingObject::advance()
+  0.68      1.45     0.01    97715     0.00     0.00  std::_List_iterator<Asteroid*>::operator++()
+  0.68      1.46     0.01    52746     0.00     0.00  drawSmallAsteroid(Point const&, int)
+  0.34      1.47     0.01    99202     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::begin()
+  0.34      1.47     0.01     2482     0.00     0.00  Point::Point()
+  0.34      1.48     0.01     1240     0.00     0.01  FlyingObject::FlyingObject()
+  0.34      1.48     0.01                             Velocity::Velocity(float, float)
+  0.00      1.48     0.00  7069904     0.00     0.00  float const& std::max<float>(float const&, float const&)
+  0.00      1.48     0.00  3928490     0.00     0.00  std::_List_node<Asteroid*>::_M_valptr()
+  0.00      1.48     0.00  3554822     0.00     0.00  __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::base() const
+  0.00      1.48     0.00  1885107     0.00     0.00  __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator(Bullet** const&)
+  0.00      1.48     0.00  1776240     0.00     0.00  bool __gnu_cxx::operator!=<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&)
+  0.00      1.48     0.00  1677603     0.00     0.00  __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator*() const
+  0.00      1.48     0.00  1669241     0.00     0.00  __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator++()
+  0.00      1.48     0.00   972325     0.00     0.00  Point::Point(bool)
+  0.00      1.48     0.00   397386     0.00     0.00  std::_List_iterator<Asteroid*>::_List_iterator(std::__detail::_List_node_base*)
+  0.00      1.48     0.00   394383     0.00     0.00  std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::end()
+  0.00      1.48     0.00   105763     0.00     0.00  Point::addX(float)
+  0.00      1.48     0.00   105763     0.00     0.00  Point::addY(float)
+  0.00      1.48     0.00    52746     0.00     0.00  SmallAsteroid::draw()
+  0.00      1.48     0.00    46845     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::operator[](unsigned long)
+  0.00      1.48     0.00    23635     0.00     0.00  drawLargeAsteroid(Point const&, int)
+  0.00      1.48     0.00    23635     0.00     0.00  LargeAsteroid::draw()
+  0.00      1.48     0.00    21334     0.00     0.00  drawMediumAsteroid(Point const&, int)
+  0.00      1.48     0.00    21334     0.00     0.00  MediumAsteroid::draw()
+  0.00      1.48     0.00    16633     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::size() const
+  0.00      1.48     0.00     7824     0.00     0.00  drawDot(Point const&)
+  0.00      1.48     0.00     7824     0.00     0.00  Bullet::draw()
+  0.00      1.48     0.00     7824     0.00     0.00  Bullet::setHealth()
+  0.00      1.48     0.00     7785     0.00     0.00  Game::isOnScreen(Point const&)
+  0.00      1.48     0.00     7333     0.00     0.00  __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator++(int)
+  0.00      1.48     0.00     2992     0.00     0.00  Asteroid*&& std::forward<Asteroid*>(std::remove_reference<Asteroid*>::type&)
+  0.00      1.48     0.00     2244     0.00     0.00  random(int, int)
+  0.00      1.48     0.00     2088     0.00     0.00  FlyingObject::setRotation(int)
+  0.00      1.48     0.00     1963     0.00     0.00  std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::begin()
+  0.00      1.48     0.00     1888     0.00     0.00  FlyingObject::setPoint(Point)
+  0.00      1.48     0.00     1864     0.00     0.00  __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator+(long) const
+  0.00      1.48     0.00     1848     0.00     0.00  Bullet** std::__niter_base<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >)
+  0.00      1.48     0.00     1496     0.00     0.00  random(double, double)
+  0.00      1.48     0.00     1479     0.00     0.00  Bullet*&& std::forward<Bullet*>(std::remove_reference<Bullet*>::type&)
+  0.00      1.48     0.00     1268     0.00     0.00  std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_get_Node_allocator()
+  0.00      1.48     0.00     1239     0.00     0.00  operator new(unsigned long, void*)
+  0.00      1.48     0.00     1136     0.00     0.00  FlyingObject::kill()
+  0.00      1.48     0.00      982     0.00     0.00  timeDiff(timespec, timespec)
+  0.00      1.48     0.00      940     0.00     0.00  __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::base() const
+  0.00      1.48     0.00      924     0.00     0.00  __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__miter_base<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >)
+  0.00      1.48     0.00      748     0.00     0.01  Asteroid::Asteroid()
+  0.00      1.48     0.00      748     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::allocate(unsigned long, void const*)
+  0.00      1.48     0.00      748     0.00     0.00  void __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::construct<Asteroid*, Asteroid*>(Asteroid**, Asteroid*&&)
+  0.00      1.48     0.00      748     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::max_size() const
+  0.00      1.48     0.00      748     0.00     0.00  std::__allocated_ptr<std::allocator<std::_List_node<Asteroid*> > >::__allocated_ptr(std::allocator<std::_List_node<Asteroid*> >&, std::_List_node<Asteroid*>*)
+  0.00      1.48     0.00      748     0.00     0.00  std::__allocated_ptr<std::allocator<std::_List_node<Asteroid*> > >::~__allocated_ptr()
+  0.00      1.48     0.00      748     0.00     0.00  std::__allocated_ptr<std::allocator<std::_List_node<Asteroid*> > >::operator=(decltype(nullptr))
+  0.00      1.48     0.00      748     0.00     0.00  std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::allocate(std::allocator<std::_List_node<Asteroid*> >&, unsigned long)
+  0.00      1.48     0.00      748     0.00     0.00  void std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::construct<Asteroid*, Asteroid*>(std::allocator<std::_List_node<Asteroid*> >&, Asteroid**, Asteroid*&&)
+  0.00      1.48     0.00      748     0.00     0.00  std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_get_node()
+  0.00      1.48     0.00      748     0.00     0.00  std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_inc_size(unsigned long)
+  0.00      1.48     0.00      748     0.00     0.00  std::_List_node<Asteroid*>* std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_create_node<Asteroid*>(Asteroid*&&)
+  0.00      1.48     0.00      748     0.00     0.00  void std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_insert<Asteroid*>(std::_List_iterator<Asteroid*>, Asteroid*&&)
+  0.00      1.48     0.00      748     0.00     0.00  std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::push_back(Asteroid*&&)
+  0.00      1.48     0.00      748     0.00     0.00  std::allocator<std::_List_node<Asteroid*> >* std::__addressof<std::allocator<std::_List_node<Asteroid*> > >(std::allocator<std::_List_node<Asteroid*> >&)
+  0.00      1.48     0.00      748     0.00     0.00  std::remove_reference<Asteroid*&>::type&& std::move<Asteroid*&>(Asteroid*&)
+  0.00      1.48     0.00      648     0.00     0.00  FlyingObject::setVelocity(Velocity)
+  0.00      1.48     0.00      520     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::deallocate(std::_List_node<Asteroid*>*, unsigned long)
+  0.00      1.48     0.00      520     0.00     0.00  void __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::destroy<Asteroid*>(Asteroid**)
+  0.00      1.48     0.00      520     0.00     0.00  std::_List_const_iterator<Asteroid*>::_M_const_cast() const
+  0.00      1.48     0.00      520     0.00     0.00  std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::deallocate(std::allocator<std::_List_node<Asteroid*> >&, std::_List_node<Asteroid*>*, unsigned long)
+  0.00      1.48     0.00      520     0.00     0.00  void std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::destroy<Asteroid*>(std::allocator<std::_List_node<Asteroid*> >&, Asteroid**)
+  0.00      1.48     0.00      520     0.00     0.00  std::_List_const_iterator<Asteroid*>::_List_const_iterator(std::_List_iterator<Asteroid*> const&)
+  0.00      1.48     0.00      520     0.00     0.00  std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_dec_size(unsigned long)
+  0.00      1.48     0.00      520     0.00     0.00  std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_put_node(std::_List_node<Asteroid*>*)
+  0.00      1.48     0.00      520     0.00     0.00  std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::erase(std::_List_const_iterator<Asteroid*>)
+  0.00      1.48     0.00      520     0.00     0.00  std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_erase(std::_List_iterator<Asteroid*>)
+  0.00      1.48     0.00      508     0.00     0.00  Interface::initialize(int, char**, char const*, Point, Point)
+  0.00      1.48     0.00      507     0.00     0.00  Interface::Interface()
+  0.00      1.48     0.00      507     0.00     0.00  Interface::~Interface()
+  0.00      1.48     0.00      492     0.00     0.00  drawShip(Point const&, int, bool)
+  0.00      1.48     0.00      492     0.00     0.00  Ship::draw()
+  0.00      1.48     0.00      491     0.00     2.38  callBack(Interface const*, void*)
+  0.00      1.48     0.00      491     0.00     0.00  FlyingObject::setVelocity(float, float)
+  0.00      1.48     0.00      491     0.00     0.00  Game::advanceShip()
+  0.00      1.48     0.00      491     0.00     0.01  Game::handleInput(Interface const&)
+  0.00      1.48     0.00      491     0.00     0.01  Game::createBullet()
+  0.00      1.48     0.00      491     0.00     0.00  Game::advanceBullets()
+  0.00      1.48     0.00      491     0.00     0.03  Game::cleanUpZombies()
+  0.00      1.48     0.00      491     0.00     0.04  Game::advanceAsteroid()
+  0.00      1.48     0.00      491     0.00     0.15  Game::draw(Interface const&)
+  0.00      1.48     0.00      491     0.00     2.23  Game::advance()
+  0.00      1.48     0.00      491     0.00     0.00  Ship::getOrientation()
+  0.00      1.48     0.00      491     0.00     0.00  Ship::moveLeft()
+  0.00      1.48     0.00      491     0.00     0.00  bench::incr(long, long)
+  0.00      1.48     0.00      491     0.00     0.00  Bullet::fire(Point, float, Velocity)
+  0.00      1.48     0.00      491     0.00     0.01  Bullet::Bullet(Point, float, Velocity)
+  0.00      1.48     0.00      491     0.00     0.00  Interface::setNextDrawTime()
+  0.00      1.48     0.00      491     0.00     0.00  Interface::keyEvent()
+  0.00      1.48     0.00      491     0.00     0.00  void __gnu_cxx::new_allocator<Bullet*>::construct<Bullet*, Bullet*>(Bullet**, Bullet*&&)
+  0.00      1.48     0.00      491     0.00     0.00  Interface::isY() const
+  0.00      1.48     0.00      491     0.00     0.00  Interface::isUp() const
+  0.00      1.48     0.00      491     0.00     0.00  Interface::isRight() const
+  0.00      1.48     0.00      491     0.00     0.00  std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_get_size() const
+  0.00      1.48     0.00      491     0.00     0.00  std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_node_count() const
+  0.00      1.48     0.00      491     0.00     0.00  std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::size() const
+  0.00      1.48     0.00      491     0.00     0.00  void std::allocator_traits<std::allocator<Bullet*> >::construct<Bullet*, Bullet*>(std::allocator<Bullet*>&, Bullet**, Bullet*&&)
+  0.00      1.48     0.00      491     0.00     0.00  void std::vector<Bullet*, std::allocator<Bullet*> >::emplace_back<Bullet*>(Bullet*&&)
+  0.00      1.48     0.00      491     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::push_back(Bullet*&&)
+  0.00      1.48     0.00      491     0.00     0.00  std::remove_reference<Bullet*&>::type&& std::move<Bullet*&>(Bullet*&)
+  0.00      1.48     0.00      470     0.00     0.00  void __gnu_cxx::new_allocator<Bullet*>::destroy<Bullet*>(Bullet**)
+  0.00      1.48     0.00      470     0.00     0.00  __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator(Bullet* const* const&)
+  0.00      1.48     0.00      470     0.00     0.00  __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator<Bullet**>(__gnu_cxx::__normal_iterator<Bullet**, __gnu_cxx::__enable_if<std::__are_same<Bullet**, Bullet**>::__value, std::vector<Bullet*, std::allocator<Bullet*> > >::__type> const&)
+  0.00      1.48     0.00      470     0.00     0.00  __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::difference_type __gnu_cxx::operator-<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > > const&)
+  0.00      1.48     0.00      470     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::cbegin() const
+  0.00      1.48     0.00      470     0.00     0.00  void std::allocator_traits<std::allocator<Bullet*> >::destroy<Bullet*>(std::allocator<Bullet*>&, Bullet**)
+  0.00      1.48     0.00      470     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::erase(__gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >)
+  0.00      1.48     0.00      470     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::_M_erase(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >)
+  0.00      1.48     0.00      462     0.00     0.00  Bullet** std::__copy_move<true, true, std::random_access_iterator_tag>::__copy_m<Bullet*>(Bullet* const*, Bullet* const*, Bullet**)
+  0.00      1.48     0.00      462     0.00     0.00  __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__niter_wrap<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet**>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet**)
+  0.00      1.48     0.00      462     0.00     0.00  Bullet** std::__copy_move_a<true, Bullet**, Bullet**>(Bullet**, Bullet**, Bullet**)
+  0.00      1.48     0.00      462     0.00     0.00  __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__copy_move_a2<true, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >)
+  0.00      1.48     0.00      462     0.00     0.00  __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::move<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >)
+  0.00      1.48     0.00      440     0.00     0.01  SmallAsteroid::SmallAsteroid(Point, Velocity)
+  0.00      1.48     0.00      336     0.00     0.01  Game::createSmallAsteroid(Point, Velocity)
+  0.00      1.48     0.00      287     0.00     0.00  Game::explodeSmall(Asteroid*, Bullet*)
+  0.00      1.48     0.00      208     0.00     0.01  MediumAsteroid::MediumAsteroid(Point, Velocity)
+  0.00      1.48     0.00      168     0.00     0.02  Game::explodeMedium(Asteroid*, Bullet*)
+  0.00      1.48     0.00      104     0.00     0.02  Game::explodeLarge(Asteroid*, Bullet*)
+  0.00      1.48     0.00      104     0.00     0.02  Game::createMediumAsteroid(Point, Velocity)
+  0.00      1.48     0.00      100     0.00     0.01  LargeAsteroid::LargeAsteroid()
+  0.00      1.48     0.00       36     0.00     0.00  Bullet** std::__niter_base<Bullet**>(Bullet**)
+  0.00      1.48     0.00       18     0.00     0.00  __gnu_cxx::new_allocator<Bullet*>::max_size() const
+  0.00      1.48     0.00       16     0.00     0.00  Interface::keyEvent(int, bool)
+  0.00      1.48     0.00       12     0.00     0.00  std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_get_Tp_allocator() const
+  0.00      1.48     0.00       12     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::max_size() const
+  0.00      1.48     0.00       12     0.00     0.00  std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_get_Tp_allocator()
+  0.00      1.48     0.00       12     0.00     0.00  std::allocator_traits<std::allocator<Bullet*> >::max_size(std::allocator<Bullet*> const&)
+  0.00      1.48     0.00       12     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::_S_max_size(std::allocator<Bullet*> const&)
+  0.00      1.48     0.00       12     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::_S_relocate(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&)
+  0.00      1.48     0.00       12     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::_S_do_relocate(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&, std::integral_constant<bool, true>)
+  0.00      1.48     0.00       12     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::_S_use_relocate()
+  0.00      1.48     0.00       12     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::_S_nothrow_relocate(std::integral_constant<bool, true>)
+  0.00      1.48     0.00       12     0.00     0.00  Bullet** std::__relocate_a<Bullet**, Bullet**, std::allocator<Bullet*> >(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&)
+  0.00      1.48     0.00       12     0.00     0.00  std::enable_if<std::__is_bitwise_relocatable<Bullet*, void>::value, Bullet**>::type std::__relocate_a_1<Bullet*, Bullet*>(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&)
+  0.00      1.48     0.00       12     0.00     0.00  unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&)
+  0.00      1.48     0.00        6     0.00     0.00  __gnu_cxx::new_allocator<Bullet*>::allocate(unsigned long, void const*)
+  0.00      1.48     0.00        6     0.00     0.00  __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::difference_type __gnu_cxx::operator-<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&)
+  0.00      1.48     0.00        6     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::_M_check_len(unsigned long, char const*) const
+  0.00      1.48     0.00        6     0.00     0.00  std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_allocate(unsigned long)
+  0.00      1.48     0.00        6     0.00     0.00  std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_deallocate(Bullet**, unsigned long)
+  0.00      1.48     0.00        6     0.00     0.00  std::allocator_traits<std::allocator<Bullet*> >::allocate(std::allocator<Bullet*>&, unsigned long)
+  0.00      1.48     0.00        6     0.00     0.00  void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&)
+  0.00      1.48     0.00        6     0.00     0.00  unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&)
+  0.00      1.48     0.00        5     0.00     0.00  __gnu_cxx::new_allocator<Bullet*>::deallocate(Bullet**, unsigned long)
+  0.00      1.48     0.00        5     0.00     0.00  std::allocator_traits<std::allocator<Bullet*> >::deallocate(std::allocator<Bullet*>&, Bullet**, unsigned long)
+  0.00      1.48     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z5sleepm
+  0.00      1.48     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z8timeDiff8timespecS_
+  0.00      1.48     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z9drawDigitRK5Pointc
+  0.00      1.48     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN12FlyingObjectC2Ev
+  0.00      1.48     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN4ShipC2Ev
+  0.00      1.48     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN6BulletC2Ev
+  0.00      1.48     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN8AsteroidC2Ev
+  0.00      1.48     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZNK4Game18getClosestDistanceERK12FlyingObjectS2_
+  0.00      1.48     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      1.48     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      1.48     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      1.48     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      1.48     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      1.48     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      1.48     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      1.48     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      1.48     0.00        1     0.00     0.01  Game::createShip()
+  0.00      1.48     0.00        1     0.00     0.81  Game::createAsteroid()
+  0.00      1.48     0.00        1     0.00     0.01  Game::Game(Point, Point)
+  0.00      1.48     0.00        1     0.00     0.00  Ship::setOrientation(float)
+  0.00      1.48     0.00        1     0.00     0.01  Ship::Ship()
+  0.00      1.48     0.00        1     0.00     0.00  bench::bench()
+  0.00      1.48     0.00        1     0.00     0.00  Interface::run(void (*)(Interface const*, void*), void*)
+  0.00      1.48     0.00        1     0.00     0.00  Interface::Interface(int, char**, char const*, Point, Point)
+  0.00      1.48     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<Bullet*>::new_allocator()
+  0.00      1.48     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::new_allocator()
+  0.00      1.48     0.00        1     0.00     0.00  std::allocator<Bullet*>::allocator()
+  0.00      1.48     0.00        1     0.00     0.00  std::allocator<std::_List_node<Asteroid*> >::allocator()
+  0.00      1.48     0.00        1     0.00     0.00  std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_Vector_impl::_Vector_impl()
+  0.00      1.48     0.00        1     0.00     0.00  std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_Vector_impl_data::_Vector_impl_data()
+  0.00      1.48     0.00        1     0.00     0.00  std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_Vector_base()
+  0.00      1.48     0.00        1     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::vector()
+  0.00      1.48     0.00        1     0.00     0.00  std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_List_impl::_List_impl()
+  0.00      1.48     0.00        1     0.00     0.00  std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_List_base()
+  0.00      1.48     0.00        1     0.00     0.00  std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::list()
+  0.00      1.48     0.00        1     0.00     0.00  std::__detail::_List_node_header::_M_init()
+  0.00      1.48     0.00        1     0.00     0.00  std::__detail::_List_node_header::_List_node_header()
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.68% of 1.48 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     79.1    0.00    1.17                 drawCallback() [1]
+                0.00    1.17     491/491         callBack(Interface const*, void*) [2]
+                0.00    0.00     491/507         Interface::Interface() [76]
+                0.00    0.00     491/491         Interface::setNextDrawTime() [144]
+                0.00    0.00     491/491         Interface::keyEvent() [145]
+                0.00    0.00     491/507         Interface::~Interface() [138]
+-----------------------------------------------
+                0.00    1.17     491/491         drawCallback() [1]
+[2]     79.1    0.00    1.17     491         callBack(Interface const*, void*) [2]
+                0.00    1.09     491/491         Game::advance() [3]
+                0.00    0.07     491/491         Game::draw(Interface const&) [11]
+                0.00    0.00     491/491         Game::handleInput(Interface const&) [44]
+                0.00    0.00     982/982         timeDiff(timespec, timespec) [114]
+                0.00    0.00     491/491         bench::incr(long, long) [142]
+-----------------------------------------------
+                0.00    1.09     491/491         callBack(Interface const*, void*) [2]
+[3]     73.9    0.00    1.09     491         Game::advance() [3]
+                0.04    1.02     491/491         Game::handleCollisions() [4]
+                0.00    0.02     491/491         Game::advanceAsteroid() [25]
+                0.00    0.01     491/491         Game::cleanUpZombies() [27]
+                0.00    0.00     491/491         Game::advanceBullets() [53]
+                0.00    0.00     491/491         Game::advanceShip() [59]
+-----------------------------------------------
+                0.04    1.02     491/491         Game::advance() [3]
+[4]     71.7    0.04    1.02     491         Game::handleCollisions() [4]
+                0.01    0.93 1767476/1767476     Game::getCollision(FlyingObject const&, FlyingObject const&, int) [5]
+                0.02    0.03 3536070/3927222     std::_List_iterator<Asteroid*>::operator*() const [14]
+                0.01    0.00 1767476/1776708     std::vector<Bullet*, std::allocator<Bullet*> >::end() [26]
+                0.01    0.00   98235/319579      FlyingObject::isAlive() const [24]
+                0.00    0.00   98235/99202       std::vector<Bullet*, std::allocator<Bullet*> >::begin() [41]
+                0.00    0.00   98235/293437      std::_List_iterator<Asteroid*>::operator++(int) [34]
+                0.00    0.00     168/168         Game::explodeMedium(Asteroid*, Bullet*) [48]
+                0.00    0.00     104/104         Game::explodeLarge(Asteroid*, Bullet*) [50]
+                0.00    0.00   98726/393635      std::operator!=(std::_List_iterator<Asteroid*> const&, std::_List_iterator<Asteroid*> const&) [33]
+                0.00    0.00 1767476/1776240     bool __gnu_cxx::operator!=<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&) [92]
+                0.00    0.00 1669800/1677603     __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator*() const [93]
+                0.00    0.00 1669241/1669241     __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator++() [94]
+                0.00    0.00   98726/394383      std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::end() [97]
+                0.00    0.00     491/1963        std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::begin() [105]
+                0.00    0.00     287/287         Game::explodeSmall(Asteroid*, Bullet*) [166]
+-----------------------------------------------
+                0.01    0.93 1767476/1767476     Game::handleCollisions() [4]
+[5]     63.4    0.01    0.93 1767476         Game::getCollision(FlyingObject const&, FlyingObject const&, int) [5]
+                0.58    0.35 1767476/1767476     Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const [6]
+-----------------------------------------------
+                0.58    0.35 1767476/1767476     Game::getCollision(FlyingObject const&, FlyingObject const&, int) [5]
+[6]     62.7    0.58    0.35 1767476         Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const [6]
+                0.15    0.00 40452316/40453079     FlyingObject::getVelocity() const [7]
+                0.09    0.00 33382412/33391128     FlyingObject::getPoint() const [9]
+                0.04    0.00 8345603/8345603     float const& std::min<float>(float const&, float const&) [15]
+                0.03    0.00 33382412/40568045     Point::getX() const [17]
+                0.02    0.00 33382412/40567789     Point::getY() const [18]
+                0.01    0.00 7069904/7069904     std::abs(float) [31]
+                0.01    0.00 1767476/1767476     std::sqrt(float) [32]
+                0.00    0.00 7069904/7069904     float const& std::max<float>(float const&, float const&) [89]
+-----------------------------------------------
+                0.00    0.00     104/40453079     Game::explodeLarge(Asteroid*, Bullet*) [50]
+                0.00    0.00     168/40453079     Game::explodeMedium(Asteroid*, Bullet*) [48]
+                0.00    0.00     491/40453079     Game::createBullet() [45]
+                0.15    0.00 40452316/40453079     Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const [6]
+[7]     10.1    0.15    0.00 40453079         FlyingObject::getVelocity() const [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[8]      6.1    0.09    0.00                 Point::Point(float, float) [8]
+-----------------------------------------------
+                0.00    0.00     104/33391128     Game::explodeLarge(Asteroid*, Bullet*) [50]
+                0.00    0.00     336/33391128     Game::explodeMedium(Asteroid*, Bullet*) [48]
+                0.00    0.00     491/33391128     Game::createBullet() [45]
+                0.00    0.00    7785/33391128     Game::advanceBullets() [53]
+                0.09    0.00 33382412/33391128     Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const [6]
+[9]      5.7    0.09    0.00 33391128         FlyingObject::getPoint() const [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]     5.1    0.08    0.00                 Velocity::getDy() const [10]
+-----------------------------------------------
+                0.00    0.07     491/491         callBack(Interface const*, void*) [2]
+[11]     4.9    0.00    0.07     491         Game::draw(Interface const&) [11]
+                0.00    0.03   52746/52746       SmallAsteroid::draw() [23]
+                0.00    0.01   23635/23635       LargeAsteroid::draw() [29]
+                0.01    0.00   97715/97715       std::_List_iterator<Asteroid*>::operator++() [35]
+                0.00    0.01   21334/21334       MediumAsteroid::draw() [39]
+                0.01    0.00  106030/319579      FlyingObject::isAlive() const [24]
+                0.00    0.00   98206/393635      std::operator!=(std::_List_iterator<Asteroid*> const&, std::_List_iterator<Asteroid*> const&) [33]
+                0.00    0.00  195430/3927222     std::_List_iterator<Asteroid*>::operator*() const [14]
+                0.00    0.00     491/492         Ship::draw() [57]
+                0.00    0.00    7824/7824        Bullet::draw() [62]
+                0.00    0.00   98206/394383      std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::end() [97]
+                0.00    0.00   23472/46845       std::vector<Bullet*, std::allocator<Bullet*> >::operator[](unsigned long) [98]
+                0.00    0.00    8315/16633       std::vector<Bullet*, std::allocator<Bullet*> >::size() const [99]
+                0.00    0.00    7824/7824        Bullet::setHealth() [100]
+                0.00    0.00     491/1963        std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::begin() [105]
+-----------------------------------------------
+                                                 <spontaneous>
+[12]     4.1    0.06    0.00                 Point::setX(float) [12]
+-----------------------------------------------
+                                                 <spontaneous>
+[13]     3.4    0.05    0.00                 Velocity::getDx() const [13]
+-----------------------------------------------
+                0.00    0.00   97487/3927222     Game::advanceAsteroid() [25]
+                0.00    0.00   98235/3927222     Game::cleanUpZombies() [27]
+                0.00    0.00  195430/3927222     Game::draw(Interface const&) [11]
+                0.02    0.03 3536070/3927222     Game::handleCollisions() [4]
+[14]     3.4    0.02    0.03 3927222         std::_List_iterator<Asteroid*>::operator*() const [14]
+                0.00    0.03 3927222/3928490     std::_List_node<Asteroid*>::_M_valptr() [20]
+-----------------------------------------------
+                0.04    0.00 8345603/8345603     Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const [6]
+[15]     2.7    0.04    0.00 8345603         float const& std::min<float>(float const&, float const&) [15]
+-----------------------------------------------
+                0.00    0.00    2952/972325      drawShip(Point const&, int, bool) [56]
+                0.01    0.00  234674/972325      drawMediumAsteroid(Point const&, int) [38]
+                0.01    0.00  259985/972325      drawLargeAsteroid(Point const&, int) [28]
+                0.01    0.00  474714/972325      drawSmallAsteroid(Point const&, int) [22]
+[16]     2.6    0.03    0.01  972325         rotate(Point&, Point const&, int) [16]
+                0.00    0.00 4861625/40568045     Point::getX() const [17]
+                0.00    0.00 4861625/40567789     Point::getY() const [18]
+                0.00    0.00  972325/972325      Point::Point(bool) [95]
+-----------------------------------------------
+                0.00    0.00       4/40568045     Interface::initialize(int, char**, char const*, Point, Point) [75]
+                0.00    0.00    5904/40568045     drawShip(Point const&, int, bool) [56]
+                0.00    0.00   31140/40568045     Game::isOnScreen(Point const&) [63]
+                0.00    0.00   31296/40568045     drawDot(Point const&) [61]
+                0.00    0.00  105763/40568045     Point::addX(float) [58]
+                0.00    0.00  211155/40568045     FlyingObject::advance() [30]
+                0.00    0.00  469348/40568045     drawMediumAsteroid(Point const&, int) [38]
+                0.00    0.00  519970/40568045     drawLargeAsteroid(Point const&, int) [28]
+                0.00    0.00  949428/40568045     drawSmallAsteroid(Point const&, int) [22]
+                0.00    0.00 4861625/40568045     rotate(Point&, Point const&, int) [16]
+                0.03    0.00 33382412/40568045     Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const [6]
+[17]     2.4    0.04    0.00 40568045         Point::getX() const [17]
+-----------------------------------------------
+                0.00    0.00       4/40567789     Interface::initialize(int, char**, char const*, Point, Point) [75]
+                0.00    0.00    5904/40567789     drawShip(Point const&, int, bool) [56]
+                0.00    0.00   31140/40567789     Game::isOnScreen(Point const&) [63]
+                0.00    0.00   31296/40567789     drawDot(Point const&) [61]
+                0.00    0.00  105763/40567789     Point::addY(float) [60]
+                0.00    0.00  210899/40567789     FlyingObject::advance() [30]
+                0.00    0.00  469348/40567789     drawMediumAsteroid(Point const&, int) [38]
+                0.00    0.00  519970/40567789     drawLargeAsteroid(Point const&, int) [28]
+                0.00    0.00  949428/40567789     drawSmallAsteroid(Point const&, int) [22]
+                0.00    0.00 4861625/40567789     rotate(Point&, Point const&, int) [16]
+                0.02    0.00 33382412/40567789     Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const [6]
+[18]     2.0    0.03    0.00 40567789         Point::getY() const [18]
+-----------------------------------------------
+                                                 <spontaneous>
+[19]     2.0    0.03    0.00                 Point::setY(float) [19]
+-----------------------------------------------
+                0.00    0.00     520/3928490     std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_erase(std::_List_iterator<Asteroid*>) [74]
+                0.00    0.00     748/3928490     std::_List_node<Asteroid*>* std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_create_node<Asteroid*>(Asteroid*&&) [70]
+                0.00    0.03 3927222/3928490     std::_List_iterator<Asteroid*>::operator*() const [14]
+[20]     2.0    0.00    0.03 3928490         std::_List_node<Asteroid*>::_M_valptr() [20]
+                0.02    0.01 3928490/3928490     __gnu_cxx::__aligned_membuf<Asteroid*>::_M_ptr() [21]
+-----------------------------------------------
+                0.02    0.01 3928490/3928490     std::_List_node<Asteroid*>::_M_valptr() [20]
+[21]     2.0    0.02    0.01 3928490         __gnu_cxx::__aligned_membuf<Asteroid*>::_M_ptr() [21]
+                0.01    0.00 3928490/3928490     __gnu_cxx::__aligned_membuf<Asteroid*>::_M_addr() [36]
+-----------------------------------------------
+                0.01    0.02   52746/52746       SmallAsteroid::draw() [23]
+[22]     2.0    0.01    0.02   52746         drawSmallAsteroid(Point const&, int) [22]
+                0.01    0.00  474714/972325      rotate(Point&, Point const&, int) [16]
+                0.00    0.00  949428/40568045     Point::getX() const [17]
+                0.00    0.00  949428/40567789     Point::getY() const [18]
+-----------------------------------------------
+                0.00    0.03   52746/52746       Game::draw(Interface const&) [11]
+[23]     2.0    0.00    0.03   52746         SmallAsteroid::draw() [23]
+                0.01    0.02   52746/52746       drawSmallAsteroid(Point const&, int) [22]
+-----------------------------------------------
+                0.00    0.00     491/319579      Game::advanceShip() [59]
+                0.00    0.00     491/319579      Game::handleInput(Interface const&) [44]
+                0.00    0.00    7803/319579      Game::advanceBullets() [53]
+                0.01    0.00   98235/319579      Game::handleCollisions() [4]
+                0.01    0.00  106030/319579      Game::draw(Interface const&) [11]
+                0.01    0.00  106529/319579      Game::cleanUpZombies() [27]
+[24]     1.4    0.02    0.00  319579         FlyingObject::isAlive() const [24]
+-----------------------------------------------
+                0.00    0.02     491/491         Game::advance() [3]
+[25]     1.2    0.00    0.02     491         Game::advanceAsteroid() [25]
+                0.01    0.00   97487/105763      FlyingObject::advance() [30]
+                0.00    0.00   97487/293437      std::_List_iterator<Asteroid*>::operator++(int) [34]
+                0.00    0.00   97977/393635      std::operator!=(std::_List_iterator<Asteroid*> const&, std::_List_iterator<Asteroid*> const&) [33]
+                0.00    0.00   97487/3927222     std::_List_iterator<Asteroid*>::operator*() const [14]
+                0.00    0.00       1/1           Game::createAsteroid() [54]
+                0.00    0.00   97977/394383      std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::end() [97]
+                0.00    0.00     491/491         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::size() const [152]
+                0.00    0.00     490/1963        std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::begin() [105]
+-----------------------------------------------
+                0.00    0.00       6/1776708     void std::vector<Bullet*, std::allocator<Bullet*> >::emplace_back<Bullet*>(Bullet*&&) [77]
+                0.00    0.00     932/1776708     std::vector<Bullet*, std::allocator<Bullet*> >::_M_erase(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [69]
+                0.00    0.00    8294/1776708     Game::cleanUpZombies() [27]
+                0.01    0.00 1767476/1776708     Game::handleCollisions() [4]
+[26]     1.0    0.02    0.00 1776708         std::vector<Bullet*, std::allocator<Bullet*> >::end() [26]
+                0.00    0.00 1776708/1885107     __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator(Bullet** const&) [91]
+-----------------------------------------------
+                0.00    0.01     491/491         Game::advance() [3]
+[27]     0.9    0.00    0.01     491         Game::cleanUpZombies() [27]
+                0.01    0.00  106529/319579      FlyingObject::isAlive() const [24]
+                0.00    0.00   97715/293437      std::_List_iterator<Asteroid*>::operator++(int) [34]
+                0.00    0.00   98726/393635      std::operator!=(std::_List_iterator<Asteroid*> const&, std::_List_iterator<Asteroid*> const&) [33]
+                0.00    0.00   98235/3927222     std::_List_iterator<Asteroid*>::operator*() const [14]
+                0.00    0.00    8294/1776708     std::vector<Bullet*, std::allocator<Bullet*> >::end() [26]
+                0.00    0.00     470/470         std::vector<Bullet*, std::allocator<Bullet*> >::erase(__gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >) [64]
+                0.00    0.00     491/99202       std::vector<Bullet*, std::allocator<Bullet*> >::begin() [41]
+                0.00    0.00     520/520         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::erase(std::_List_const_iterator<Asteroid*>) [73]
+                0.00    0.00   98726/394383      std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::end() [97]
+                0.00    0.00    8294/1776240     bool __gnu_cxx::operator!=<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&) [92]
+                0.00    0.00    7803/1677603     __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator*() const [93]
+                0.00    0.00    7333/7333        __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator++(int) [101]
+                0.00    0.00     520/520         std::_List_const_iterator<Asteroid*>::_List_const_iterator(std::_List_iterator<Asteroid*> const&) [135]
+                0.00    0.00     491/1963        std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::begin() [105]
+                0.00    0.00     470/470         __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator<Bullet**>(__gnu_cxx::__normal_iterator<Bullet**, __gnu_cxx::__enable_if<std::__are_same<Bullet**, Bullet**>::__value, std::vector<Bullet*, std::allocator<Bullet*> > >::__type> const&) [157]
+-----------------------------------------------
+                0.00    0.01   23635/23635       LargeAsteroid::draw() [29]
+[28]     0.7    0.00    0.01   23635         drawLargeAsteroid(Point const&, int) [28]
+                0.01    0.00  259985/972325      rotate(Point&, Point const&, int) [16]
+                0.00    0.00  519970/40568045     Point::getX() const [17]
+                0.00    0.00  519970/40567789     Point::getY() const [18]
+-----------------------------------------------
+                0.00    0.01   23635/23635       Game::draw(Interface const&) [11]
+[29]     0.7    0.00    0.01   23635         LargeAsteroid::draw() [29]
+                0.00    0.01   23635/23635       drawLargeAsteroid(Point const&, int) [28]
+-----------------------------------------------
+                0.00    0.00     491/105763      Game::advanceShip() [59]
+                0.00    0.00    7785/105763      Game::advanceBullets() [53]
+                0.01    0.00   97487/105763      Game::advanceAsteroid() [25]
+[30]     0.7    0.01    0.00  105763         FlyingObject::advance() [30]
+                0.00    0.00  211155/40568045     Point::getX() const [17]
+                0.00    0.00  210899/40567789     Point::getY() const [18]
+                0.00    0.00  105763/105763      Point::addX(float) [58]
+                0.00    0.00  105763/105763      Point::addY(float) [60]
+-----------------------------------------------
+                0.01    0.00 7069904/7069904     Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const [6]
+[31]     0.7    0.01    0.00 7069904         std::abs(float) [31]
+-----------------------------------------------
+                0.01    0.00 1767476/1767476     Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const [6]
+[32]     0.7    0.01    0.00 1767476         std::sqrt(float) [32]
+-----------------------------------------------
+                0.00    0.00   97977/393635      Game::advanceAsteroid() [25]
+                0.00    0.00   98206/393635      Game::draw(Interface const&) [11]
+                0.00    0.00   98726/393635      Game::handleCollisions() [4]
+                0.00    0.00   98726/393635      Game::cleanUpZombies() [27]
+[33]     0.7    0.01    0.00  393635         std::operator!=(std::_List_iterator<Asteroid*> const&, std::_List_iterator<Asteroid*> const&) [33]
+-----------------------------------------------
+                0.00    0.00   97487/293437      Game::advanceAsteroid() [25]
+                0.00    0.00   97715/293437      Game::cleanUpZombies() [27]
+                0.00    0.00   98235/293437      Game::handleCollisions() [4]
+[34]     0.7    0.01    0.00  293437         std::_List_iterator<Asteroid*>::operator++(int) [34]
+-----------------------------------------------
+                0.01    0.00   97715/97715       Game::draw(Interface const&) [11]
+[35]     0.7    0.01    0.00   97715         std::_List_iterator<Asteroid*>::operator++() [35]
+-----------------------------------------------
+                0.01    0.00 3928490/3928490     __gnu_cxx::__aligned_membuf<Asteroid*>::_M_ptr() [21]
+[36]     0.7    0.01    0.00 3928490         __gnu_cxx::__aligned_membuf<Asteroid*>::_M_addr() [36]
+-----------------------------------------------
+                0.00    0.00       1/1240        Ship::Ship() [68]
+                0.00    0.00     491/1240        Bullet::Bullet(Point, float, Velocity) [46]
+                0.00    0.00     748/1240        Asteroid::Asteroid() [40]
+[37]     0.7    0.01    0.00    1240         FlyingObject::FlyingObject() [37]
+                0.00    0.00    2480/2482        Point::Point() [42]
+                0.00    0.00    1240/2088        FlyingObject::setRotation(int) [104]
+-----------------------------------------------
+                0.00    0.01   21334/21334       MediumAsteroid::draw() [39]
+[38]     0.7    0.00    0.01   21334         drawMediumAsteroid(Point const&, int) [38]
+                0.01    0.00  234674/972325      rotate(Point&, Point const&, int) [16]
+                0.00    0.00  469348/40568045     Point::getX() const [17]
+                0.00    0.00  469348/40567789     Point::getY() const [18]
+-----------------------------------------------
+                0.00    0.01   21334/21334       Game::draw(Interface const&) [11]
+[39]     0.7    0.00    0.01   21334         MediumAsteroid::draw() [39]
+                0.00    0.01   21334/21334       drawMediumAsteroid(Point const&, int) [38]
+-----------------------------------------------
+                0.00    0.00     100/748         LargeAsteroid::LargeAsteroid() [55]
+                0.00    0.00     208/748         MediumAsteroid::MediumAsteroid(Point, Velocity) [52]
+                0.00    0.00     440/748         SmallAsteroid::SmallAsteroid(Point, Velocity) [47]
+[40]     0.4    0.00    0.01     748         Asteroid::Asteroid() [40]
+                0.00    0.00     748/1240        FlyingObject::FlyingObject() [37]
+                0.00    0.00    2244/2244        random(int, int) [103]
+                0.00    0.00    1496/1496        random(double, double) [109]
+                0.00    0.00     748/1888        FlyingObject::setPoint(Point) [106]
+                0.00    0.00     748/2088        FlyingObject::setRotation(int) [104]
+-----------------------------------------------
+                0.00    0.00       6/99202       void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&) [79]
+                0.00    0.00     470/99202       std::vector<Bullet*, std::allocator<Bullet*> >::erase(__gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >) [64]
+                0.00    0.00     491/99202       Game::cleanUpZombies() [27]
+                0.00    0.00   98235/99202       Game::handleCollisions() [4]
+[41]     0.3    0.01    0.00   99202         std::vector<Bullet*, std::allocator<Bullet*> >::begin() [41]
+                0.00    0.00   99202/1885107     __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator(Bullet** const&) [91]
+-----------------------------------------------
+                0.00    0.00       1/2482        Interface::initialize(int, char**, char const*, Point, Point) [75]
+                0.00    0.00       1/2482        Ship::Ship() [68]
+                0.00    0.00    2480/2482        FlyingObject::FlyingObject() [37]
+[42]     0.3    0.01    0.00    2482         Point::Point() [42]
+-----------------------------------------------
+                                                 <spontaneous>
+[43]     0.3    0.01    0.00                 Velocity::Velocity(float, float) [43]
+-----------------------------------------------
+                0.00    0.00     491/491         callBack(Interface const*, void*) [2]
+[44]     0.3    0.00    0.00     491         Game::handleInput(Interface const&) [44]
+                0.00    0.00     491/491         Game::createBullet() [45]
+                0.00    0.00     491/319579      FlyingObject::isAlive() const [24]
+                0.00    0.00     491/491         Interface::isRight() const [149]
+                0.00    0.00     491/491         Ship::moveLeft() [141]
+                0.00    0.00     491/491         Interface::isUp() const [148]
+                0.00    0.00     491/491         Interface::isY() const [147]
+-----------------------------------------------
+                0.00    0.00     491/491         Game::handleInput(Interface const&) [44]
+[45]     0.3    0.00    0.00     491         Game::createBullet() [45]
+                0.00    0.00     491/491         Bullet::Bullet(Point, float, Velocity) [46]
+                0.00    0.00     491/40453079     FlyingObject::getVelocity() const [7]
+                0.00    0.00     491/33391128     FlyingObject::getPoint() const [9]
+                0.00    0.00     491/491         std::vector<Bullet*, std::allocator<Bullet*> >::push_back(Bullet*&&) [78]
+                0.00    0.00     491/491         Ship::getOrientation() [140]
+-----------------------------------------------
+                0.00    0.00     491/491         Game::createBullet() [45]
+[46]     0.3    0.00    0.00     491         Bullet::Bullet(Point, float, Velocity) [46]
+                0.00    0.00     491/1240        FlyingObject::FlyingObject() [37]
+                0.00    0.00     491/491         Bullet::fire(Point, float, Velocity) [143]
+-----------------------------------------------
+                0.00    0.00     104/440         Game::createMediumAsteroid(Point, Velocity) [51]
+                0.00    0.00     336/440         Game::createSmallAsteroid(Point, Velocity) [49]
+[47]     0.2    0.00    0.00     440         SmallAsteroid::SmallAsteroid(Point, Velocity) [47]
+                0.00    0.00     440/748         Asteroid::Asteroid() [40]
+                0.00    0.00     440/1888        FlyingObject::setPoint(Point) [106]
+                0.00    0.00     440/648         FlyingObject::setVelocity(Velocity) [129]
+-----------------------------------------------
+                0.00    0.00     168/168         Game::handleCollisions() [4]
+[48]     0.2    0.00    0.00     168         Game::explodeMedium(Asteroid*, Bullet*) [48]
+                0.00    0.00     336/336         Game::createSmallAsteroid(Point, Velocity) [49]
+                0.00    0.00     336/33391128     FlyingObject::getPoint() const [9]
+                0.00    0.00     168/40453079     FlyingObject::getVelocity() const [7]
+                0.00    0.00     336/1136        FlyingObject::kill() [113]
+-----------------------------------------------
+                0.00    0.00     336/336         Game::explodeMedium(Asteroid*, Bullet*) [48]
+[49]     0.2    0.00    0.00     336         Game::createSmallAsteroid(Point, Velocity) [49]
+                0.00    0.00     336/440         SmallAsteroid::SmallAsteroid(Point, Velocity) [47]
+                0.00    0.00     336/748         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::push_back(Asteroid*&&) [72]
+-----------------------------------------------
+                0.00    0.00     104/104         Game::handleCollisions() [4]
+[50]     0.2    0.00    0.00     104         Game::explodeLarge(Asteroid*, Bullet*) [50]
+                0.00    0.00     104/104         Game::createMediumAsteroid(Point, Velocity) [51]
+                0.00    0.00     104/40453079     FlyingObject::getVelocity() const [7]
+                0.00    0.00     104/33391128     FlyingObject::getPoint() const [9]
+                0.00    0.00     208/1136        FlyingObject::kill() [113]
+-----------------------------------------------
+                0.00    0.00     104/104         Game::explodeLarge(Asteroid*, Bullet*) [50]
+[51]     0.2    0.00    0.00     104         Game::createMediumAsteroid(Point, Velocity) [51]
+                0.00    0.00     208/208         MediumAsteroid::MediumAsteroid(Point, Velocity) [52]
+                0.00    0.00     104/440         SmallAsteroid::SmallAsteroid(Point, Velocity) [47]
+                0.00    0.00     312/748         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::push_back(Asteroid*&&) [72]
+-----------------------------------------------
+                0.00    0.00     208/208         Game::createMediumAsteroid(Point, Velocity) [51]
+[52]     0.1    0.00    0.00     208         MediumAsteroid::MediumAsteroid(Point, Velocity) [52]
+                0.00    0.00     208/748         Asteroid::Asteroid() [40]
+                0.00    0.00     208/1888        FlyingObject::setPoint(Point) [106]
+                0.00    0.00     208/648         FlyingObject::setVelocity(Velocity) [129]
+-----------------------------------------------
+                0.00    0.00     491/491         Game::advance() [3]
+[53]     0.1    0.00    0.00     491         Game::advanceBullets() [53]
+                0.00    0.00    7785/105763      FlyingObject::advance() [30]
+                0.00    0.00    7803/319579      FlyingObject::isAlive() const [24]
+                0.00    0.00    7785/7785        Game::isOnScreen(Point const&) [63]
+                0.00    0.00    7785/33391128     FlyingObject::getPoint() const [9]
+                0.00    0.00   23373/46845       std::vector<Bullet*, std::allocator<Bullet*> >::operator[](unsigned long) [98]
+                0.00    0.00    8294/16633       std::vector<Bullet*, std::allocator<Bullet*> >::size() const [99]
+-----------------------------------------------
+                0.00    0.00       1/1           Game::advanceAsteroid() [25]
+[54]     0.1    0.00    0.00       1         Game::createAsteroid() [54]
+                0.00    0.00     100/100         LargeAsteroid::LargeAsteroid() [55]
+                0.00    0.00     100/748         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::push_back(Asteroid*&&) [72]
+-----------------------------------------------
+                0.00    0.00     100/100         Game::createAsteroid() [54]
+[55]     0.1    0.00    0.00     100         LargeAsteroid::LargeAsteroid() [55]
+                0.00    0.00     100/748         Asteroid::Asteroid() [40]
+                0.00    0.00     100/2088        FlyingObject::setRotation(int) [104]
+-----------------------------------------------
+                0.00    0.00     492/492         Ship::draw() [57]
+[56]     0.0    0.00    0.00     492         drawShip(Point const&, int, bool) [56]
+                0.00    0.00    2952/972325      rotate(Point&, Point const&, int) [16]
+                0.00    0.00    5904/40568045     Point::getX() const [17]
+                0.00    0.00    5904/40567789     Point::getY() const [18]
+-----------------------------------------------
+                0.00    0.00       1/492         Ship::Ship() [68]
+                0.00    0.00     491/492         Game::draw(Interface const&) [11]
+[57]     0.0    0.00    0.00     492         Ship::draw() [57]
+                0.00    0.00     492/492         drawShip(Point const&, int, bool) [56]
+-----------------------------------------------
+                0.00    0.00  105763/105763      FlyingObject::advance() [30]
+[58]     0.0    0.00    0.00  105763         Point::addX(float) [58]
+                0.00    0.00  105763/40568045     Point::getX() const [17]
+-----------------------------------------------
+                0.00    0.00     491/491         Game::advance() [3]
+[59]     0.0    0.00    0.00     491         Game::advanceShip() [59]
+                0.00    0.00     491/105763      FlyingObject::advance() [30]
+                0.00    0.00     491/319579      FlyingObject::isAlive() const [24]
+-----------------------------------------------
+                0.00    0.00  105763/105763      FlyingObject::advance() [30]
+[60]     0.0    0.00    0.00  105763         Point::addY(float) [60]
+                0.00    0.00  105763/40567789     Point::getY() const [18]
+-----------------------------------------------
+                0.00    0.00    7824/7824        Bullet::draw() [62]
+[61]     0.0    0.00    0.00    7824         drawDot(Point const&) [61]
+                0.00    0.00   31296/40568045     Point::getX() const [17]
+                0.00    0.00   31296/40567789     Point::getY() const [18]
+-----------------------------------------------
+                0.00    0.00    7824/7824        Game::draw(Interface const&) [11]
+[62]     0.0    0.00    0.00    7824         Bullet::draw() [62]
+                0.00    0.00    7824/7824        drawDot(Point const&) [61]
+-----------------------------------------------
+                0.00    0.00    7785/7785        Game::advanceBullets() [53]
+[63]     0.0    0.00    0.00    7785         Game::isOnScreen(Point const&) [63]
+                0.00    0.00   31140/40568045     Point::getX() const [17]
+                0.00    0.00   31140/40567789     Point::getY() const [18]
+-----------------------------------------------
+                0.00    0.00     470/470         Game::cleanUpZombies() [27]
+[64]     0.0    0.00    0.00     470         std::vector<Bullet*, std::allocator<Bullet*> >::erase(__gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >) [64]
+                0.00    0.00     470/99202       std::vector<Bullet*, std::allocator<Bullet*> >::begin() [41]
+                0.00    0.00     470/470         std::vector<Bullet*, std::allocator<Bullet*> >::_M_erase(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [69]
+                0.00    0.00     470/470         std::vector<Bullet*, std::allocator<Bullet*> >::cbegin() const [159]
+                0.00    0.00     470/470         __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::difference_type __gnu_cxx::operator-<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > > const&) [158]
+                0.00    0.00     470/1864        __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator+(long) const [107]
+-----------------------------------------------
+                                                 <spontaneous>
+[65]     0.0    0.00    0.00                 main [65]
+                0.00    0.00       1/1           Game::Game(Point, Point) [67]
+                0.00    0.00       1/1           Interface::Interface(int, char**, char const*, Point, Point) [82]
+                0.00    0.00       1/1           Interface::run(void (*)(Interface const*, void*), void*) [209]
+-----------------------------------------------
+                0.00    0.00       1/1           Game::Game(Point, Point) [67]
+[66]     0.0    0.00    0.00       1         Game::createShip() [66]
+                0.00    0.00       1/1           Ship::Ship() [68]
+-----------------------------------------------
+                0.00    0.00       1/1           main [65]
+[67]     0.0    0.00    0.00       1         Game::Game(Point, Point) [67]
+                0.00    0.00       1/1           Game::createShip() [66]
+                0.00    0.00       1/1           bench::bench() [208]
+                0.00    0.00       1/1           std::vector<Bullet*, std::allocator<Bullet*> >::vector() [217]
+                0.00    0.00       1/1           std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::list() [220]
+-----------------------------------------------
+                0.00    0.00       1/1           Game::createShip() [66]
+[68]     0.0    0.00    0.00       1         Ship::Ship() [68]
+                0.00    0.00       1/1240        FlyingObject::FlyingObject() [37]
+                0.00    0.00       1/2482        Point::Point() [42]
+                0.00    0.00       1/492         Ship::draw() [57]
+                0.00    0.00       1/1           Ship::setOrientation(float) [207]
+                0.00    0.00       1/1888        FlyingObject::setPoint(Point) [106]
+-----------------------------------------------
+                0.00    0.00     470/470         std::vector<Bullet*, std::allocator<Bullet*> >::erase(__gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >) [64]
+[69]     0.0    0.00    0.00     470         std::vector<Bullet*, std::allocator<Bullet*> >::_M_erase(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [69]
+                0.00    0.00     932/1776708     std::vector<Bullet*, std::allocator<Bullet*> >::end() [26]
+                0.00    0.00     932/1864        __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator+(long) const [107]
+                0.00    0.00     470/1776240     bool __gnu_cxx::operator!=<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&) [92]
+                0.00    0.00     470/470         void std::allocator_traits<std::allocator<Bullet*> >::destroy<Bullet*>(std::allocator<Bullet*>&, Bullet**) [160]
+                0.00    0.00     462/462         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::move<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [165]
+-----------------------------------------------
+                0.00    0.00     748/748         void std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_insert<Asteroid*>(std::_List_iterator<Asteroid*>, Asteroid*&&) [71]
+[70]     0.0    0.00    0.00     748         std::_List_node<Asteroid*>* std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_create_node<Asteroid*>(Asteroid*&&) [70]
+                0.00    0.00     748/3928490     std::_List_node<Asteroid*>::_M_valptr() [20]
+                0.00    0.00     748/748         std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_get_node() [125]
+                0.00    0.00     748/1268        std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_get_Node_allocator() [111]
+                0.00    0.00     748/2992        Asteroid*&& std::forward<Asteroid*>(std::remove_reference<Asteroid*>::type&) [102]
+                0.00    0.00     748/748         std::__allocated_ptr<std::allocator<std::_List_node<Asteroid*> > >::__allocated_ptr(std::allocator<std::_List_node<Asteroid*> >&, std::_List_node<Asteroid*>*) [120]
+                0.00    0.00     748/748         void std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::construct<Asteroid*, Asteroid*>(std::allocator<std::_List_node<Asteroid*> >&, Asteroid**, Asteroid*&&) [124]
+                0.00    0.00     748/748         std::__allocated_ptr<std::allocator<std::_List_node<Asteroid*> > >::operator=(decltype(nullptr)) [122]
+                0.00    0.00     748/748         std::__allocated_ptr<std::allocator<std::_List_node<Asteroid*> > >::~__allocated_ptr() [121]
+-----------------------------------------------
+                0.00    0.00     748/748         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::push_back(Asteroid*&&) [72]
+[71]     0.0    0.00    0.00     748         void std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_insert<Asteroid*>(std::_List_iterator<Asteroid*>, Asteroid*&&) [71]
+                0.00    0.00     748/748         std::_List_node<Asteroid*>* std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_create_node<Asteroid*>(Asteroid*&&) [70]
+                0.00    0.00     748/2992        Asteroid*&& std::forward<Asteroid*>(std::remove_reference<Asteroid*>::type&) [102]
+                0.00    0.00     748/748         std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_inc_size(unsigned long) [126]
+-----------------------------------------------
+                0.00    0.00     100/748         Game::createAsteroid() [54]
+                0.00    0.00     312/748         Game::createMediumAsteroid(Point, Velocity) [51]
+                0.00    0.00     336/748         Game::createSmallAsteroid(Point, Velocity) [49]
+[72]     0.0    0.00    0.00     748         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::push_back(Asteroid*&&) [72]
+                0.00    0.00     748/748         void std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_insert<Asteroid*>(std::_List_iterator<Asteroid*>, Asteroid*&&) [71]
+                0.00    0.00     748/748         std::remove_reference<Asteroid*&>::type&& std::move<Asteroid*&>(Asteroid*&) [128]
+                0.00    0.00     748/394383      std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::end() [97]
+-----------------------------------------------
+                0.00    0.00     520/520         Game::cleanUpZombies() [27]
+[73]     0.0    0.00    0.00     520         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::erase(std::_List_const_iterator<Asteroid*>) [73]
+                0.00    0.00     520/520         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_erase(std::_List_iterator<Asteroid*>) [74]
+                0.00    0.00     520/397386      std::_List_iterator<Asteroid*>::_List_iterator(std::__detail::_List_node_base*) [96]
+                0.00    0.00     520/520         std::_List_const_iterator<Asteroid*>::_M_const_cast() const [132]
+-----------------------------------------------
+                0.00    0.00     520/520         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::erase(std::_List_const_iterator<Asteroid*>) [73]
+[74]     0.0    0.00    0.00     520         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_erase(std::_List_iterator<Asteroid*>) [74]
+                0.00    0.00     520/3928490     std::_List_node<Asteroid*>::_M_valptr() [20]
+                0.00    0.00     520/520         std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_dec_size(unsigned long) [136]
+                0.00    0.00     520/1268        std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_get_Node_allocator() [111]
+                0.00    0.00     520/520         void std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::destroy<Asteroid*>(std::allocator<std::_List_node<Asteroid*> >&, Asteroid**) [134]
+                0.00    0.00     520/520         std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_put_node(std::_List_node<Asteroid*>*) [137]
+-----------------------------------------------
+                0.00    0.00       1/508         Interface::Interface(int, char**, char const*, Point, Point) [82]
+                0.00    0.00     507/508         Interface::Interface() [76]
+[75]     0.0    0.00    0.00     508         Interface::initialize(int, char**, char const*, Point, Point) [75]
+                0.00    0.00       1/2482        Point::Point() [42]
+                0.00    0.00       4/40568045     Point::getX() const [17]
+                0.00    0.00       4/40567789     Point::getY() const [18]
+-----------------------------------------------
+                0.00    0.00       8/507         keyDownCallback(int, int, int) [81]
+                0.00    0.00       8/507         keyUpCallback(int, int, int) [80]
+                0.00    0.00     491/507         drawCallback() [1]
+[76]     0.0    0.00    0.00     507         Interface::Interface() [76]
+                0.00    0.00     507/508         Interface::initialize(int, char**, char const*, Point, Point) [75]
+-----------------------------------------------
+                0.00    0.00     491/491         std::vector<Bullet*, std::allocator<Bullet*> >::push_back(Bullet*&&) [78]
+[77]     0.0    0.00    0.00     491         void std::vector<Bullet*, std::allocator<Bullet*> >::emplace_back<Bullet*>(Bullet*&&) [77]
+                0.00    0.00       6/6           void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&) [79]
+                0.00    0.00       6/1776708     std::vector<Bullet*, std::allocator<Bullet*> >::end() [26]
+                0.00    0.00     491/1479        Bullet*&& std::forward<Bullet*>(std::remove_reference<Bullet*>::type&) [110]
+                0.00    0.00     485/491         void std::allocator_traits<std::allocator<Bullet*> >::construct<Bullet*, Bullet*>(std::allocator<Bullet*>&, Bullet**, Bullet*&&) [153]
+-----------------------------------------------
+                0.00    0.00     491/491         Game::createBullet() [45]
+[78]     0.0    0.00    0.00     491         std::vector<Bullet*, std::allocator<Bullet*> >::push_back(Bullet*&&) [78]
+                0.00    0.00     491/491         void std::vector<Bullet*, std::allocator<Bullet*> >::emplace_back<Bullet*>(Bullet*&&) [77]
+                0.00    0.00     491/491         std::remove_reference<Bullet*&>::type&& std::move<Bullet*&>(Bullet*&) [154]
+-----------------------------------------------
+                0.00    0.00       6/6           void std::vector<Bullet*, std::allocator<Bullet*> >::emplace_back<Bullet*>(Bullet*&&) [77]
+[79]     0.0    0.00    0.00       6         void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&) [79]
+                0.00    0.00       6/99202       std::vector<Bullet*, std::allocator<Bullet*> >::begin() [41]
+                0.00    0.00      12/12          std::vector<Bullet*, std::allocator<Bullet*> >::_S_use_relocate() [177]
+                0.00    0.00      12/12          std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_get_Tp_allocator() [172]
+                0.00    0.00      12/3554822     __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::base() const [90]
+                0.00    0.00      12/12          std::vector<Bullet*, std::allocator<Bullet*> >::_S_relocate(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&) [175]
+                0.00    0.00       6/6           std::vector<Bullet*, std::allocator<Bullet*> >::_M_check_len(unsigned long, char const*) const [184]
+                0.00    0.00       6/6           __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::difference_type __gnu_cxx::operator-<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&) [183]
+                0.00    0.00       6/6           std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_allocate(unsigned long) [185]
+                0.00    0.00       6/1479        Bullet*&& std::forward<Bullet*>(std::remove_reference<Bullet*>::type&) [110]
+                0.00    0.00       6/491         void std::allocator_traits<std::allocator<Bullet*> >::construct<Bullet*, Bullet*>(std::allocator<Bullet*>&, Bullet**, Bullet*&&) [153]
+                0.00    0.00       6/6           std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_deallocate(Bullet**, unsigned long) [186]
+-----------------------------------------------
+                                                 <spontaneous>
+[80]     0.0    0.00    0.00                 keyUpCallback(int, int, int) [80]
+                0.00    0.00       8/507         Interface::Interface() [76]
+                0.00    0.00       8/16          Interface::keyEvent(int, bool) [169]
+                0.00    0.00       8/507         Interface::~Interface() [138]
+-----------------------------------------------
+                                                 <spontaneous>
+[81]     0.0    0.00    0.00                 keyDownCallback(int, int, int) [81]
+                0.00    0.00       8/507         Interface::Interface() [76]
+                0.00    0.00       8/16          Interface::keyEvent(int, bool) [169]
+                0.00    0.00       8/507         Interface::~Interface() [138]
+-----------------------------------------------
+                0.00    0.00       1/1           main [65]
+[82]     0.0    0.00    0.00       1         Interface::Interface(int, char**, char const*, Point, Point) [82]
+                0.00    0.00       1/508         Interface::initialize(int, char**, char const*, Point, Point) [75]
+-----------------------------------------------
+                0.00    0.00 7069904/7069904     Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const [6]
+[89]     0.0    0.00    0.00 7069904         float const& std::max<float>(float const&, float const&) [89]
+-----------------------------------------------
+                0.00    0.00      12/3554822     void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&) [79]
+                0.00    0.00      12/3554822     __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::difference_type __gnu_cxx::operator-<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&) [183]
+                0.00    0.00     470/3554822     __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator<Bullet**>(__gnu_cxx::__normal_iterator<Bullet**, __gnu_cxx::__enable_if<std::__are_same<Bullet**, Bullet**>::__value, std::vector<Bullet*, std::allocator<Bullet*> > >::__type> const&) [157]
+                0.00    0.00    1848/3554822     Bullet** std::__niter_base<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [108]
+                0.00    0.00 3552480/3554822     bool __gnu_cxx::operator!=<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&) [92]
+[90]     0.0    0.00    0.00 3554822         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::base() const [90]
+-----------------------------------------------
+                0.00    0.00    1864/1885107     __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator+(long) const [107]
+                0.00    0.00    7333/1885107     __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator++(int) [101]
+                0.00    0.00   99202/1885107     std::vector<Bullet*, std::allocator<Bullet*> >::begin() [41]
+                0.00    0.00 1776708/1885107     std::vector<Bullet*, std::allocator<Bullet*> >::end() [26]
+[91]     0.0    0.00    0.00 1885107         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator(Bullet** const&) [91]
+-----------------------------------------------
+                0.00    0.00     470/1776240     std::vector<Bullet*, std::allocator<Bullet*> >::_M_erase(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [69]
+                0.00    0.00    8294/1776240     Game::cleanUpZombies() [27]
+                0.00    0.00 1767476/1776240     Game::handleCollisions() [4]
+[92]     0.0    0.00    0.00 1776240         bool __gnu_cxx::operator!=<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&) [92]
+                0.00    0.00 3552480/3554822     __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::base() const [90]
+-----------------------------------------------
+                0.00    0.00    7803/1677603     Game::cleanUpZombies() [27]
+                0.00    0.00 1669800/1677603     Game::handleCollisions() [4]
+[93]     0.0    0.00    0.00 1677603         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator*() const [93]
+-----------------------------------------------
+                0.00    0.00 1669241/1669241     Game::handleCollisions() [4]
+[94]     0.0    0.00    0.00 1669241         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator++() [94]
+-----------------------------------------------
+                0.00    0.00  972325/972325      rotate(Point&, Point const&, int) [16]
+[95]     0.0    0.00    0.00  972325         Point::Point(bool) [95]
+-----------------------------------------------
+                0.00    0.00     520/397386      std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::erase(std::_List_const_iterator<Asteroid*>) [73]
+                0.00    0.00     520/397386      std::_List_const_iterator<Asteroid*>::_M_const_cast() const [132]
+                0.00    0.00    1963/397386      std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::begin() [105]
+                0.00    0.00  394383/397386      std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::end() [97]
+[96]     0.0    0.00    0.00  397386         std::_List_iterator<Asteroid*>::_List_iterator(std::__detail::_List_node_base*) [96]
+-----------------------------------------------
+                0.00    0.00     748/394383      std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::push_back(Asteroid*&&) [72]
+                0.00    0.00   97977/394383      Game::advanceAsteroid() [25]
+                0.00    0.00   98206/394383      Game::draw(Interface const&) [11]
+                0.00    0.00   98726/394383      Game::handleCollisions() [4]
+                0.00    0.00   98726/394383      Game::cleanUpZombies() [27]
+[97]     0.0    0.00    0.00  394383         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::end() [97]
+                0.00    0.00  394383/397386      std::_List_iterator<Asteroid*>::_List_iterator(std::__detail::_List_node_base*) [96]
+-----------------------------------------------
+                0.00    0.00   23373/46845       Game::advanceBullets() [53]
+                0.00    0.00   23472/46845       Game::draw(Interface const&) [11]
+[98]     0.0    0.00    0.00   46845         std::vector<Bullet*, std::allocator<Bullet*> >::operator[](unsigned long) [98]
+-----------------------------------------------
+                0.00    0.00      24/16633       std::vector<Bullet*, std::allocator<Bullet*> >::_M_check_len(unsigned long, char const*) const [184]
+                0.00    0.00    8294/16633       Game::advanceBullets() [53]
+                0.00    0.00    8315/16633       Game::draw(Interface const&) [11]
+[99]     0.0    0.00    0.00   16633         std::vector<Bullet*, std::allocator<Bullet*> >::size() const [99]
+-----------------------------------------------
+                0.00    0.00    7824/7824        Game::draw(Interface const&) [11]
+[100]    0.0    0.00    0.00    7824         Bullet::setHealth() [100]
+                0.00    0.00      18/1136        FlyingObject::kill() [113]
+-----------------------------------------------
+                0.00    0.00    7333/7333        Game::cleanUpZombies() [27]
+[101]    0.0    0.00    0.00    7333         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator++(int) [101]
+                0.00    0.00    7333/1885107     __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator(Bullet** const&) [91]
+-----------------------------------------------
+                0.00    0.00     748/2992        void std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_insert<Asteroid*>(std::_List_iterator<Asteroid*>, Asteroid*&&) [71]
+                0.00    0.00     748/2992        std::_List_node<Asteroid*>* std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_create_node<Asteroid*>(Asteroid*&&) [70]
+                0.00    0.00     748/2992        void std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::construct<Asteroid*, Asteroid*>(std::allocator<std::_List_node<Asteroid*> >&, Asteroid**, Asteroid*&&) [124]
+                0.00    0.00     748/2992        void __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::construct<Asteroid*, Asteroid*>(Asteroid**, Asteroid*&&) [118]
+[102]    0.0    0.00    0.00    2992         Asteroid*&& std::forward<Asteroid*>(std::remove_reference<Asteroid*>::type&) [102]
+-----------------------------------------------
+                0.00    0.00    2244/2244        Asteroid::Asteroid() [40]
+[103]    0.0    0.00    0.00    2244         random(int, int) [103]
+-----------------------------------------------
+                0.00    0.00     100/2088        LargeAsteroid::LargeAsteroid() [55]
+                0.00    0.00     748/2088        Asteroid::Asteroid() [40]
+                0.00    0.00    1240/2088        FlyingObject::FlyingObject() [37]
+[104]    0.0    0.00    0.00    2088         FlyingObject::setRotation(int) [104]
+-----------------------------------------------
+                0.00    0.00     490/1963        Game::advanceAsteroid() [25]
+                0.00    0.00     491/1963        Game::handleCollisions() [4]
+                0.00    0.00     491/1963        Game::cleanUpZombies() [27]
+                0.00    0.00     491/1963        Game::draw(Interface const&) [11]
+[105]    0.0    0.00    0.00    1963         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::begin() [105]
+                0.00    0.00    1963/397386      std::_List_iterator<Asteroid*>::_List_iterator(std::__detail::_List_node_base*) [96]
+-----------------------------------------------
+                0.00    0.00       1/1888        Ship::Ship() [68]
+                0.00    0.00     208/1888        MediumAsteroid::MediumAsteroid(Point, Velocity) [52]
+                0.00    0.00     440/1888        SmallAsteroid::SmallAsteroid(Point, Velocity) [47]
+                0.00    0.00     491/1888        Bullet::fire(Point, float, Velocity) [143]
+                0.00    0.00     748/1888        Asteroid::Asteroid() [40]
+[106]    0.0    0.00    0.00    1888         FlyingObject::setPoint(Point) [106]
+-----------------------------------------------
+                0.00    0.00     462/1864        __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__niter_wrap<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet**>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet**) [162]
+                0.00    0.00     470/1864        std::vector<Bullet*, std::allocator<Bullet*> >::erase(__gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >) [64]
+                0.00    0.00     932/1864        std::vector<Bullet*, std::allocator<Bullet*> >::_M_erase(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [69]
+[107]    0.0    0.00    0.00    1864         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator+(long) const [107]
+                0.00    0.00    1864/1885107     __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator(Bullet** const&) [91]
+-----------------------------------------------
+                0.00    0.00     462/1848        __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__niter_wrap<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet**>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet**) [162]
+                0.00    0.00    1386/1848        __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__copy_move_a2<true, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [164]
+[108]    0.0    0.00    0.00    1848         Bullet** std::__niter_base<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [108]
+                0.00    0.00    1848/3554822     __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::base() const [90]
+-----------------------------------------------
+                0.00    0.00    1496/1496        Asteroid::Asteroid() [40]
+[109]    0.0    0.00    0.00    1496         random(double, double) [109]
+-----------------------------------------------
+                0.00    0.00       6/1479        void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&) [79]
+                0.00    0.00     491/1479        void std::vector<Bullet*, std::allocator<Bullet*> >::emplace_back<Bullet*>(Bullet*&&) [77]
+                0.00    0.00     491/1479        void std::allocator_traits<std::allocator<Bullet*> >::construct<Bullet*, Bullet*>(std::allocator<Bullet*>&, Bullet**, Bullet*&&) [153]
+                0.00    0.00     491/1479        void __gnu_cxx::new_allocator<Bullet*>::construct<Bullet*, Bullet*>(Bullet**, Bullet*&&) [146]
+[110]    0.0    0.00    0.00    1479         Bullet*&& std::forward<Bullet*>(std::remove_reference<Bullet*>::type&) [110]
+-----------------------------------------------
+                0.00    0.00     520/1268        std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_erase(std::_List_iterator<Asteroid*>) [74]
+                0.00    0.00     748/1268        std::_List_node<Asteroid*>* std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_create_node<Asteroid*>(Asteroid*&&) [70]
+[111]    0.0    0.00    0.00    1268         std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_get_Node_allocator() [111]
+-----------------------------------------------
+                0.00    0.00     491/1239        void __gnu_cxx::new_allocator<Bullet*>::construct<Bullet*, Bullet*>(Bullet**, Bullet*&&) [146]
+                0.00    0.00     748/1239        void __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::construct<Asteroid*, Asteroid*>(Asteroid**, Asteroid*&&) [118]
+[112]    0.0    0.00    0.00    1239         operator new(unsigned long, void*) [112]
+-----------------------------------------------
+                0.00    0.00      18/1136        Bullet::setHealth() [100]
+                0.00    0.00     208/1136        Game::explodeLarge(Asteroid*, Bullet*) [50]
+                0.00    0.00     336/1136        Game::explodeMedium(Asteroid*, Bullet*) [48]
+                0.00    0.00     574/1136        Game::explodeSmall(Asteroid*, Bullet*) [166]
+[113]    0.0    0.00    0.00    1136         FlyingObject::kill() [113]
+-----------------------------------------------
+                0.00    0.00     982/982         callBack(Interface const*, void*) [2]
+[114]    0.0    0.00    0.00     982         timeDiff(timespec, timespec) [114]
+-----------------------------------------------
+                0.00    0.00     940/940         __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::difference_type __gnu_cxx::operator-<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > > const&) [158]
+[115]    0.0    0.00    0.00     940         __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::base() const [115]
+-----------------------------------------------
+                0.00    0.00     924/924         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::move<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [165]
+[116]    0.0    0.00    0.00     924         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__miter_base<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [116]
+-----------------------------------------------
+                0.00    0.00     748/748         std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::allocate(std::allocator<std::_List_node<Asteroid*> >&, unsigned long) [123]
+[117]    0.0    0.00    0.00     748         __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::allocate(unsigned long, void const*) [117]
+                0.00    0.00     748/748         __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::max_size() const [119]
+-----------------------------------------------
+                0.00    0.00     748/748         void std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::construct<Asteroid*, Asteroid*>(std::allocator<std::_List_node<Asteroid*> >&, Asteroid**, Asteroid*&&) [124]
+[118]    0.0    0.00    0.00     748         void __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::construct<Asteroid*, Asteroid*>(Asteroid**, Asteroid*&&) [118]
+                0.00    0.00     748/2992        Asteroid*&& std::forward<Asteroid*>(std::remove_reference<Asteroid*>::type&) [102]
+                0.00    0.00     748/1239        operator new(unsigned long, void*) [112]
+-----------------------------------------------
+                0.00    0.00     748/748         __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::allocate(unsigned long, void const*) [117]
+[119]    0.0    0.00    0.00     748         __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::max_size() const [119]
+-----------------------------------------------
+                0.00    0.00     748/748         std::_List_node<Asteroid*>* std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_create_node<Asteroid*>(Asteroid*&&) [70]
+[120]    0.0    0.00    0.00     748         std::__allocated_ptr<std::allocator<std::_List_node<Asteroid*> > >::__allocated_ptr(std::allocator<std::_List_node<Asteroid*> >&, std::_List_node<Asteroid*>*) [120]
+                0.00    0.00     748/748         std::allocator<std::_List_node<Asteroid*> >* std::__addressof<std::allocator<std::_List_node<Asteroid*> > >(std::allocator<std::_List_node<Asteroid*> >&) [127]
+-----------------------------------------------
+                0.00    0.00     748/748         std::_List_node<Asteroid*>* std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_create_node<Asteroid*>(Asteroid*&&) [70]
+[121]    0.0    0.00    0.00     748         std::__allocated_ptr<std::allocator<std::_List_node<Asteroid*> > >::~__allocated_ptr() [121]
+-----------------------------------------------
+                0.00    0.00     748/748         std::_List_node<Asteroid*>* std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_create_node<Asteroid*>(Asteroid*&&) [70]
+[122]    0.0    0.00    0.00     748         std::__allocated_ptr<std::allocator<std::_List_node<Asteroid*> > >::operator=(decltype(nullptr)) [122]
+-----------------------------------------------
+                0.00    0.00     748/748         std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_get_node() [125]
+[123]    0.0    0.00    0.00     748         std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::allocate(std::allocator<std::_List_node<Asteroid*> >&, unsigned long) [123]
+                0.00    0.00     748/748         __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::allocate(unsigned long, void const*) [117]
+-----------------------------------------------
+                0.00    0.00     748/748         std::_List_node<Asteroid*>* std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_create_node<Asteroid*>(Asteroid*&&) [70]
+[124]    0.0    0.00    0.00     748         void std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::construct<Asteroid*, Asteroid*>(std::allocator<std::_List_node<Asteroid*> >&, Asteroid**, Asteroid*&&) [124]
+                0.00    0.00     748/2992        Asteroid*&& std::forward<Asteroid*>(std::remove_reference<Asteroid*>::type&) [102]
+                0.00    0.00     748/748         void __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::construct<Asteroid*, Asteroid*>(Asteroid**, Asteroid*&&) [118]
+-----------------------------------------------
+                0.00    0.00     748/748         std::_List_node<Asteroid*>* std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_create_node<Asteroid*>(Asteroid*&&) [70]
+[125]    0.0    0.00    0.00     748         std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_get_node() [125]
+                0.00    0.00     748/748         std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::allocate(std::allocator<std::_List_node<Asteroid*> >&, unsigned long) [123]
+-----------------------------------------------
+                0.00    0.00     748/748         void std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_insert<Asteroid*>(std::_List_iterator<Asteroid*>, Asteroid*&&) [71]
+[126]    0.0    0.00    0.00     748         std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_inc_size(unsigned long) [126]
+-----------------------------------------------
+                0.00    0.00     748/748         std::__allocated_ptr<std::allocator<std::_List_node<Asteroid*> > >::__allocated_ptr(std::allocator<std::_List_node<Asteroid*> >&, std::_List_node<Asteroid*>*) [120]
+[127]    0.0    0.00    0.00     748         std::allocator<std::_List_node<Asteroid*> >* std::__addressof<std::allocator<std::_List_node<Asteroid*> > >(std::allocator<std::_List_node<Asteroid*> >&) [127]
+-----------------------------------------------
+                0.00    0.00     748/748         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::push_back(Asteroid*&&) [72]
+[128]    0.0    0.00    0.00     748         std::remove_reference<Asteroid*&>::type&& std::move<Asteroid*&>(Asteroid*&) [128]
+-----------------------------------------------
+                0.00    0.00     208/648         MediumAsteroid::MediumAsteroid(Point, Velocity) [52]
+                0.00    0.00     440/648         SmallAsteroid::SmallAsteroid(Point, Velocity) [47]
+[129]    0.0    0.00    0.00     648         FlyingObject::setVelocity(Velocity) [129]
+-----------------------------------------------
+                0.00    0.00     520/520         std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::deallocate(std::allocator<std::_List_node<Asteroid*> >&, std::_List_node<Asteroid*>*, unsigned long) [133]
+[130]    0.0    0.00    0.00     520         __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::deallocate(std::_List_node<Asteroid*>*, unsigned long) [130]
+-----------------------------------------------
+                0.00    0.00     520/520         void std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::destroy<Asteroid*>(std::allocator<std::_List_node<Asteroid*> >&, Asteroid**) [134]
+[131]    0.0    0.00    0.00     520         void __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::destroy<Asteroid*>(Asteroid**) [131]
+-----------------------------------------------
+                0.00    0.00     520/520         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::erase(std::_List_const_iterator<Asteroid*>) [73]
+[132]    0.0    0.00    0.00     520         std::_List_const_iterator<Asteroid*>::_M_const_cast() const [132]
+                0.00    0.00     520/397386      std::_List_iterator<Asteroid*>::_List_iterator(std::__detail::_List_node_base*) [96]
+-----------------------------------------------
+                0.00    0.00     520/520         std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_put_node(std::_List_node<Asteroid*>*) [137]
+[133]    0.0    0.00    0.00     520         std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::deallocate(std::allocator<std::_List_node<Asteroid*> >&, std::_List_node<Asteroid*>*, unsigned long) [133]
+                0.00    0.00     520/520         __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::deallocate(std::_List_node<Asteroid*>*, unsigned long) [130]
+-----------------------------------------------
+                0.00    0.00     520/520         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_erase(std::_List_iterator<Asteroid*>) [74]
+[134]    0.0    0.00    0.00     520         void std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::destroy<Asteroid*>(std::allocator<std::_List_node<Asteroid*> >&, Asteroid**) [134]
+                0.00    0.00     520/520         void __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::destroy<Asteroid*>(Asteroid**) [131]
+-----------------------------------------------
+                0.00    0.00     520/520         Game::cleanUpZombies() [27]
+[135]    0.0    0.00    0.00     520         std::_List_const_iterator<Asteroid*>::_List_const_iterator(std::_List_iterator<Asteroid*> const&) [135]
+-----------------------------------------------
+                0.00    0.00     520/520         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_erase(std::_List_iterator<Asteroid*>) [74]
+[136]    0.0    0.00    0.00     520         std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_dec_size(unsigned long) [136]
+-----------------------------------------------
+                0.00    0.00     520/520         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_erase(std::_List_iterator<Asteroid*>) [74]
+[137]    0.0    0.00    0.00     520         std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_put_node(std::_List_node<Asteroid*>*) [137]
+                0.00    0.00     520/520         std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::deallocate(std::allocator<std::_List_node<Asteroid*> >&, std::_List_node<Asteroid*>*, unsigned long) [133]
+-----------------------------------------------
+                0.00    0.00       8/507         keyDownCallback(int, int, int) [81]
+                0.00    0.00       8/507         keyUpCallback(int, int, int) [80]
+                0.00    0.00     491/507         drawCallback() [1]
+[138]    0.0    0.00    0.00     507         Interface::~Interface() [138]
+-----------------------------------------------
+                0.00    0.00     491/491         Bullet::fire(Point, float, Velocity) [143]
+[139]    0.0    0.00    0.00     491         FlyingObject::setVelocity(float, float) [139]
+-----------------------------------------------
+                0.00    0.00     491/491         Game::createBullet() [45]
+[140]    0.0    0.00    0.00     491         Ship::getOrientation() [140]
+-----------------------------------------------
+                0.00    0.00     491/491         Game::handleInput(Interface const&) [44]
+[141]    0.0    0.00    0.00     491         Ship::moveLeft() [141]
+-----------------------------------------------
+                0.00    0.00     491/491         callBack(Interface const*, void*) [2]
+[142]    0.0    0.00    0.00     491         bench::incr(long, long) [142]
+-----------------------------------------------
+                0.00    0.00     491/491         Bullet::Bullet(Point, float, Velocity) [46]
+[143]    0.0    0.00    0.00     491         Bullet::fire(Point, float, Velocity) [143]
+                0.00    0.00     491/1888        FlyingObject::setPoint(Point) [106]
+                0.00    0.00     491/491         FlyingObject::setVelocity(float, float) [139]
+-----------------------------------------------
+                0.00    0.00     491/491         drawCallback() [1]
+[144]    0.0    0.00    0.00     491         Interface::setNextDrawTime() [144]
+-----------------------------------------------
+                0.00    0.00     491/491         drawCallback() [1]
+[145]    0.0    0.00    0.00     491         Interface::keyEvent() [145]
+-----------------------------------------------
+                0.00    0.00     491/491         void std::allocator_traits<std::allocator<Bullet*> >::construct<Bullet*, Bullet*>(std::allocator<Bullet*>&, Bullet**, Bullet*&&) [153]
+[146]    0.0    0.00    0.00     491         void __gnu_cxx::new_allocator<Bullet*>::construct<Bullet*, Bullet*>(Bullet**, Bullet*&&) [146]
+                0.00    0.00     491/1479        Bullet*&& std::forward<Bullet*>(std::remove_reference<Bullet*>::type&) [110]
+                0.00    0.00     491/1239        operator new(unsigned long, void*) [112]
+-----------------------------------------------
+                0.00    0.00     491/491         Game::handleInput(Interface const&) [44]
+[147]    0.0    0.00    0.00     491         Interface::isY() const [147]
+-----------------------------------------------
+                0.00    0.00     491/491         Game::handleInput(Interface const&) [44]
+[148]    0.0    0.00    0.00     491         Interface::isUp() const [148]
+-----------------------------------------------
+                0.00    0.00     491/491         Game::handleInput(Interface const&) [44]
+[149]    0.0    0.00    0.00     491         Interface::isRight() const [149]
+-----------------------------------------------
+                0.00    0.00     491/491         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_node_count() const [151]
+[150]    0.0    0.00    0.00     491         std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_get_size() const [150]
+-----------------------------------------------
+                0.00    0.00     491/491         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::size() const [152]
+[151]    0.0    0.00    0.00     491         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_node_count() const [151]
+                0.00    0.00     491/491         std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_get_size() const [150]
+-----------------------------------------------
+                0.00    0.00     491/491         Game::advanceAsteroid() [25]
+[152]    0.0    0.00    0.00     491         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::size() const [152]
+                0.00    0.00     491/491         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_node_count() const [151]
+-----------------------------------------------
+                0.00    0.00       6/491         void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&) [79]
+                0.00    0.00     485/491         void std::vector<Bullet*, std::allocator<Bullet*> >::emplace_back<Bullet*>(Bullet*&&) [77]
+[153]    0.0    0.00    0.00     491         void std::allocator_traits<std::allocator<Bullet*> >::construct<Bullet*, Bullet*>(std::allocator<Bullet*>&, Bullet**, Bullet*&&) [153]
+                0.00    0.00     491/1479        Bullet*&& std::forward<Bullet*>(std::remove_reference<Bullet*>::type&) [110]
+                0.00    0.00     491/491         void __gnu_cxx::new_allocator<Bullet*>::construct<Bullet*, Bullet*>(Bullet**, Bullet*&&) [146]
+-----------------------------------------------
+                0.00    0.00     491/491         std::vector<Bullet*, std::allocator<Bullet*> >::push_back(Bullet*&&) [78]
+[154]    0.0    0.00    0.00     491         std::remove_reference<Bullet*&>::type&& std::move<Bullet*&>(Bullet*&) [154]
+-----------------------------------------------
+                0.00    0.00     470/470         void std::allocator_traits<std::allocator<Bullet*> >::destroy<Bullet*>(std::allocator<Bullet*>&, Bullet**) [160]
+[155]    0.0    0.00    0.00     470         void __gnu_cxx::new_allocator<Bullet*>::destroy<Bullet*>(Bullet**) [155]
+-----------------------------------------------
+                0.00    0.00     470/470         std::vector<Bullet*, std::allocator<Bullet*> >::cbegin() const [159]
+[156]    0.0    0.00    0.00     470         __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator(Bullet* const* const&) [156]
+-----------------------------------------------
+                0.00    0.00     470/470         Game::cleanUpZombies() [27]
+[157]    0.0    0.00    0.00     470         __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator<Bullet**>(__gnu_cxx::__normal_iterator<Bullet**, __gnu_cxx::__enable_if<std::__are_same<Bullet**, Bullet**>::__value, std::vector<Bullet*, std::allocator<Bullet*> > >::__type> const&) [157]
+                0.00    0.00     470/3554822     __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::base() const [90]
+-----------------------------------------------
+                0.00    0.00     470/470         std::vector<Bullet*, std::allocator<Bullet*> >::erase(__gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >) [64]
+[158]    0.0    0.00    0.00     470         __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::difference_type __gnu_cxx::operator-<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > > const&) [158]
+                0.00    0.00     940/940         __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::base() const [115]
+-----------------------------------------------
+                0.00    0.00     470/470         std::vector<Bullet*, std::allocator<Bullet*> >::erase(__gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >) [64]
+[159]    0.0    0.00    0.00     470         std::vector<Bullet*, std::allocator<Bullet*> >::cbegin() const [159]
+                0.00    0.00     470/470         __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator(Bullet* const* const&) [156]
+-----------------------------------------------
+                0.00    0.00     470/470         std::vector<Bullet*, std::allocator<Bullet*> >::_M_erase(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [69]
+[160]    0.0    0.00    0.00     470         void std::allocator_traits<std::allocator<Bullet*> >::destroy<Bullet*>(std::allocator<Bullet*>&, Bullet**) [160]
+                0.00    0.00     470/470         void __gnu_cxx::new_allocator<Bullet*>::destroy<Bullet*>(Bullet**) [155]
+-----------------------------------------------
+                0.00    0.00     462/462         Bullet** std::__copy_move_a<true, Bullet**, Bullet**>(Bullet**, Bullet**, Bullet**) [163]
+[161]    0.0    0.00    0.00     462         Bullet** std::__copy_move<true, true, std::random_access_iterator_tag>::__copy_m<Bullet*>(Bullet* const*, Bullet* const*, Bullet**) [161]
+-----------------------------------------------
+                0.00    0.00     462/462         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__copy_move_a2<true, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [164]
+[162]    0.0    0.00    0.00     462         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__niter_wrap<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet**>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet**) [162]
+                0.00    0.00     462/1848        Bullet** std::__niter_base<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [108]
+                0.00    0.00     462/1864        __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator+(long) const [107]
+-----------------------------------------------
+                0.00    0.00     462/462         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__copy_move_a2<true, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [164]
+[163]    0.0    0.00    0.00     462         Bullet** std::__copy_move_a<true, Bullet**, Bullet**>(Bullet**, Bullet**, Bullet**) [163]
+                0.00    0.00     462/462         Bullet** std::__copy_move<true, true, std::random_access_iterator_tag>::__copy_m<Bullet*>(Bullet* const*, Bullet* const*, Bullet**) [161]
+-----------------------------------------------
+                0.00    0.00     462/462         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::move<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [165]
+[164]    0.0    0.00    0.00     462         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__copy_move_a2<true, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [164]
+                0.00    0.00    1386/1848        Bullet** std::__niter_base<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [108]
+                0.00    0.00     462/462         Bullet** std::__copy_move_a<true, Bullet**, Bullet**>(Bullet**, Bullet**, Bullet**) [163]
+                0.00    0.00     462/462         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__niter_wrap<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet**>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet**) [162]
+-----------------------------------------------
+                0.00    0.00     462/462         std::vector<Bullet*, std::allocator<Bullet*> >::_M_erase(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [69]
+[165]    0.0    0.00    0.00     462         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::move<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [165]
+                0.00    0.00     924/924         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__miter_base<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [116]
+                0.00    0.00     462/462         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__copy_move_a2<true, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [164]
+-----------------------------------------------
+                0.00    0.00     287/287         Game::handleCollisions() [4]
+[166]    0.0    0.00    0.00     287         Game::explodeSmall(Asteroid*, Bullet*) [166]
+                0.00    0.00     574/1136        FlyingObject::kill() [113]
+-----------------------------------------------
+                0.00    0.00      36/36          Bullet** std::__relocate_a<Bullet**, Bullet**, std::allocator<Bullet*> >(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&) [179]
+[167]    0.0    0.00    0.00      36         Bullet** std::__niter_base<Bullet**>(Bullet**) [167]
+-----------------------------------------------
+                0.00    0.00       6/18          __gnu_cxx::new_allocator<Bullet*>::allocate(unsigned long, void const*) [182]
+                0.00    0.00      12/18          std::allocator_traits<std::allocator<Bullet*> >::max_size(std::allocator<Bullet*> const&) [173]
+[168]    0.0    0.00    0.00      18         __gnu_cxx::new_allocator<Bullet*>::max_size() const [168]
+-----------------------------------------------
+                0.00    0.00       8/16          keyDownCallback(int, int, int) [81]
+                0.00    0.00       8/16          keyUpCallback(int, int, int) [80]
+[169]    0.0    0.00    0.00      16         Interface::keyEvent(int, bool) [169]
+-----------------------------------------------
+                0.00    0.00      12/12          std::vector<Bullet*, std::allocator<Bullet*> >::max_size() const [171]
+[170]    0.0    0.00    0.00      12         std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_get_Tp_allocator() const [170]
+-----------------------------------------------
+                0.00    0.00      12/12          std::vector<Bullet*, std::allocator<Bullet*> >::_M_check_len(unsigned long, char const*) const [184]
+[171]    0.0    0.00    0.00      12         std::vector<Bullet*, std::allocator<Bullet*> >::max_size() const [171]
+                0.00    0.00      12/12          std::vector<Bullet*, std::allocator<Bullet*> >::_S_max_size(std::allocator<Bullet*> const&) [174]
+                0.00    0.00      12/12          std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_get_Tp_allocator() const [170]
+-----------------------------------------------
+                0.00    0.00      12/12          void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&) [79]
+[172]    0.0    0.00    0.00      12         std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_get_Tp_allocator() [172]
+-----------------------------------------------
+                0.00    0.00      12/12          std::vector<Bullet*, std::allocator<Bullet*> >::_S_max_size(std::allocator<Bullet*> const&) [174]
+[173]    0.0    0.00    0.00      12         std::allocator_traits<std::allocator<Bullet*> >::max_size(std::allocator<Bullet*> const&) [173]
+                0.00    0.00      12/18          __gnu_cxx::new_allocator<Bullet*>::max_size() const [168]
+-----------------------------------------------
+                0.00    0.00      12/12          std::vector<Bullet*, std::allocator<Bullet*> >::max_size() const [171]
+[174]    0.0    0.00    0.00      12         std::vector<Bullet*, std::allocator<Bullet*> >::_S_max_size(std::allocator<Bullet*> const&) [174]
+                0.00    0.00      12/12          std::allocator_traits<std::allocator<Bullet*> >::max_size(std::allocator<Bullet*> const&) [173]
+                0.00    0.00      12/12          unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&) [181]
+-----------------------------------------------
+                0.00    0.00      12/12          void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&) [79]
+[175]    0.0    0.00    0.00      12         std::vector<Bullet*, std::allocator<Bullet*> >::_S_relocate(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&) [175]
+                0.00    0.00      12/12          std::vector<Bullet*, std::allocator<Bullet*> >::_S_do_relocate(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&, std::integral_constant<bool, true>) [176]
+-----------------------------------------------
+                0.00    0.00      12/12          std::vector<Bullet*, std::allocator<Bullet*> >::_S_relocate(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&) [175]
+[176]    0.0    0.00    0.00      12         std::vector<Bullet*, std::allocator<Bullet*> >::_S_do_relocate(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&, std::integral_constant<bool, true>) [176]
+                0.00    0.00      12/12          Bullet** std::__relocate_a<Bullet**, Bullet**, std::allocator<Bullet*> >(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&) [179]
+-----------------------------------------------
+                0.00    0.00      12/12          void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&) [79]
+[177]    0.0    0.00    0.00      12         std::vector<Bullet*, std::allocator<Bullet*> >::_S_use_relocate() [177]
+                0.00    0.00      12/12          std::vector<Bullet*, std::allocator<Bullet*> >::_S_nothrow_relocate(std::integral_constant<bool, true>) [178]
+-----------------------------------------------
+                0.00    0.00      12/12          std::vector<Bullet*, std::allocator<Bullet*> >::_S_use_relocate() [177]
+[178]    0.0    0.00    0.00      12         std::vector<Bullet*, std::allocator<Bullet*> >::_S_nothrow_relocate(std::integral_constant<bool, true>) [178]
+-----------------------------------------------
+                0.00    0.00      12/12          std::vector<Bullet*, std::allocator<Bullet*> >::_S_do_relocate(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&, std::integral_constant<bool, true>) [176]
+[179]    0.0    0.00    0.00      12         Bullet** std::__relocate_a<Bullet**, Bullet**, std::allocator<Bullet*> >(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&) [179]
+                0.00    0.00      36/36          Bullet** std::__niter_base<Bullet**>(Bullet**) [167]
+                0.00    0.00      12/12          std::enable_if<std::__is_bitwise_relocatable<Bullet*, void>::value, Bullet**>::type std::__relocate_a_1<Bullet*, Bullet*>(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&) [180]
+-----------------------------------------------
+                0.00    0.00      12/12          Bullet** std::__relocate_a<Bullet**, Bullet**, std::allocator<Bullet*> >(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&) [179]
+[180]    0.0    0.00    0.00      12         std::enable_if<std::__is_bitwise_relocatable<Bullet*, void>::value, Bullet**>::type std::__relocate_a_1<Bullet*, Bullet*>(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&) [180]
+-----------------------------------------------
+                0.00    0.00      12/12          std::vector<Bullet*, std::allocator<Bullet*> >::_S_max_size(std::allocator<Bullet*> const&) [174]
+[181]    0.0    0.00    0.00      12         unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&) [181]
+-----------------------------------------------
+                0.00    0.00       6/6           std::allocator_traits<std::allocator<Bullet*> >::allocate(std::allocator<Bullet*>&, unsigned long) [187]
+[182]    0.0    0.00    0.00       6         __gnu_cxx::new_allocator<Bullet*>::allocate(unsigned long, void const*) [182]
+                0.00    0.00       6/18          __gnu_cxx::new_allocator<Bullet*>::max_size() const [168]
+-----------------------------------------------
+                0.00    0.00       6/6           void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&) [79]
+[183]    0.0    0.00    0.00       6         __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::difference_type __gnu_cxx::operator-<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&) [183]
+                0.00    0.00      12/3554822     __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::base() const [90]
+-----------------------------------------------
+                0.00    0.00       6/6           void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&) [79]
+[184]    0.0    0.00    0.00       6         std::vector<Bullet*, std::allocator<Bullet*> >::_M_check_len(unsigned long, char const*) const [184]
+                0.00    0.00      24/16633       std::vector<Bullet*, std::allocator<Bullet*> >::size() const [99]
+                0.00    0.00      12/12          std::vector<Bullet*, std::allocator<Bullet*> >::max_size() const [171]
+                0.00    0.00       6/6           unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&) [188]
+-----------------------------------------------
+                0.00    0.00       6/6           void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&) [79]
+[185]    0.0    0.00    0.00       6         std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_allocate(unsigned long) [185]
+                0.00    0.00       6/6           std::allocator_traits<std::allocator<Bullet*> >::allocate(std::allocator<Bullet*>&, unsigned long) [187]
+-----------------------------------------------
+                0.00    0.00       6/6           void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&) [79]
+[186]    0.0    0.00    0.00       6         std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_deallocate(Bullet**, unsigned long) [186]
+                0.00    0.00       5/5           std::allocator_traits<std::allocator<Bullet*> >::deallocate(std::allocator<Bullet*>&, Bullet**, unsigned long) [190]
+-----------------------------------------------
+                0.00    0.00       6/6           std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_allocate(unsigned long) [185]
+[187]    0.0    0.00    0.00       6         std::allocator_traits<std::allocator<Bullet*> >::allocate(std::allocator<Bullet*>&, unsigned long) [187]
+                0.00    0.00       6/6           __gnu_cxx::new_allocator<Bullet*>::allocate(unsigned long, void const*) [182]
+-----------------------------------------------
+                0.00    0.00       6/6           std::vector<Bullet*, std::allocator<Bullet*> >::_M_check_len(unsigned long, char const*) const [184]
+[188]    0.0    0.00    0.00       6         unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&) [188]
+-----------------------------------------------
+                0.00    0.00       5/5           std::allocator_traits<std::allocator<Bullet*> >::deallocate(std::allocator<Bullet*>&, Bullet**, unsigned long) [190]
+[189]    0.0    0.00    0.00       5         __gnu_cxx::new_allocator<Bullet*>::deallocate(Bullet**, unsigned long) [189]
+-----------------------------------------------
+                0.00    0.00       5/5           std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_deallocate(Bullet**, unsigned long) [186]
+[190]    0.0    0.00    0.00       5         std::allocator_traits<std::allocator<Bullet*> >::deallocate(std::allocator<Bullet*>&, Bullet**, unsigned long) [190]
+                0.00    0.00       5/5           __gnu_cxx::new_allocator<Bullet*>::deallocate(Bullet**, unsigned long) [189]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [300]
+[191]    0.0    0.00    0.00       1         _GLOBAL__sub_I__Z5sleepm [191]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [201]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [300]
+[192]    0.0    0.00    0.00       1         _GLOBAL__sub_I__Z8timeDiff8timespecS_ [192]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [199]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [300]
+[193]    0.0    0.00    0.00       1         _GLOBAL__sub_I__Z9drawDigitRK5Pointc [193]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [202]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [300]
+[194]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN12FlyingObjectC2Ev [194]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [203]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [300]
+[195]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN4ShipC2Ev [195]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [204]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [300]
+[196]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN6BulletC2Ev [196]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [205]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [300]
+[197]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN8AsteroidC2Ev [197]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [206]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [300]
+[198]    0.0    0.00    0.00       1         _GLOBAL__sub_I__ZNK4Game18getClosestDistanceERK12FlyingObjectS2_ [198]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [200]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__Z8timeDiff8timespecS_ [192]
+[199]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [199]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZNK4Game18getClosestDistanceERK12FlyingObjectS2_ [198]
+[200]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [200]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__Z5sleepm [191]
+[201]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [201]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__Z9drawDigitRK5Pointc [193]
+[202]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [202]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN12FlyingObjectC2Ev [194]
+[203]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [203]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN4ShipC2Ev [195]
+[204]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [204]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN6BulletC2Ev [196]
+[205]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [205]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN8AsteroidC2Ev [197]
+[206]    0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [206]
+-----------------------------------------------
+                0.00    0.00       1/1           Ship::Ship() [68]
+[207]    0.0    0.00    0.00       1         Ship::setOrientation(float) [207]
+-----------------------------------------------
+                0.00    0.00       1/1           Game::Game(Point, Point) [67]
+[208]    0.0    0.00    0.00       1         bench::bench() [208]
+-----------------------------------------------
+                0.00    0.00       1/1           main [65]
+[209]    0.0    0.00    0.00       1         Interface::run(void (*)(Interface const*, void*), void*) [209]
+-----------------------------------------------
+                0.00    0.00       1/1           std::allocator<Bullet*>::allocator() [212]
+[210]    0.0    0.00    0.00       1         __gnu_cxx::new_allocator<Bullet*>::new_allocator() [210]
+-----------------------------------------------
+                0.00    0.00       1/1           std::allocator<std::_List_node<Asteroid*> >::allocator() [213]
+[211]    0.0    0.00    0.00       1         __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::new_allocator() [211]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_Vector_impl::_Vector_impl() [214]
+[212]    0.0    0.00    0.00       1         std::allocator<Bullet*>::allocator() [212]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<Bullet*>::new_allocator() [210]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_List_impl::_List_impl() [218]
+[213]    0.0    0.00    0.00       1         std::allocator<std::_List_node<Asteroid*> >::allocator() [213]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::new_allocator() [211]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_Vector_base() [216]
+[214]    0.0    0.00    0.00       1         std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_Vector_impl::_Vector_impl() [214]
+                0.00    0.00       1/1           std::allocator<Bullet*>::allocator() [212]
+                0.00    0.00       1/1           std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_Vector_impl_data::_Vector_impl_data() [215]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_Vector_impl::_Vector_impl() [214]
+[215]    0.0    0.00    0.00       1         std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_Vector_impl_data::_Vector_impl_data() [215]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<Bullet*, std::allocator<Bullet*> >::vector() [217]
+[216]    0.0    0.00    0.00       1         std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_Vector_base() [216]
+                0.00    0.00       1/1           std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_Vector_impl::_Vector_impl() [214]
+-----------------------------------------------
+                0.00    0.00       1/1           Game::Game(Point, Point) [67]
+[217]    0.0    0.00    0.00       1         std::vector<Bullet*, std::allocator<Bullet*> >::vector() [217]
+                0.00    0.00       1/1           std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_Vector_base() [216]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_List_base() [219]
+[218]    0.0    0.00    0.00       1         std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_List_impl::_List_impl() [218]
+                0.00    0.00       1/1           std::allocator<std::_List_node<Asteroid*> >::allocator() [213]
+                0.00    0.00       1/1           std::__detail::_List_node_header::_List_node_header() [222]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::list() [220]
+[219]    0.0    0.00    0.00       1         std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_List_base() [219]
+                0.00    0.00       1/1           std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_List_impl::_List_impl() [218]
+-----------------------------------------------
+                0.00    0.00       1/1           Game::Game(Point, Point) [67]
+[220]    0.0    0.00    0.00       1         std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::list() [220]
+                0.00    0.00       1/1           std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_List_base() [219]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__detail::_List_node_header::_List_node_header() [222]
+[221]    0.0    0.00    0.00       1         std::__detail::_List_node_header::_M_init() [221]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_List_impl::_List_impl() [218]
+[222]    0.0    0.00    0.00       1         std::__detail::_List_node_header::_List_node_header() [222]
+                0.00    0.00       1/1           std::__detail::_List_node_header::_M_init() [221]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+ [191] _GLOBAL__sub_I__Z5sleepm [208] bench::bench()     [216] std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_Vector_base()
+ [192] _GLOBAL__sub_I__Z8timeDiff8timespecS_ [62] Bullet::draw() [96] std::_List_iterator<Asteroid*>::_List_iterator(std::__detail::_List_node_base*)
+ [193] _GLOBAL__sub_I__Z9drawDigitRK5Pointc [143] Bullet::fire(Point, float, Velocity) [34] std::_List_iterator<Asteroid*>::operator++(int)
+ [194] _GLOBAL__sub_I__ZN12FlyingObjectC2Ev [100] Bullet::setHealth() [35] std::_List_iterator<Asteroid*>::operator++()
+ [195] _GLOBAL__sub_I__ZN4ShipC2Ev [46] Bullet::Bullet(Point, float, Velocity) [120] std::__allocated_ptr<std::allocator<std::_List_node<Asteroid*> > >::__allocated_ptr(std::allocator<std::_List_node<Asteroid*> >&, std::_List_node<Asteroid*>*)
+ [196] _GLOBAL__sub_I__ZN6BulletC2Ev [40] Asteroid::Asteroid() [121] std::__allocated_ptr<std::allocator<std::_List_node<Asteroid*> > >::~__allocated_ptr()
+ [197] _GLOBAL__sub_I__ZN8AsteroidC2Ev [43] Velocity::Velocity(float, float) [122] std::__allocated_ptr<std::allocator<std::_List_node<Asteroid*> > >::operator=(decltype(nullptr))
+ [198] _GLOBAL__sub_I__ZNK4Game18getClosestDistanceERK12FlyingObjectS2_ [75] Interface::initialize(int, char**, char const*, Point, Point) [190] std::allocator_traits<std::allocator<Bullet*> >::deallocate(std::allocator<Bullet*>&, Bullet**, unsigned long)
+  [28] drawLargeAsteroid(Point const&, int) [144] Interface::setNextDrawTime() [160] void std::allocator_traits<std::allocator<Bullet*> >::destroy<Bullet*>(std::allocator<Bullet*>&, Bullet**)
+  [22] drawSmallAsteroid(Point const&, int) [209] Interface::run(void (*)(Interface const*, void*), void*) [187] std::allocator_traits<std::allocator<Bullet*> >::allocate(std::allocator<Bullet*>&, unsigned long)
+  [38] drawMediumAsteroid(Point const&, int) [169] Interface::keyEvent(int, bool) [173] std::allocator_traits<std::allocator<Bullet*> >::max_size(std::allocator<Bullet*> const&)
+ [199] __static_initialization_and_destruction_0(int, int) [145] Interface::keyEvent() [153] void std::allocator_traits<std::allocator<Bullet*> >::construct<Bullet*, Bullet*>(std::allocator<Bullet*>&, Bullet**, Bullet*&&)
+ [200] __static_initialization_and_destruction_0(int, int) [82] Interface::Interface(int, char**, char const*, Point, Point) [133] std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::deallocate(std::allocator<std::_List_node<Asteroid*> >&, std::_List_node<Asteroid*>*, unsigned long)
+ [201] __static_initialization_and_destruction_0(int, int) [76] Interface::Interface() [134] void std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::destroy<Asteroid*>(std::allocator<std::_List_node<Asteroid*> >&, Asteroid**)
+ [202] __static_initialization_and_destruction_0(int, int) [138] Interface::~Interface() [123] std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::allocate(std::allocator<std::_List_node<Asteroid*> >&, unsigned long)
+ [203] __static_initialization_and_destruction_0(int, int) [189] __gnu_cxx::new_allocator<Bullet*>::deallocate(Bullet**, unsigned long) [124] void std::allocator_traits<std::allocator<std::_List_node<Asteroid*> > >::construct<Asteroid*, Asteroid*>(std::allocator<std::_List_node<Asteroid*> >&, Asteroid**, Asteroid*&&)
+ [204] __static_initialization_and_destruction_0(int, int) [155] void __gnu_cxx::new_allocator<Bullet*>::destroy<Bullet*>(Bullet**) [135] std::_List_const_iterator<Asteroid*>::_List_const_iterator(std::_List_iterator<Asteroid*> const&)
+ [205] __static_initialization_and_destruction_0(int, int) [182] __gnu_cxx::new_allocator<Bullet*>::allocate(unsigned long, void const*) [174] std::vector<Bullet*, std::allocator<Bullet*> >::_S_max_size(std::allocator<Bullet*> const&)
+ [206] __static_initialization_and_destruction_0(int, int) [146] void __gnu_cxx::new_allocator<Bullet*>::construct<Bullet*, Bullet*>(Bullet**, Bullet*&&) [175] std::vector<Bullet*, std::allocator<Bullet*> >::_S_relocate(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&)
+ [109] random(double, double) [210] __gnu_cxx::new_allocator<Bullet*>::new_allocator() [77] void std::vector<Bullet*, std::allocator<Bullet*> >::emplace_back<Bullet*>(Bullet*&&)
+ [103] random(int, int)      [130] __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::deallocate(std::_List_node<Asteroid*>*, unsigned long) [176] std::vector<Bullet*, std::allocator<Bullet*> >::_S_do_relocate(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&, std::integral_constant<bool, true>)
+  [16] rotate(Point&, Point const&, int) [131] void __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::destroy<Asteroid*>(Asteroid**) [177] std::vector<Bullet*, std::allocator<Bullet*> >::_S_use_relocate()
+  [61] drawDot(Point const&) [117] __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::allocate(unsigned long, void const*) [79] void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&)
+   [2] callBack(Interface const*, void*) [118] void __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::construct<Asteroid*, Asteroid*>(Asteroid**, Asteroid*&&) [178] std::vector<Bullet*, std::allocator<Bullet*> >::_S_nothrow_relocate(std::integral_constant<bool, true>)
+  [56] drawShip(Point const&, int, bool) [211] __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::new_allocator() [26] std::vector<Bullet*, std::allocator<Bullet*> >::end()
+ [114] timeDiff(timespec, timespec) [21] __gnu_cxx::__aligned_membuf<Asteroid*>::_M_ptr() [41] std::vector<Bullet*, std::allocator<Bullet*> >::begin()
+ [104] FlyingObject::setRotation(int) [36] __gnu_cxx::__aligned_membuf<Asteroid*>::_M_addr() [64] std::vector<Bullet*, std::allocator<Bullet*> >::erase(__gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >)
+ [129] FlyingObject::setVelocity(Velocity) [156] __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator(Bullet* const* const&) [69] std::vector<Bullet*, std::allocator<Bullet*> >::_M_erase(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >)
+ [139] FlyingObject::setVelocity(float, float) [157] __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator<Bullet**>(__gnu_cxx::__normal_iterator<Bullet**, __gnu_cxx::__enable_if<std::__are_same<Bullet**, Bullet**>::__value, std::vector<Bullet*, std::allocator<Bullet*> > >::__type> const&) [78] std::vector<Bullet*, std::allocator<Bullet*> >::push_back(Bullet*&&)
+ [113] FlyingObject::kill()   [91] __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::__normal_iterator(Bullet** const&) [217] std::vector<Bullet*, std::allocator<Bullet*> >::vector()
+  [30] FlyingObject::advance() [101] __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator++(int) [98] std::vector<Bullet*, std::allocator<Bullet*> >::operator[](unsigned long)
+ [106] FlyingObject::setPoint(Point) [94] __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator++() [218] std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_List_impl::_List_impl()
+  [37] FlyingObject::FlyingObject() [158] __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::difference_type __gnu_cxx::operator-<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > > const&) [136] std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_dec_size(unsigned long)
+  [29] LargeAsteroid::draw() [183] __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::difference_type __gnu_cxx::operator-<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&) [125] std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_get_node()
+  [55] LargeAsteroid::LargeAsteroid() [92] bool __gnu_cxx::operator!=<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > const&) [126] std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_inc_size(unsigned long)
+  [23] SmallAsteroid::draw()   [7] FlyingObject::getVelocity() const [137] std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_put_node(std::_List_node<Asteroid*>*)
+  [47] SmallAsteroid::SmallAsteroid(Point, Velocity) [24] FlyingObject::isAlive() const [111] std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_get_Node_allocator()
+  [39] MediumAsteroid::draw()  [9] FlyingObject::getPoint() const [219] std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_List_base()
+  [52] MediumAsteroid::MediumAsteroid(Point, Velocity) [6] Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const [70] std::_List_node<Asteroid*>* std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_create_node<Asteroid*>(Asteroid*&&)
+  [66] Game::createShip()     [17] Point::getX() const    [97] std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::end()
+  [63] Game::isOnScreen(Point const&) [18] Point::getY() const [105] std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::begin()
+  [59] Game::advanceShip()    [13] Velocity::getDx() const [73] std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::erase(std::_List_const_iterator<Asteroid*>)
+  [44] Game::handleInput(Interface const&) [10] Velocity::getDy() const [74] std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_erase(std::_List_iterator<Asteroid*>)
+  [45] Game::createBullet()  [147] Interface::isY() const [71] void std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_insert<Asteroid*>(std::_List_iterator<Asteroid*>, Asteroid*&&)
+  [50] Game::explodeLarge(Asteroid*, Bullet*) [148] Interface::isUp() const [72] std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::push_back(Asteroid*&&)
+ [166] Game::explodeSmall(Asteroid*, Bullet*) [149] Interface::isRight() const [220] std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::list()
+   [5] Game::getCollision(FlyingObject const&, FlyingObject const&, int) [168] __gnu_cxx::new_allocator<Bullet*>::max_size() const [221] std::__detail::_List_node_header::_M_init()
+  [48] Game::explodeMedium(Asteroid*, Bullet*) [119] __gnu_cxx::new_allocator<std::_List_node<Asteroid*> >::max_size() const [222] std::__detail::_List_node_header::_List_node_header()
+  [53] Game::advanceBullets() [115] __gnu_cxx::__normal_iterator<Bullet* const*, std::vector<Bullet*, std::allocator<Bullet*> > >::base() const [127] std::allocator<std::_List_node<Asteroid*> >* std::__addressof<std::allocator<std::_List_node<Asteroid*> > >(std::allocator<std::_List_node<Asteroid*> >&)
+  [27] Game::cleanUpZombies() [90] __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::base() const [116] __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__miter_base<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >)
+  [54] Game::createAsteroid() [93] __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator*() const [167] Bullet** std::__niter_base<Bullet**>(Bullet**)
+  [25] Game::advanceAsteroid() [107] __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >::operator+(long) const [108] Bullet** std::__niter_base<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >)
+   [4] Game::handleCollisions() [170] std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_get_Tp_allocator() const [162] __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__niter_wrap<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet**>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet**)
+  [49] Game::createSmallAsteroid(Point, Velocity) [14] std::_List_iterator<Asteroid*>::operator*() const [179] Bullet** std::__relocate_a<Bullet**, Bullet**, std::allocator<Bullet*> >(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&)
+  [51] Game::createMediumAsteroid(Point, Velocity) [132] std::_List_const_iterator<Asteroid*>::_M_const_cast() const [163] Bullet** std::__copy_move_a<true, Bullet**, Bullet**>(Bullet**, Bullet**, Bullet**)
+  [11] Game::draw(Interface const&) [184] std::vector<Bullet*, std::allocator<Bullet*> >::_M_check_len(unsigned long, char const*) const [164] __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::__copy_move_a2<true, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >)
+   [3] Game::advance()        [99] std::vector<Bullet*, std::allocator<Bullet*> >::size() const [180] std::enable_if<std::__is_bitwise_relocatable<Bullet*, void>::value, Bullet**>::type std::__relocate_a_1<Bullet*, Bullet*>(Bullet**, Bullet**, Bullet**, std::allocator<Bullet*>&)
+  [67] Game::Game(Point, Point) [159] std::vector<Bullet*, std::allocator<Bullet*> >::cbegin() const [31] std::abs(float)
+ [140] Ship::getOrientation() [171] std::vector<Bullet*, std::allocator<Bullet*> >::max_size() const [89] float const& std::max<float>(float const&, float const&)
+ [207] Ship::setOrientation(float) [150] std::__cxx11::_List_base<Asteroid*, std::allocator<Asteroid*> >::_M_get_size() const [188] unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&)
+  [57] Ship::draw()          [151] std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::_M_node_count() const [15] float const& std::min<float>(float const&, float const&)
+ [141] Ship::moveLeft()      [152] std::__cxx11::list<Asteroid*, std::allocator<Asteroid*> >::size() const [181] unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&)
+  [68] Ship::Ship()          [212] std::allocator<Bullet*>::allocator() [165] __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > std::move<__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > > >(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, __gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >)
+  [58] Point::addX(float)    [213] std::allocator<std::_List_node<Asteroid*> >::allocator() [154] std::remove_reference<Bullet*&>::type&& std::move<Bullet*&>(Bullet*&)
+  [60] Point::addY(float)     [20] std::_List_node<Asteroid*>::_M_valptr() [128] std::remove_reference<Asteroid*&>::type&& std::move<Asteroid*&>(Asteroid*&)
+  [12] Point::setX(float)    [161] Bullet** std::__copy_move<true, true, std::random_access_iterator_tag>::__copy_m<Bullet*>(Bullet* const*, Bullet* const*, Bullet**) [32] std::sqrt(float)
+  [19] Point::setY(float)    [185] std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_allocate(unsigned long) [110] Bullet*&& std::forward<Bullet*>(std::remove_reference<Bullet*>::type&)
+  [95] Point::Point(bool)    [214] std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_Vector_impl::_Vector_impl() [102] Asteroid*&& std::forward<Asteroid*>(std::remove_reference<Asteroid*>::type&)
+   [8] Point::Point(float, float) [186] std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_deallocate(Bullet**, unsigned long) [33] std::operator!=(std::_List_iterator<Asteroid*> const&, std::_List_iterator<Asteroid*> const&)
+  [42] Point::Point()        [215] std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_Vector_impl_data::_Vector_impl_data() [112] operator new(unsigned long, void*)
+ [142] bench::incr(long, long) [172] std::_Vector_base<Bullet*, std::allocator<Bullet*> >::_M_get_Tp_allocator()

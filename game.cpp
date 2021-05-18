@@ -7,6 +7,7 @@
 
 #include "game.h"
 #include <string>
+#include <cstdio>
 #include "uiDraw.h"
 #include "uiInteract.h"
 #include "point.h"
@@ -19,7 +20,7 @@ using namespace std;
 
 
 #define OFF_SCREEN_BORDER_AMOUNT 5
-#define BEGGINNING_ASTEROID_COUNT 70
+#define BEGGINNING_ASTEROID_COUNT 100
 
 // You may find this function helpful...
 
@@ -321,7 +322,7 @@ void Game :: handleCollisions()
       {
          if (getCollision(**it, *ship, (*it)->radius))
          {
-            ship->kill();
+            //ship->kill();
          }
       }
 
@@ -475,6 +476,14 @@ void Game :: handleInput(const Interface & ui)
       if (ui.isY())
       {
          bStartGame = true;
+   	 std::cout
+            << "time ellapsed: "
+      	    << this->benchmark.ellapsedReal << "ms"
+	    << " (cpu time:" 
+	    << this->benchmark.ellapsedCpu << "ms)"
+            << "\nframes rendered: "
+            << this->benchmark.frameCount
+	    << std::endl;
       }
    }
    

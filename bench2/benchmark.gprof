@@ -1,0 +1,583 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 73.89      0.48     0.48  2027670     0.00     0.00  Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const
+  6.16      0.52     0.04 46802611     0.00     0.00  FlyingObject::getVelocity() const
+  4.62      0.55     0.03 38700850     0.00     0.00  FlyingObject::getPoint() const
+  2.31      0.57     0.02  1009213     0.00     0.00  rotate(Point&, Point const&, int)
+  2.31      0.58     0.02                             Velocity::getDy() const
+  1.54      0.59     0.01  2027670     0.00     0.00  Game::getCollision(FlyingObject const&, FlyingObject const&, int)
+  1.54      0.60     0.01   330785     0.00     0.00  FlyingObject::isAlive() const
+  1.54      0.61     0.01    49600     0.00     0.00  SmallAsteroid::draw()
+  1.54      0.62     0.01    30461     0.00     0.00  drawMediumAsteroid(Point const&, int)
+  1.54      0.63     0.01     1195     0.01     0.01  FlyingObject::FlyingObject()
+  1.54      0.64     0.01      479     0.02     1.21  Game::handleCollisions()
+  0.77      0.65     0.01                             drawText(Point const&, char const*)
+  0.77      0.65     0.01                             Velocity::getDx() const
+  0.00      0.65     0.00   109507     0.00     0.00  FlyingObject::advance()
+  0.00      0.65     0.00    49600     0.00     0.00  drawSmallAsteroid(Point const&, int)
+  0.00      0.65     0.00    30461     0.00     0.00  MediumAsteroid::draw()
+  0.00      0.65     0.00    20442     0.00     0.00  drawLargeAsteroid(Point const&, int)
+  0.00      0.65     0.00    20442     0.00     0.00  LargeAsteroid::draw()
+  0.00      0.65     0.00     8818     0.00     0.00  drawDot(Point const&)
+  0.00      0.65     0.00     8818     0.00     0.00  Bullet::draw()
+  0.00      0.65     0.00     8818     0.00     0.00  Bullet::setHealth()
+  0.00      0.65     0.00     8766     0.00     0.00  Game::isOnScreen(Point const&)
+  0.00      0.65     0.00     2145     0.00     0.00  random(int, int)
+  0.00      0.65     0.00     1810     0.00     0.00  FlyingObject::setPoint(Point)
+  0.00      0.65     0.00     1430     0.00     0.00  random(double, double)
+  0.00      0.65     0.00     1033     0.00     0.00  FlyingObject::kill()
+  0.00      0.65     0.00      958     0.00     0.00  timeDiff(timespec, timespec)
+  0.00      0.65     0.00      815     0.00     0.00  FlyingObject::setRotation(int)
+  0.00      0.65     0.00      715     0.00     0.01  Asteroid::Asteroid()
+  0.00      0.65     0.00      615     0.00     0.00  FlyingObject::setVelocity(Velocity)
+  0.00      0.65     0.00      490     0.00     0.00  Interface::initialize(int, char**, char const*, Point, Point)
+  0.00      0.65     0.00      480     0.00     0.00  drawShip(Point const&, int, bool)
+  0.00      0.65     0.00      480     0.00     0.00  Ship::draw()
+  0.00      0.65     0.00      479     0.00     1.31  callBack(Interface const*, void*)
+  0.00      0.65     0.00      479     0.00     0.00  FlyingObject::setVelocity(float, float)
+  0.00      0.65     0.00      479     0.00     0.00  Game::advanceShip()
+  0.00      0.65     0.00      479     0.00     0.01  Game::handleInput(Interface const&)
+  0.00      0.65     0.00      479     0.00     0.01  Game::createBullet()
+  0.00      0.65     0.00      479     0.00     0.00  Game::advanceBullets()
+  0.00      0.65     0.00      479     0.00     0.01  Game::cleanUpZombies()
+  0.00      0.65     0.00      479     0.00     0.00  Game::advanceAsteroid()
+  0.00      0.65     0.00      479     0.00     0.08  Game::draw(Interface const&)
+  0.00      0.65     0.00      479     0.00     1.22  Game::advance()
+  0.00      0.65     0.00      479     0.00     0.00  Ship::getOrientation()
+  0.00      0.65     0.00      479     0.00     0.00  Ship::moveLeft()
+  0.00      0.65     0.00      479     0.00     0.00  Bullet::fire(Point, float, Velocity)
+  0.00      0.65     0.00      479     0.00     0.01  Bullet::Bullet(Point, float, Velocity)
+  0.00      0.65     0.00      479     0.00     0.00  Interface::setNextDrawTime()
+  0.00      0.65     0.00      479     0.00     0.00  Interface::keyEvent()
+  0.00      0.65     0.00      458     0.00     0.00  std::vector<Bullet*, std::allocator<Bullet*> >::_M_erase(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >)
+  0.00      0.65     0.00      409     0.00     0.01  SmallAsteroid::SmallAsteroid(Point, Velocity)
+  0.00      0.65     0.00      306     0.00     0.01  Game::createSmallAsteroid(Point, Velocity)
+  0.00      0.65     0.00      206     0.00     0.01  MediumAsteroid::MediumAsteroid(Point, Velocity)
+  0.00      0.65     0.00      153     0.00     0.02  Game::explodeMedium(Asteroid*, Bullet*)
+  0.00      0.65     0.00      103     0.00     0.03  Game::explodeLarge(Asteroid*, Bullet*)
+  0.00      0.65     0.00      103     0.00     0.03  Game::createMediumAsteroid(Point, Velocity)
+  0.00      0.65     0.00      100     0.00     0.01  LargeAsteroid::LargeAsteroid()
+  0.00      0.65     0.00       10     0.00     0.00  Interface::keyEvent(int, bool)
+  0.00      0.65     0.00        6     0.00     0.00  void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&)
+  0.00      0.65     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z5sleepm
+  0.00      0.65     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z8timeDiff8timespecS_
+  0.00      0.65     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z9drawDigitRK5Pointc
+  0.00      0.65     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN12FlyingObjectC2Ev
+  0.00      0.65     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN4ShipC2Ev
+  0.00      0.65     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN6BulletC2Ev
+  0.00      0.65     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN8AsteroidC2Ev
+  0.00      0.65     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZNK4Game18getClosestDistanceERK12FlyingObjectS2_
+  0.00      0.65     0.00        1     0.00     0.01  Game::createShip()
+  0.00      0.65     0.00        1     0.00     0.84  Game::createAsteroid()
+  0.00      0.65     0.00        1     0.00     0.01  Game::Game(Point, Point)
+  0.00      0.65     0.00        1     0.00     0.01  Ship::Ship()
+  0.00      0.65     0.00        1     0.00     0.00  Interface::run(void (*)(Interface const*, void*), void*)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 1.54% of 0.65 seconds
+
+index % time    self  children    called     name
+                0.00    0.63     479/479         drawCallback() [2]
+[1]     96.2    0.00    0.63     479         callBack(Interface const*, void*) [1]
+                0.00    0.58     479/479         Game::advance() [3]
+                0.00    0.04     479/479         Game::draw(Interface const&) [8]
+                0.00    0.00     479/479         Game::handleInput(Interface const&) [21]
+                0.00    0.00     958/958         timeDiff(timespec, timespec) [59]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     96.2    0.00    0.63                 drawCallback() [2]
+                0.00    0.63     479/479         callBack(Interface const*, void*) [1]
+                0.00    0.00     479/490         Interface::initialize(int, char**, char const*, Point, Point) [62]
+                0.00    0.00     479/479         Interface::keyEvent() [68]
+                0.00    0.00     479/479         Interface::setNextDrawTime() [67]
+-----------------------------------------------
+                0.00    0.58     479/479         callBack(Interface const*, void*) [1]
+[3]     89.6    0.00    0.58     479         Game::advance() [3]
+                0.01    0.57     479/479         Game::handleCollisions() [4]
+                0.00    0.00     479/479         Game::cleanUpZombies() [27]
+                0.00    0.00     479/479         Game::advanceAsteroid() [33]
+                0.00    0.00     479/479         Game::advanceBullets() [36]
+                0.00    0.00     479/479         Game::advanceShip() [39]
+-----------------------------------------------
+                0.01    0.57     479/479         Game::advance() [3]
+[4]     89.0    0.01    0.57     479         Game::handleCollisions() [4]
+                0.01    0.55 2027670/2027670     Game::getCollision(FlyingObject const&, FlyingObject const&, int) [5]
+                0.00    0.00  100977/330785      FlyingObject::isAlive() const [15]
+                0.00    0.00     103/103         Game::explodeLarge(Asteroid*, Bullet*) [28]
+                0.00    0.00     153/153         Game::explodeMedium(Asteroid*, Bullet*) [30]
+                0.00    0.00     490/1033        FlyingObject::kill() [58]
+-----------------------------------------------
+                0.01    0.55 2027670/2027670     Game::handleCollisions() [4]
+[5]     86.2    0.01    0.55 2027670         Game::getCollision(FlyingObject const&, FlyingObject const&, int) [5]
+                0.48    0.07 2027670/2027670     Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const [6]
+-----------------------------------------------
+                0.48    0.07 2027670/2027670     Game::getCollision(FlyingObject const&, FlyingObject const&, int) [5]
+[6]     84.6    0.48    0.07 2027670         Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const [6]
+                0.04    0.00 46801876/46802611     FlyingObject::getVelocity() const [7]
+                0.03    0.00 38691196/38700850     FlyingObject::getPoint() const [9]
+-----------------------------------------------
+                0.00    0.00     103/46802611     Game::explodeLarge(Asteroid*, Bullet*) [28]
+                0.00    0.00     153/46802611     Game::explodeMedium(Asteroid*, Bullet*) [30]
+                0.00    0.00     479/46802611     Game::createBullet() [22]
+                0.04    0.00 46801876/46802611     Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const [6]
+[7]      6.2    0.04    0.00 46802611         FlyingObject::getVelocity() const [7]
+-----------------------------------------------
+                0.00    0.04     479/479         callBack(Interface const*, void*) [1]
+[8]      5.9    0.00    0.04     479         Game::draw(Interface const&) [8]
+                0.01    0.01   49600/49600       SmallAsteroid::draw() [10]
+                0.00    0.01   30461/30461       MediumAsteroid::draw() [14]
+                0.00    0.00   20442/20442       LargeAsteroid::draw() [26]
+                0.00    0.00  109800/330785      FlyingObject::isAlive() const [15]
+                0.00    0.00     479/480         Ship::draw() [38]
+                0.00    0.00    8818/8818        Bullet::setHealth() [53]
+                0.00    0.00    8818/8818        Bullet::draw() [52]
+-----------------------------------------------
+                0.00    0.00     103/38700850     Game::explodeLarge(Asteroid*, Bullet*) [28]
+                0.00    0.00     306/38700850     Game::explodeMedium(Asteroid*, Bullet*) [30]
+                0.00    0.00     479/38700850     Game::createBullet() [22]
+                0.00    0.00    8766/38700850     Game::advanceBullets() [36]
+                0.03    0.00 38691196/38700850     Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const [6]
+[9]      4.6    0.03    0.00 38700850         FlyingObject::getPoint() const [9]
+-----------------------------------------------
+                0.01    0.01   49600/49600       Game::draw(Interface const&) [8]
+[10]     2.6    0.01    0.01   49600         SmallAsteroid::draw() [10]
+                0.00    0.01   49600/49600       drawSmallAsteroid(Point const&, int) [17]
+-----------------------------------------------
+                0.00    0.00    2880/1009213     drawShip(Point const&, int, bool) [37]
+                0.00    0.00  224862/1009213     drawLargeAsteroid(Point const&, int) [25]
+                0.00    0.00  335071/1009213     drawMediumAsteroid(Point const&, int) [13]
+                0.01    0.00  446400/1009213     drawSmallAsteroid(Point const&, int) [17]
+[11]     2.3    0.02    0.00 1009213         rotate(Point&, Point const&, int) [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[12]     2.3    0.02    0.00                 Velocity::getDy() const [12]
+-----------------------------------------------
+                0.01    0.00   30461/30461       MediumAsteroid::draw() [14]
+[13]     2.3    0.01    0.00   30461         drawMediumAsteroid(Point const&, int) [13]
+                0.00    0.00  335071/1009213     rotate(Point&, Point const&, int) [11]
+-----------------------------------------------
+                0.00    0.01   30461/30461       Game::draw(Interface const&) [8]
+[14]     2.3    0.00    0.01   30461         MediumAsteroid::draw() [14]
+                0.01    0.00   30461/30461       drawMediumAsteroid(Point const&, int) [13]
+-----------------------------------------------
+                0.00    0.00     479/330785      Game::advanceShip() [39]
+                0.00    0.00     479/330785      Game::handleInput(Interface const&) [21]
+                0.00    0.00    8797/330785      Game::advanceBullets() [36]
+                0.00    0.00  100977/330785      Game::handleCollisions() [4]
+                0.00    0.00  109800/330785      Game::draw(Interface const&) [8]
+                0.00    0.00  110253/330785      Game::cleanUpZombies() [27]
+[15]     1.5    0.01    0.00  330785         FlyingObject::isAlive() const [15]
+-----------------------------------------------
+                0.00    0.00       1/1195        Ship::Ship() [43]
+                0.00    0.00     479/1195        Bullet::Bullet(Point, float, Velocity) [23]
+                0.01    0.00     715/1195        Asteroid::Asteroid() [18]
+[16]     1.5    0.01    0.00    1195         FlyingObject::FlyingObject() [16]
+-----------------------------------------------
+                0.00    0.01   49600/49600       SmallAsteroid::draw() [10]
+[17]     1.0    0.00    0.01   49600         drawSmallAsteroid(Point const&, int) [17]
+                0.01    0.00  446400/1009213     rotate(Point&, Point const&, int) [11]
+-----------------------------------------------
+                0.00    0.00     100/715         LargeAsteroid::LargeAsteroid() [34]
+                0.00    0.00     206/715         MediumAsteroid::MediumAsteroid(Point, Velocity) [32]
+                0.00    0.00     409/715         SmallAsteroid::SmallAsteroid(Point, Velocity) [24]
+[18]     0.9    0.00    0.01     715         Asteroid::Asteroid() [18]
+                0.01    0.00     715/1195        FlyingObject::FlyingObject() [16]
+                0.00    0.00    2145/2145        random(int, int) [55]
+                0.00    0.00    1430/1430        random(double, double) [57]
+                0.00    0.00     715/1810        FlyingObject::setPoint(Point) [56]
+                0.00    0.00     715/815         FlyingObject::setRotation(int) [60]
+-----------------------------------------------
+                                                 <spontaneous>
+[19]     0.8    0.01    0.00                 drawText(Point const&, char const*) [19]
+-----------------------------------------------
+                                                 <spontaneous>
+[20]     0.8    0.01    0.00                 Velocity::getDx() const [20]
+-----------------------------------------------
+                0.00    0.00     479/479         callBack(Interface const*, void*) [1]
+[21]     0.6    0.00    0.00     479         Game::handleInput(Interface const&) [21]
+                0.00    0.00     479/479         Game::createBullet() [22]
+                0.00    0.00     479/330785      FlyingObject::isAlive() const [15]
+                0.00    0.00     479/479         Ship::moveLeft() [65]
+-----------------------------------------------
+                0.00    0.00     479/479         Game::handleInput(Interface const&) [21]
+[22]     0.6    0.00    0.00     479         Game::createBullet() [22]
+                0.00    0.00     479/479         Bullet::Bullet(Point, float, Velocity) [23]
+                0.00    0.00     479/46802611     FlyingObject::getVelocity() const [7]
+                0.00    0.00     479/38700850     FlyingObject::getPoint() const [9]
+                0.00    0.00     479/479         Ship::getOrientation() [64]
+                0.00    0.00       6/6           void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&) [71]
+-----------------------------------------------
+                0.00    0.00     479/479         Game::createBullet() [22]
+[23]     0.6    0.00    0.00     479         Bullet::Bullet(Point, float, Velocity) [23]
+                0.00    0.00     479/1195        FlyingObject::FlyingObject() [16]
+                0.00    0.00     479/479         Bullet::fire(Point, float, Velocity) [66]
+-----------------------------------------------
+                0.00    0.00     103/409         Game::createMediumAsteroid(Point, Velocity) [29]
+                0.00    0.00     306/409         Game::createSmallAsteroid(Point, Velocity) [31]
+[24]     0.5    0.00    0.00     409         SmallAsteroid::SmallAsteroid(Point, Velocity) [24]
+                0.00    0.00     409/715         Asteroid::Asteroid() [18]
+                0.00    0.00     409/1810        FlyingObject::setPoint(Point) [56]
+                0.00    0.00     409/615         FlyingObject::setVelocity(Velocity) [61]
+-----------------------------------------------
+                0.00    0.00   20442/20442       LargeAsteroid::draw() [26]
+[25]     0.5    0.00    0.00   20442         drawLargeAsteroid(Point const&, int) [25]
+                0.00    0.00  224862/1009213     rotate(Point&, Point const&, int) [11]
+-----------------------------------------------
+                0.00    0.00   20442/20442       Game::draw(Interface const&) [8]
+[26]     0.5    0.00    0.00   20442         LargeAsteroid::draw() [26]
+                0.00    0.00   20442/20442       drawLargeAsteroid(Point const&, int) [25]
+-----------------------------------------------
+                0.00    0.00     479/479         Game::advance() [3]
+[27]     0.5    0.00    0.00     479         Game::cleanUpZombies() [27]
+                0.00    0.00  110253/330785      FlyingObject::isAlive() const [15]
+                0.00    0.00     458/458         std::vector<Bullet*, std::allocator<Bullet*> >::_M_erase(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [69]
+-----------------------------------------------
+                0.00    0.00     103/103         Game::handleCollisions() [4]
+[28]     0.4    0.00    0.00     103         Game::explodeLarge(Asteroid*, Bullet*) [28]
+                0.00    0.00     103/103         Game::createMediumAsteroid(Point, Velocity) [29]
+                0.00    0.00     103/46802611     FlyingObject::getVelocity() const [7]
+                0.00    0.00     103/38700850     FlyingObject::getPoint() const [9]
+                0.00    0.00     206/1033        FlyingObject::kill() [58]
+-----------------------------------------------
+                0.00    0.00     103/103         Game::explodeLarge(Asteroid*, Bullet*) [28]
+[29]     0.4    0.00    0.00     103         Game::createMediumAsteroid(Point, Velocity) [29]
+                0.00    0.00     206/206         MediumAsteroid::MediumAsteroid(Point, Velocity) [32]
+                0.00    0.00     103/409         SmallAsteroid::SmallAsteroid(Point, Velocity) [24]
+-----------------------------------------------
+                0.00    0.00     153/153         Game::handleCollisions() [4]
+[30]     0.4    0.00    0.00     153         Game::explodeMedium(Asteroid*, Bullet*) [30]
+                0.00    0.00     306/306         Game::createSmallAsteroid(Point, Velocity) [31]
+                0.00    0.00     306/38700850     FlyingObject::getPoint() const [9]
+                0.00    0.00     153/46802611     FlyingObject::getVelocity() const [7]
+                0.00    0.00     306/1033        FlyingObject::kill() [58]
+-----------------------------------------------
+                0.00    0.00     306/306         Game::explodeMedium(Asteroid*, Bullet*) [30]
+[31]     0.4    0.00    0.00     306         Game::createSmallAsteroid(Point, Velocity) [31]
+                0.00    0.00     306/409         SmallAsteroid::SmallAsteroid(Point, Velocity) [24]
+-----------------------------------------------
+                0.00    0.00     206/206         Game::createMediumAsteroid(Point, Velocity) [29]
+[32]     0.3    0.00    0.00     206         MediumAsteroid::MediumAsteroid(Point, Velocity) [32]
+                0.00    0.00     206/715         Asteroid::Asteroid() [18]
+                0.00    0.00     206/1810        FlyingObject::setPoint(Point) [56]
+                0.00    0.00     206/615         FlyingObject::setVelocity(Velocity) [61]
+-----------------------------------------------
+                0.00    0.00     479/479         Game::advance() [3]
+[33]     0.1    0.00    0.00     479         Game::advanceAsteroid() [33]
+                0.00    0.00       1/1           Game::createAsteroid() [35]
+                0.00    0.00  100262/109507      FlyingObject::advance() [50]
+-----------------------------------------------
+                0.00    0.00     100/100         Game::createAsteroid() [35]
+[34]     0.1    0.00    0.00     100         LargeAsteroid::LargeAsteroid() [34]
+                0.00    0.00     100/715         Asteroid::Asteroid() [18]
+                0.00    0.00     100/815         FlyingObject::setRotation(int) [60]
+-----------------------------------------------
+                0.00    0.00       1/1           Game::advanceAsteroid() [33]
+[35]     0.1    0.00    0.00       1         Game::createAsteroid() [35]
+                0.00    0.00     100/100         LargeAsteroid::LargeAsteroid() [34]
+-----------------------------------------------
+                0.00    0.00     479/479         Game::advance() [3]
+[36]     0.0    0.00    0.00     479         Game::advanceBullets() [36]
+                0.00    0.00    8797/330785      FlyingObject::isAlive() const [15]
+                0.00    0.00    8766/38700850     FlyingObject::getPoint() const [9]
+                0.00    0.00    8766/109507      FlyingObject::advance() [50]
+                0.00    0.00    8766/8766        Game::isOnScreen(Point const&) [54]
+-----------------------------------------------
+                0.00    0.00     480/480         Ship::draw() [38]
+[37]     0.0    0.00    0.00     480         drawShip(Point const&, int, bool) [37]
+                0.00    0.00    2880/1009213     rotate(Point&, Point const&, int) [11]
+-----------------------------------------------
+                0.00    0.00       1/480         Ship::Ship() [43]
+                0.00    0.00     479/480         Game::draw(Interface const&) [8]
+[38]     0.0    0.00    0.00     480         Ship::draw() [38]
+                0.00    0.00     480/480         drawShip(Point const&, int, bool) [37]
+-----------------------------------------------
+                0.00    0.00     479/479         Game::advance() [3]
+[39]     0.0    0.00    0.00     479         Game::advanceShip() [39]
+                0.00    0.00     479/330785      FlyingObject::isAlive() const [15]
+                0.00    0.00     479/109507      FlyingObject::advance() [50]
+-----------------------------------------------
+                                                 <spontaneous>
+[40]     0.0    0.00    0.00                 main [40]
+                0.00    0.00       1/1           Game::Game(Point, Point) [42]
+                0.00    0.00       1/490         Interface::initialize(int, char**, char const*, Point, Point) [62]
+                0.00    0.00       1/1           Interface::run(void (*)(Interface const*, void*), void*) [80]
+-----------------------------------------------
+                0.00    0.00       1/1           Game::Game(Point, Point) [42]
+[41]     0.0    0.00    0.00       1         Game::createShip() [41]
+                0.00    0.00       1/1           Ship::Ship() [43]
+-----------------------------------------------
+                0.00    0.00       1/1           main [40]
+[42]     0.0    0.00    0.00       1         Game::Game(Point, Point) [42]
+                0.00    0.00       1/1           Game::createShip() [41]
+-----------------------------------------------
+                0.00    0.00       1/1           Game::createShip() [41]
+[43]     0.0    0.00    0.00       1         Ship::Ship() [43]
+                0.00    0.00       1/1195        FlyingObject::FlyingObject() [16]
+                0.00    0.00       1/480         Ship::draw() [38]
+                0.00    0.00       1/1810        FlyingObject::setPoint(Point) [56]
+-----------------------------------------------
+                0.00    0.00     479/109507      Game::advanceShip() [39]
+                0.00    0.00    8766/109507      Game::advanceBullets() [36]
+                0.00    0.00  100262/109507      Game::advanceAsteroid() [33]
+[50]     0.0    0.00    0.00  109507         FlyingObject::advance() [50]
+-----------------------------------------------
+                0.00    0.00    8818/8818        Bullet::draw() [52]
+[51]     0.0    0.00    0.00    8818         drawDot(Point const&) [51]
+-----------------------------------------------
+                0.00    0.00    8818/8818        Game::draw(Interface const&) [8]
+[52]     0.0    0.00    0.00    8818         Bullet::draw() [52]
+                0.00    0.00    8818/8818        drawDot(Point const&) [51]
+-----------------------------------------------
+                0.00    0.00    8818/8818        Game::draw(Interface const&) [8]
+[53]     0.0    0.00    0.00    8818         Bullet::setHealth() [53]
+                0.00    0.00      31/1033        FlyingObject::kill() [58]
+-----------------------------------------------
+                0.00    0.00    8766/8766        Game::advanceBullets() [36]
+[54]     0.0    0.00    0.00    8766         Game::isOnScreen(Point const&) [54]
+-----------------------------------------------
+                0.00    0.00    2145/2145        Asteroid::Asteroid() [18]
+[55]     0.0    0.00    0.00    2145         random(int, int) [55]
+-----------------------------------------------
+                0.00    0.00       1/1810        Ship::Ship() [43]
+                0.00    0.00     206/1810        MediumAsteroid::MediumAsteroid(Point, Velocity) [32]
+                0.00    0.00     409/1810        SmallAsteroid::SmallAsteroid(Point, Velocity) [24]
+                0.00    0.00     479/1810        Bullet::fire(Point, float, Velocity) [66]
+                0.00    0.00     715/1810        Asteroid::Asteroid() [18]
+[56]     0.0    0.00    0.00    1810         FlyingObject::setPoint(Point) [56]
+-----------------------------------------------
+                0.00    0.00    1430/1430        Asteroid::Asteroid() [18]
+[57]     0.0    0.00    0.00    1430         random(double, double) [57]
+-----------------------------------------------
+                0.00    0.00      31/1033        Bullet::setHealth() [53]
+                0.00    0.00     206/1033        Game::explodeLarge(Asteroid*, Bullet*) [28]
+                0.00    0.00     306/1033        Game::explodeMedium(Asteroid*, Bullet*) [30]
+                0.00    0.00     490/1033        Game::handleCollisions() [4]
+[58]     0.0    0.00    0.00    1033         FlyingObject::kill() [58]
+-----------------------------------------------
+                0.00    0.00     958/958         callBack(Interface const*, void*) [1]
+[59]     0.0    0.00    0.00     958         timeDiff(timespec, timespec) [59]
+-----------------------------------------------
+                0.00    0.00     100/815         LargeAsteroid::LargeAsteroid() [34]
+                0.00    0.00     715/815         Asteroid::Asteroid() [18]
+[60]     0.0    0.00    0.00     815         FlyingObject::setRotation(int) [60]
+-----------------------------------------------
+                0.00    0.00     206/615         MediumAsteroid::MediumAsteroid(Point, Velocity) [32]
+                0.00    0.00     409/615         SmallAsteroid::SmallAsteroid(Point, Velocity) [24]
+[61]     0.0    0.00    0.00     615         FlyingObject::setVelocity(Velocity) [61]
+-----------------------------------------------
+                0.00    0.00       1/490         main [40]
+                0.00    0.00       5/490         keyDownCallback(int, int, int) [89]
+                0.00    0.00       5/490         keyUpCallback(int, int, int) [87]
+                0.00    0.00     479/490         drawCallback() [2]
+[62]     0.0    0.00    0.00     490         Interface::initialize(int, char**, char const*, Point, Point) [62]
+-----------------------------------------------
+                0.00    0.00     479/479         Bullet::fire(Point, float, Velocity) [66]
+[63]     0.0    0.00    0.00     479         FlyingObject::setVelocity(float, float) [63]
+-----------------------------------------------
+                0.00    0.00     479/479         Game::createBullet() [22]
+[64]     0.0    0.00    0.00     479         Ship::getOrientation() [64]
+-----------------------------------------------
+                0.00    0.00     479/479         Game::handleInput(Interface const&) [21]
+[65]     0.0    0.00    0.00     479         Ship::moveLeft() [65]
+-----------------------------------------------
+                0.00    0.00     479/479         Bullet::Bullet(Point, float, Velocity) [23]
+[66]     0.0    0.00    0.00     479         Bullet::fire(Point, float, Velocity) [66]
+                0.00    0.00     479/1810        FlyingObject::setPoint(Point) [56]
+                0.00    0.00     479/479         FlyingObject::setVelocity(float, float) [63]
+-----------------------------------------------
+                0.00    0.00     479/479         drawCallback() [2]
+[67]     0.0    0.00    0.00     479         Interface::setNextDrawTime() [67]
+-----------------------------------------------
+                0.00    0.00     479/479         drawCallback() [2]
+[68]     0.0    0.00    0.00     479         Interface::keyEvent() [68]
+-----------------------------------------------
+                0.00    0.00     458/458         Game::cleanUpZombies() [27]
+[69]     0.0    0.00    0.00     458         std::vector<Bullet*, std::allocator<Bullet*> >::_M_erase(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >) [69]
+-----------------------------------------------
+                0.00    0.00       5/10          keyDownCallback(int, int, int) [89]
+                0.00    0.00       5/10          keyUpCallback(int, int, int) [87]
+[70]     0.0    0.00    0.00      10         Interface::keyEvent(int, bool) [70]
+-----------------------------------------------
+                0.00    0.00       6/6           Game::createBullet() [22]
+[71]     0.0    0.00    0.00       6         void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&) [71]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [138]
+[72]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z5sleepm [72]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [138]
+[73]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z8timeDiff8timespecS_ [73]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [138]
+[74]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z9drawDigitRK5Pointc [74]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [138]
+[75]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN12FlyingObjectC2Ev [75]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [138]
+[76]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN4ShipC2Ev [76]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [138]
+[77]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN6BulletC2Ev [77]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [138]
+[78]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN8AsteroidC2Ev [78]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [138]
+[79]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZNK4Game18getClosestDistanceERK12FlyingObjectS2_ [79]
+-----------------------------------------------
+                0.00    0.00       1/1           main [40]
+[80]     0.0    0.00    0.00       1         Interface::run(void (*)(Interface const*, void*), void*) [80]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [72] _GLOBAL__sub_I__Z5sleepm [56] FlyingObject::setPoint(Point) [3] Game::advance()
+  [73] _GLOBAL__sub_I__Z8timeDiff8timespecS_ [16] FlyingObject::FlyingObject() [42] Game::Game(Point, Point)
+  [74] _GLOBAL__sub_I__Z9drawDigitRK5Pointc [26] LargeAsteroid::draw() [64] Ship::getOrientation()
+  [75] _GLOBAL__sub_I__ZN12FlyingObjectC2Ev [34] LargeAsteroid::LargeAsteroid() [38] Ship::draw()
+  [76] _GLOBAL__sub_I__ZN4ShipC2Ev [10] SmallAsteroid::draw() [65] Ship::moveLeft()
+  [77] _GLOBAL__sub_I__ZN6BulletC2Ev [24] SmallAsteroid::SmallAsteroid(Point, Velocity) [43] Ship::Ship()
+  [78] _GLOBAL__sub_I__ZN8AsteroidC2Ev [14] MediumAsteroid::draw() [52] Bullet::draw()
+  [79] _GLOBAL__sub_I__ZNK4Game18getClosestDistanceERK12FlyingObjectS2_ [32] MediumAsteroid::MediumAsteroid(Point, Velocity) [66] Bullet::fire(Point, float, Velocity)
+  [25] drawLargeAsteroid(Point const&, int) [41] Game::createShip() [53] Bullet::setHealth()
+  [17] drawSmallAsteroid(Point const&, int) [54] Game::isOnScreen(Point const&) [23] Bullet::Bullet(Point, float, Velocity)
+  [13] drawMediumAsteroid(Point const&, int) [39] Game::advanceShip() [18] Asteroid::Asteroid()
+  [57] random(double, double) [21] Game::handleInput(Interface const&) [62] Interface::initialize(int, char**, char const*, Point, Point)
+  [55] random(int, int)       [22] Game::createBullet()   [67] Interface::setNextDrawTime()
+  [11] rotate(Point&, Point const&, int) [28] Game::explodeLarge(Asteroid*, Bullet*) [80] Interface::run(void (*)(Interface const*, void*), void*)
+  [51] drawDot(Point const&)   [5] Game::getCollision(FlyingObject const&, FlyingObject const&, int) [70] Interface::keyEvent(int, bool)
+   [1] callBack(Interface const*, void*) [30] Game::explodeMedium(Asteroid*, Bullet*) [68] Interface::keyEvent()
+  [37] drawShip(Point const&, int, bool) [36] Game::advanceBullets() [7] FlyingObject::getVelocity() const
+  [19] drawText(Point const&, char const*) [27] Game::cleanUpZombies() [15] FlyingObject::isAlive() const
+  [59] timeDiff(timespec, timespec) [35] Game::createAsteroid() [9] FlyingObject::getPoint() const
+  [60] FlyingObject::setRotation(int) [33] Game::advanceAsteroid() [6] Game::getClosestDistance(FlyingObject const&, FlyingObject const&) const
+  [61] FlyingObject::setVelocity(Velocity) [4] Game::handleCollisions() [20] Velocity::getDx() const
+  [63] FlyingObject::setVelocity(float, float) [31] Game::createSmallAsteroid(Point, Velocity) [12] Velocity::getDy() const
+  [58] FlyingObject::kill()   [29] Game::createMediumAsteroid(Point, Velocity) [71] void std::vector<Bullet*, std::allocator<Bullet*> >::_M_realloc_insert<Bullet*>(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >, Bullet*&&)
+  [50] FlyingObject::advance() [8] Game::draw(Interface const&) [69] std::vector<Bullet*, std::allocator<Bullet*> >::_M_erase(__gnu_cxx::__normal_iterator<Bullet**, std::vector<Bullet*, std::allocator<Bullet*> > >)

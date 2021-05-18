@@ -24,7 +24,7 @@ LFLAGS = -lglut -lGLU -lGL
 # Build the main game
 ###############################################################
 a.out: driver.o game.o uiInteract.o uiDraw.o point.o velocity.o flyingObject.o ship.o bullet.o asteroids.o
-	g++ driver.o game.o uiInteract.o uiDraw.o point.o velocity.o flyingObject.o ship.o bullet.o asteroids.o $(LFLAGS)
+	g++ -pg driver.o game.o uiInteract.o uiDraw.o point.o velocity.o flyingObject.o ship.o bullet.o asteroids.o $(LFLAGS)
 
 ###############################################################
 # Individual files
@@ -39,34 +39,34 @@ a.out: driver.o game.o uiInteract.o uiDraw.o point.o velocity.o flyingObject.o s
 #    asteroids.o        Contains all of the Asteroid classes
 ###############################################################
 uiDraw.o: uiDraw.cpp uiDraw.h
-	g++ -c uiDraw.cpp
+	g++ -pg -c uiDraw.cpp
 
 uiInteract.o: uiInteract.cpp uiInteract.h
-	g++ -c uiInteract.cpp
+	g++ -pg -c uiInteract.cpp
 
 point.o: point.cpp point.h
 	g++ -c point.cpp
 
 driver.o: driver.cpp game.h
-	g++ -c driver.cpp
+	g++ -pg -c driver.cpp
 
 game.o: game.cpp game.h uiDraw.h uiInteract.h point.h velocity.h flyingObject.h bullet.h asteroids.h ship.h
-	g++ -c game.cpp
+	g++ -pg -c game.cpp
 
 velocity.o: velocity.cpp velocity.h point.h
 	g++ -c velocity.cpp
 
 flyingObject.o: flyingObject.cpp flyingObject.h point.h velocity.h uiDraw.h
-	g++ -c flyingObject.cpp
+	g++ -pg -c flyingObject.cpp
 
 ship.o: ship.cpp ship.h flyingObject.h point.h velocity.h uiDraw.h
-	g++ -c ship.cpp
+	g++ -pg -c ship.cpp
 
 bullet.o: bullet.cpp bullet.h flyingObject.h point.h velocity.h uiDraw.h
-	g++ -c bullet.cpp
+	g++ -pg -c bullet.cpp
 
 asteroids.o: asteroids.cpp asteroids.h flyingObject.h point.h velocity.h uiDraw.h
-	g++ -c asteroids.cpp
+	g++ -pg -c asteroids.cpp
 
 
 ###############################################################

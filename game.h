@@ -9,6 +9,7 @@
 
 #include <vector>
 #include <list>
+#include <ctime>
 
 #include "uiDraw.h"
 #include "uiInteract.h"
@@ -26,9 +27,16 @@ using namespace std;
 
 struct bench {
    int frameCount;
+   struct timespec realStart;
+   long ellapsedReal;
+   struct timespec cpuStart;
+   long ellapsedCpu;
+
    bench() : frameCount(0) {}
-   void incr() {
+   void incr(long el, long cpu) {
       ++frameCount;
+      ellapsedReal = el;
+      ellapsedCpu = cpu;
    }
 };
 
