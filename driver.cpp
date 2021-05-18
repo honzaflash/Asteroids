@@ -7,8 +7,20 @@
  *  that specifies what methods of the game class are
  *  called each time through the game loop.
  ******************************************************/
+#include <iostream>
+#include <cstdio>
+#include <ctime>
 #include "game.h"
 #include "uiInteract.h"
+
+
+
+long timeDiff( struct timespec start, struct timespec end ) {
+   long s = start.tv_sec * 1000000 + start.tv_nsec / 1000;
+   long e = end.tv_sec * 1000000 + end.tv_nsec / 1000;
+   return e - s;
+}
+
 
 /*************************************
  * All the interesting work happens here, when
@@ -24,6 +36,7 @@ void callBack(const Interface *pUI, void *p)
    pGame->advance();
    pGame->handleInput(*pUI);
    pGame->draw(*pUI);
+   pGame->benchmark.incr();
 }
 
 
@@ -39,7 +52,20 @@ int main(int argc, char ** argv)
    
    Interface ui(argc, argv, "Asteroids", topLeft, bottomRight);
    Game game(topLeft, bottomRight);
+   
+   struct timespec start, end;
+   clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start);
+   
    ui.run(callBack, &game);
+
+   clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);
+   long ellapsedTime = timeDiff(start, end);
+
+   std::cout
+      << "time ellapsed: "
+      << ellapsedTime
+      << "\nframes rendered: "
+      << game.benchmark.frameCount
    
    return 0;
 }

@@ -22,6 +22,16 @@
 using namespace std;
 
 #define CLOSE_ENOUGH 15
+
+
+struct bench {
+   int frameCount;
+   bench() : frameCount(0) {}
+   void incr() {
+      ++frameCount;
+   }
+};
+
 /*****************************************
  * GAME
  * The main game class containing all the state
@@ -56,6 +66,9 @@ public:
     *********************************************/
    void draw(const Interface & ui);
    
+   
+   struct bench benchmark;
+
 private:
    // function provided for collision distance
    float getClosestDistance(const FlyingObject &obj1, const FlyingObject &obj2) const;

@@ -17,10 +17,9 @@
 #include <algorithm>
 using namespace std;
 
-//TODO: possibly remove this.
 
 #define OFF_SCREEN_BORDER_AMOUNT 5
-#define BEGGINNING_ASTEROID_COUNT 5
+#define BEGGINNING_ASTEROID_COUNT 70
 
 // You may find this function helpful...
 
@@ -57,7 +56,7 @@ float Game :: getClosestDistance(const FlyingObject &obj1, const FlyingObject &o
  * GAME CONSTRUCTOR
  ***************************************/
 Game :: Game(Point tl, Point br)
- : topLeft(tl), bottomRight(br)
+ : topLeft(tl), bottomRight(br), benchmark()
 {
    // Set up the initial conditions of the game
    bStartGame = false;
@@ -204,8 +203,7 @@ void Game :: advanceShip()
  **************************************************************************/
 void Game :: createAsteroid()
 {
-   //TODO: get rid of magic number
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < BEGGINNING_ASTEROID_COUNT; i++)
    {
       asteroids.push_back(new LargeAsteroid());
    }
@@ -450,10 +448,10 @@ void Game :: handleInput(const Interface & ui)
    if (ship != NULL && ship->isAlive())
    {
       // Change the direction of the ship left
-      if (ui.isLeft())
-      {
+      // if (ui.isLeft())
+      // {
          ship->moveLeft();
-      }
+      // }
       
       // Change the direction of the ship right
       if (ui.isRight())
@@ -468,10 +466,10 @@ void Game :: handleInput(const Interface & ui)
       }
 
       // Check for "Spacebar"
-      if (ui.isSpace())
-      {
+      // if (ui.isSpace())
+      // {
          createBullet();
-      }
+      // }
 
       // Check for "Y" press
       if (ui.isY())
