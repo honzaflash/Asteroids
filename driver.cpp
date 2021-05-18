@@ -8,7 +8,6 @@
  *  called each time through the game loop.
  ******************************************************/
 #include <iostream>
-#include <cstdio>
 #include <ctime>
 #include "game.h"
 #include "uiInteract.h"
@@ -16,8 +15,8 @@
 
 
 long timeDiff( struct timespec start, struct timespec end ) {
-   long s = start.tv_sec * 1000000 + start.tv_nsec / 1000;
-   long e = end.tv_sec * 1000000 + end.tv_nsec / 1000;
+   long s = start.tv_sec * 1000 + start.tv_nsec / 1000000;
+   long e = end.tv_sec * 1000 + end.tv_nsec / 1000000;
    return e - s;
 }
 
@@ -33,10 +32,18 @@ void callBack(const Interface *pUI, void *p)
 {
    Game *pGame = (Game *)p;
    
+
    pGame->advance();
    pGame->handleInput(*pUI);
    pGame->draw(*pUI);
-   pGame->benchmark.incr();
+   
+   struct timespec now;
+   clock_gettime(CLOCK_REALTIME, &now);
+   long ellapsedReal = timeDiff(pGame->benchmark.realStart, now);
+   clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &now);
+   long ellapsedCpu = timeDiff(pGame->benchmark.cpuStart, now);
+
+   pGame->benchmark.incr(ellapsedReal, ellapsedCpu);
 }
 
 
@@ -53,19 +60,10 @@ int main(int argc, char ** argv)
    Interface ui(argc, argv, "Asteroids", topLeft, bottomRight);
    Game game(topLeft, bottomRight);
    
-   struct timespec start, end;
-   clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start);
-   
+   clock_gettime(CLOCK_REALTIME, &(game.benchmark.realStart));
+   clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &(game.benchmark.cpuStart));
+
    ui.run(callBack, &game);
-
-   clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);
-   long ellapsedTime = timeDiff(start, end);
-
-   std::cout
-      << "time ellapsed: "
-      << ellapsedTime
-      << "\nframes rendered: "
-      << game.benchmark.frameCount
    
    return 0;
 }

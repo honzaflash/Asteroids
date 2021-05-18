@@ -95,8 +95,8 @@ void drawCallback()
    ui.callBack(&ui, ui.p);
    
    //loop until the timer runs out
-   if (!ui.isTimeToDraw())
-      sleep((unsigned long)((ui.getNextTick() - clock()) / 1000));
+   //if (!ui.isTimeToDraw())
+   //   sleep((unsigned long)((ui.getNextTick() - clock()) / 1000));
 
    // from this point, set the next draw time
    ui.setNextDrawTime();
