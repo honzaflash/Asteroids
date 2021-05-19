@@ -21,64 +21,60 @@
 ***********************************************************************/
 // constructors
 
-Asteroid :: Asteroid()
+Asteroid ::Asteroid()
 {
-   //TODO: set function for random starting points
-   currentPoint.setX(random(-180,180));
-   currentPoint.setY(random(-180,180));
-   setPoint(currentPoint);
+    //TODO: set function for random starting points
+    currentPoint.setX(random(-180, 180));
+    currentPoint.setY(random(-180, 180));
+    setPoint(currentPoint);
 
-//TODO: change random angle , and ensure asteroid is moving at 1px per
-//frame per the instructions
-   velocity.setDx(random(-1.0,1.0));
-   velocity.setDy(random(-1.0,1.0));
-   setRotation(random(-180,180));
-
+    //TODO: change random angle , and ensure asteroid is moving at 1px per
+    //frame per the instructions
+    velocity.setDx(random(-1.0, 1.0));
+    velocity.setDy(random(-1.0, 1.0));
+    setRotation(random(-180, 180));
 }
-
 
 // Put your Asteroid methods here
 
 /***********************************************************************
  * this will get the asteroids angle
 ***********************************************************************/
-float Asteroid :: getAngle()
+float Asteroid ::getAngle()
 {
-   return angle;
+    return angle;
 }
 
 /***********************************************************************
  * this will set the asteroids angle
 ***********************************************************************/
-void Asteroid :: setAngle(float angle)
+void Asteroid ::setAngle(float angle)
 {
-   this->angle = angle;
+    this->angle = angle;
 }
-
 
 /***********************************************************************
  * this will get if an asteroid is hit by bullet
 ***********************************************************************/
-bool Asteroid :: getHit()
+bool Asteroid ::getHit()
 {
-   return hit;
+    return hit;
 }
 
 /***********************************************************************
  * this will set if an asteroid is hit by bullet
 ***********************************************************************/
-void Asteroid :: setHit(bool hit)
+void Asteroid ::setHit(bool hit)
 {
-   this->hit = hit;
+    this->hit = hit;
 }
 
 /***********************************************************************
  * virtual function for the split method
  * this will create new asteroid when hit
 ***********************************************************************/
-void Asteroid :: split(bool hit)
+void Asteroid ::split(bool hit)
 {
-
 }
 
 /***********************************************************************
@@ -88,37 +84,36 @@ void Asteroid :: split(bool hit)
 /***********************************************************************
  * 
 ***********************************************************************/
-LargeAsteroid :: LargeAsteroid()
+LargeAsteroid ::LargeAsteroid()
 {
-   //TODO set function for random rotation
-   setRotation(2);
-   radius = 16;
+    //TODO set function for random rotation
+    setRotation(2);
+    radius = 16;
 }
 
-void LargeAsteroid :: setStartingDx()
+void LargeAsteroid ::setStartingDx()
 {
-   startingDx = random(RANDOM_DX_MIN, RANDOM_DX_MAX);
+    startingDx = random(RANDOM_DX_MIN, RANDOM_DX_MAX);
 }
 
-void LargeAsteroid :: setStartingDy()
+void LargeAsteroid ::setStartingDy()
 {
-   startingDy = random(RANDOM_DY_MIN, RANDOM_DY_MAX);
+    startingDy = random(RANDOM_DY_MIN, RANDOM_DY_MAX);
 }
 /***********************************************************************
  * 
 ***********************************************************************/
-void LargeAsteroid :: split(bool hit)
+void LargeAsteroid ::split(bool hit)
 {
-   
 }
 
 /***********************************************************************
  * 
 ***********************************************************************/
-void LargeAsteroid :: draw()
+void LargeAsteroid ::draw()
 {
-   drawLargeAsteroid(currentPoint, rotation);
-   rotation += BIG_ROCK_SPIN;
+    drawLargeAsteroid(currentPoint, rotation);
+    rotation += BIG_ROCK_SPIN;
 }
 
 /***********************************************************************
@@ -128,34 +123,32 @@ void LargeAsteroid :: draw()
 /***********************************************************************
  * 
 ***********************************************************************/
-MediumAsteroid :: MediumAsteroid()
+MediumAsteroid ::MediumAsteroid()
 {
-   setRotation(5);
-   radius = 8;
+    setRotation(5);
+    radius = 8;
 }
 
-MediumAsteroid :: MediumAsteroid(Point point, Velocity Velocity)
+MediumAsteroid ::MediumAsteroid(Point point, Velocity Velocity)
 {
-   radius = 8;
-   setPoint(point);
-   setVelocity(velocity);
+    radius = 8;
+    setPoint(point);
+    setVelocity(velocity);
 }
 /***********************************************************************
  * 
 ***********************************************************************/
-void MediumAsteroid :: split(bool hit)
+void MediumAsteroid ::split(bool hit)
 {
-
 }
 
 /***********************************************************************
  * 
 ***********************************************************************/
-void MediumAsteroid :: draw()
+void MediumAsteroid ::draw()
 {
-   rotation += MEDIUM_ROCK_SPIN;
-   drawMediumAsteroid(currentPoint, rotation);
-   
+    rotation += MEDIUM_ROCK_SPIN;
+    drawMediumAsteroid(currentPoint, rotation);
 }
 
 /***********************************************************************
@@ -165,30 +158,28 @@ void MediumAsteroid :: draw()
 /***********************************************************************
  * 
 ***********************************************************************/
-SmallAsteroid :: SmallAsteroid()
+SmallAsteroid ::SmallAsteroid()
 {
-
 }
 
-SmallAsteroid :: SmallAsteroid(Point point, Velocity Velocity)
+SmallAsteroid ::SmallAsteroid(Point point, Velocity Velocity)
 {
-   radius = 4;
-   setPoint(point);
-   setVelocity(velocity);
+    radius = 4;
+    setPoint(point);
+    setVelocity(velocity);
 }
 /***********************************************************************
  * 
 ***********************************************************************/
-void SmallAsteroid :: split(bool hit)
+void SmallAsteroid ::split(bool hit)
 {
-
 }
 
 /***********************************************************************
  * 
 ***********************************************************************/
-void SmallAsteroid :: draw()
+void SmallAsteroid ::draw()
 {
-   rotation += SMALL_ROCK_SPIN;
-   drawSmallAsteroid(currentPoint, rotation);
+    rotation += SMALL_ROCK_SPIN;
+    drawSmallAsteroid(currentPoint, rotation);
 }

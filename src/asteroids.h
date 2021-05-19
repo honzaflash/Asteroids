@@ -22,82 +22,73 @@
 #define MEDIUM_ROCK_SPIN 5
 #define SMALL_ROCK_SPIN 10
 
-class Asteroid: public FlyingObject
+class Asteroid : public FlyingObject
 {
-   public:
-      Asteroid();
-      // accept a starting point and velocity
-      Asteroid(Point point, Velocity velocity);
-      float getAngle();
-      void setAngle(float angle);
+public:
+    Asteroid();
+    // accept a starting point and velocity
+    Asteroid(Point point, Velocity velocity);
+    float getAngle();
+    void setAngle(float angle);
 
+    //TODO: return richer data
+    bool getHit();
+    void setHit(bool hit);
 
-      //TODO: return richer data
-      bool getHit();
-      void setHit(bool hit);
+    virtual void split(bool hit);
 
-      virtual void split(bool hit);
-
-   protected:
-      float angle;
-      int rotation;
-      bool hit;
+protected:
+    float angle;
+    int rotation;
+    bool hit;
 };
 
 /***********************************************************************
  * LargeAsteroid declarations
 ***********************************************************************/
-class LargeAsteroid: public Asteroid
+class LargeAsteroid : public Asteroid
 {
-   public:
-      LargeAsteroid();
-      LargeAsteroid(Point point, Velocity velocity);
-      // accept a random initial point and velocity
-      void split(bool hit);
-      void draw();
-      
+public:
+    LargeAsteroid();
+    LargeAsteroid(Point point, Velocity velocity);
+    // accept a random initial point and velocity
+    void split(bool hit);
+    void draw();
 
-   protected:
-
-   private:
-      void setStartingDx();
-      void setStartingDy();
-
+protected:
+private:
+    void setStartingDx();
+    void setStartingDy();
 };
 
 /***********************************************************************
  * MediumAsteroid declarations
 ***********************************************************************/
-class MediumAsteroid: public Asteroid
+class MediumAsteroid : public Asteroid
 {
-   public:
-      MediumAsteroid();
-      MediumAsteroid(Point point, Velocity Velocity);
-      void split(bool hit);
-      void draw();
+public:
+    MediumAsteroid();
+    MediumAsteroid(Point point, Velocity Velocity);
+    void split(bool hit);
+    void draw();
 
-   protected:
-
-   private:
-
+protected:
+private:
 };
 
 /***********************************************************************
  * SmallAsteroid declarations
 ***********************************************************************/
-class SmallAsteroid: public Asteroid
+class SmallAsteroid : public Asteroid
 {
-   public:
-      SmallAsteroid();
-      SmallAsteroid(Point point, Velocity Velocity);
-      void split(bool hit);
-      void draw();
-      
-   protected:
+public:
+    SmallAsteroid();
+    SmallAsteroid(Point point, Velocity Velocity);
+    void split(bool hit);
+    void draw();
 
-   private:
-
+protected:
+private:
 };
-
 
 #endif /* asteroids_h */

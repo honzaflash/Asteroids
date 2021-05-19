@@ -9,31 +9,29 @@
 #include "velocity.h"
 
 // constructors
-Velocity :: Velocity()
+Velocity ::Velocity()
 {
-
 }
-Velocity :: Velocity(float dX, float dY)
+Velocity ::Velocity(float dX, float dY)
 {
-
 }
 
-float Velocity :: getDx() const
+float Velocity ::getDx() const
 {
-   return dX;
+    return dX;
 }
 
-float Velocity :: getDy() const
+float Velocity ::getDy() const
 {
-   return dY;
+    return dY;
 }
 
-void Velocity :: setDx(float dX)
+void Velocity ::setDx(float dX)
 {
-   this->dX = dX;
+    this->dX = dX;
 }
 
-void Velocity :: setDy(float dY)
+void Velocity ::setDy(float dY)
 {
-   this->dY = dY;
+    this->dY = dY;
 }

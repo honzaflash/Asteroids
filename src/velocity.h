@@ -12,19 +12,20 @@
 
 class Velocity
 {
-   private:
-      float velocity;
-      float dX;
-      float dY;
-   public:
-      float getDx() const;
-      float getDy() const;
-      void setDx(float dX);
-      void setDy(float dY);
-      
-// constructors
-      Velocity();
-      Velocity(float dX, float dY);
+private:
+    float velocity;
+    float dX;
+    float dY;
+
+public:
+    float getDx() const;
+    float getDy() const;
+    void setDx(float dX);
+    void setDy(float dY);
+
+    // constructors
+    Velocity();
+    Velocity(float dX, float dY);
 };
 
 #endif

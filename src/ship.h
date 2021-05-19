@@ -23,41 +23,33 @@
 #define ANGLE_MIN -180
 #define ANGLE_START 90
 
-
-
-class Ship: public FlyingObject 
+class Ship : public FlyingObject
 {
-   public:
+public:
+    // constructors
+    Ship();
 
-   // constructors
-   Ship();
-   
-   void draw();
-   void setOrientation(float orientation);
-   float getOrientation();
+    void draw();
+    void setOrientation(float orientation);
+    float getOrientation();
 
-   /*****************
+    /*****************
     * Movement
     *****************/
-   void moveLeft();
-   void moveRight();
-   void moveUp();
+    void moveLeft();
+    void moveRight();
+    void moveUp();
 
-   protected:
-
+protected:
 private:
+    Point point; // !! seems unused
+    bool thrust;
 
-   Point point; // !! seems unused
-   bool thrust;
-
-      /**********************************************************
+    /**********************************************************
       * angle - The angle of the ship in degrees.
       *  Assumes that straight right is 0 degrees and up is 90.
       **********************************************************/
-   float orientation;
+    float orientation;
 };
-
-
-
 
 #endif /* ship_h */

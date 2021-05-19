@@ -17,131 +17,126 @@
 #include <algorithm>
 using namespace std;
 
-
 #define OFF_SCREEN_BORDER_AMOUNT 5
 #define BEGGINNING_ASTEROID_COUNT 5
 
 // You may find this function helpful...
 // !! checks for collision between where 2 objects are now
 // !! and where they will be next frame
-float Game :: getClosestDistance(const FlyingObject &obj1, const FlyingObject &obj2) const
+float Game ::getClosestDistance(const FlyingObject &obj1, const FlyingObject &obj2) const
 {
-   // find the maximum distance traveled
-   float dMax = max(abs(obj1.getVelocity().getDx()), abs(obj1.getVelocity().getDy()));
-   dMax = max(dMax, abs(obj2.getVelocity().getDx()));
-   dMax = max(dMax, abs(obj2.getVelocity().getDy()));
-   dMax = max(dMax, 0.1f); // when dx and dy are 0.0. Go through the loop once.
-   
-   float distMin = std::numeric_limits<float>::max();
-   for (float i = 0.0; i <= dMax; i++)
-   {
-      Point point1(obj1.getPoint().getX() + (obj1.getVelocity().getDx() * i / dMax),
-                     obj1.getPoint().getY() + (obj1.getVelocity().getDy() * i / dMax));
-      Point point2(obj2.getPoint().getX() + (obj2.getVelocity().getDx() * i / dMax),
-                     obj2.getPoint().getY() + (obj2.getVelocity().getDy() * i / dMax));
-      
-      float xDiff = point1.getX() - point2.getX();
-      float yDiff = point1.getY() - point2.getY();
-      
-      float distSquared = (xDiff * xDiff) + (yDiff * yDiff);
-      
-      distMin = min(distMin, distSquared);
-   }
-   
-   return sqrt(distMin);
-}
+    // find the maximum distance traveled
+    float dMax = max(abs(obj1.getVelocity().getDx()), abs(obj1.getVelocity().getDy()));
+    dMax = max(dMax, abs(obj2.getVelocity().getDx()));
+    dMax = max(dMax, abs(obj2.getVelocity().getDy()));
+    dMax = max(dMax, 0.1f); // when dx and dy are 0.0. Go through the loop once.
 
+    float distMin = std::numeric_limits<float>::max();
+    for (float i = 0.0; i <= dMax; i++)
+    {
+        Point point1(obj1.getPoint().getX() + (obj1.getVelocity().getDx() * i / dMax),
+                     obj1.getPoint().getY() + (obj1.getVelocity().getDy() * i / dMax));
+        Point point2(obj2.getPoint().getX() + (obj2.getVelocity().getDx() * i / dMax),
+                     obj2.getPoint().getY() + (obj2.getVelocity().getDy() * i / dMax));
+
+        float xDiff = point1.getX() - point2.getX();
+        float yDiff = point1.getY() - point2.getY();
+
+        float distSquared = (xDiff * xDiff) + (yDiff * yDiff);
+
+        distMin = min(distMin, distSquared);
+    }
+
+    return sqrt(distMin);
+}
 
 /***************************************
  * GAME CONSTRUCTOR
  ***************************************/
-Game :: Game(Point tl, Point br)
- : topLeft(tl), bottomRight(br)
+Game ::Game(Point tl, Point br)
+    : topLeft(tl), bottomRight(br)
 {
-   // Set up the initial conditions of the game
-   bStartGame = false;
+    // Set up the initial conditions of the game
+    bStartGame = false;
 
-   ship = NULL;
-   ship = createShip();
-
+    ship = NULL;
+    ship = createShip();
 }
 
 /****************************************
  * GAME DESTRUCTOR
  ****************************************/
-Game :: ~Game()
+Game ::~Game()
 {
-   //Check to see if there is currently an asteroid allocated
-   //       and if so, delete it.
+    //Check to see if there is currently an asteroid allocated
+    //       and if so, delete it.
 
-   for (list<Asteroid*>::iterator it = asteroids.begin();
-        it != asteroids.end();)
-   {
-      if (*it) // DO NOT dereference NULL
-         delete (*it);
-      it = asteroids.erase(it);
-   }
+    for (list<Asteroid *>::iterator it = asteroids.begin();
+         it != asteroids.end();)
+    {
+        if (*it) // DO NOT dereference NULL
+            delete (*it);
+        it = asteroids.erase(it);
+    }
 
-   for (vector<Bullet*>::iterator it = bullets.begin();
-        it != bullets.end();)
-   {
-      if (*it) // DO NOT dereference NULL
-         delete (*it);
-      it = bullets.erase(it);
-   }
+    for (vector<Bullet *>::iterator it = bullets.begin();
+         it != bullets.end();)
+    {
+        if (*it) // DO NOT dereference NULL
+            delete (*it);
+        it = bullets.erase(it);
+    }
 
-   if (ship) // ensures not dereferencing NULL
-   {
-      delete ship;
-      ship = NULL;
-   }
-
+    if (ship) // ensures not dereferencing NULL
+    {
+        delete ship;
+        ship = NULL;
+    }
 }
 
 /***************************************
  * GAME :: ADVANCE
  * advance the game one unit of time
  ***************************************/
-void Game :: advance()
+void Game ::advance()
 {
-   if (bStartGame)
-   {
-      advanceBullets();
-      advanceAsteroids();
-      advanceShip();
+    if (bStartGame)
+    {
+        advanceBullets();
+        advanceAsteroids();
+        advanceShip();
 
-      handleCollisions();
-      cleanUpZombies();
-   }
+        handleCollisions();
+        cleanUpZombies();
+    }
 
-   else
-   {
-      startGame();
-   }
+    else
+    {
+        startGame();
+    }
 }
 
 /***************************************
  * GAME :: ADVANCE BULLETS
  * Go through each bullet and advance it.
  ***************************************/
-void Game :: advanceBullets()
+void Game ::advanceBullets()
 {
-   // Move each of the bullets forward if it is alive
-   for (int i = 0; i < bullets.size(); i++)
-   {
-      if (bullets[i]->isAlive())
-      {
-         // this bullet is alive, so tell it to move forward
-         bullets[i]->advance();
-         
-         if (!isOnScreen(bullets[i]->getPoint()))
-         {
-            // the bullet has left the screen
-            bullets[i]->kill();
-         }
-         
-      }
-   }
+    // Move each of the bullets forward if it is alive
+    for (int i = 0; i < bullets.size(); i++)
+    {
+        if (bullets[i]->isAlive())
+        {
+            // this bullet is alive, so tell it to move forward
+            bullets[i]->advance();
+
+            if (!isOnScreen(bullets[i]->getPoint()))
+            {
+                // the bullet has left the screen
+                bullets[i]->kill();
+            }
+        }
+    }
 }
 
 /**************************************************************************
@@ -151,22 +146,21 @@ void Game :: advanceBullets()
  * 2. If there is an Asteroid, and it's alive, advance it
  * 3. Check if the Asteroid has gone of the screen, and if so, wrap it
  **************************************************************************/
-void Game :: advanceAsteroids()
-{ 
-   if (!asteroids.size()) // create asteroids if none
-   {
-      createAsteroids();
-   }
-   else
-   {
-      // advance asteroids
-      for (list<Asteroid*>::iterator it = asteroids.begin();
-            it != asteroids.end(); it++)
-            {
-               (*it)->advance();
-            }
-         
-   }
+void Game ::advanceAsteroids()
+{
+    if (!asteroids.size()) // create asteroids if none
+    {
+        createAsteroids();
+    }
+    else
+    {
+        // advance asteroids
+        for (list<Asteroid *>::iterator it = asteroids.begin();
+             it != asteroids.end(); it++)
+        {
+            (*it)->advance();
+        }
+    }
 }
 
 /**************************************************************************
@@ -176,134 +170,129 @@ void Game :: advanceAsteroids()
  * 2. If there is an ship and it's alive, advance it
  * 3. Check if the ship has gone of the screen, and if so, wrap it
  **************************************************************************/
-void Game :: advanceShip()
-{ 
-   if (ship != NULL && ship->isAlive())
-   {
-      // move it forward
-      ship->advance();
-   }
+void Game ::advanceShip()
+{
+    if (ship != NULL && ship->isAlive())
+    {
+        // move it forward
+        ship->advance();
+    }
 }
 
 /**************************************************************************
  * GAME :: CREATE Asteroid
  * Create an Asteroid according to the rules of the game.
  **************************************************************************/
-void Game :: createAsteroids()
+void Game ::createAsteroids()
 {
-   for (int i = 0; i < BEGGINNING_ASTEROID_COUNT; i++)
-   {
-      asteroids.push_back(new LargeAsteroid());
-   }
-   
+    for (int i = 0; i < BEGGINNING_ASTEROID_COUNT; i++)
+    {
+        asteroids.push_back(new LargeAsteroid());
+    }
 }
 
-void Game :: createMediumAsteroid(Point point, Velocity velocity)
+void Game ::createMediumAsteroid(Point point, Velocity velocity)
 {
-   Velocity posVelocity, negVelocity, neutralVelocity;
-   posVelocity = velocity;
-   negVelocity = velocity;
-   neutralVelocity = velocity;
+    Velocity posVelocity, negVelocity, neutralVelocity;
+    posVelocity = velocity;
+    negVelocity = velocity;
+    neutralVelocity = velocity;
 
-   //TODO: more elegant solution , If positive or negative make positive or negative???
-   posVelocity.setDy(posVelocity.getDy() + 1.0);
-   negVelocity.setDy(posVelocity.getDy() - 1.0);
-   neutralVelocity.setDx(neutralVelocity.getDx() + 1);
+    //TODO: more elegant solution , If positive or negative make positive or negative???
+    posVelocity.setDy(posVelocity.getDy() + 1.0);
+    negVelocity.setDy(posVelocity.getDy() - 1.0);
+    neutralVelocity.setDx(neutralVelocity.getDx() + 1);
 
-   asteroids.push_back(new MediumAsteroid(point, posVelocity));
-   asteroids.push_back(new MediumAsteroid(point, negVelocity));
-   asteroids.push_back(new SmallAsteroid(point, neutralVelocity));
+    asteroids.push_back(new MediumAsteroid(point, posVelocity));
+    asteroids.push_back(new MediumAsteroid(point, negVelocity));
+    asteroids.push_back(new SmallAsteroid(point, neutralVelocity));
 }
 
-void Game :: createSmallAsteroid(Point point, Velocity velocity)
+void Game ::createSmallAsteroid(Point point, Velocity velocity)
 {
-   asteroids.push_back(new SmallAsteroid(point, velocity));
+    asteroids.push_back(new SmallAsteroid(point, velocity));
 }
 /**************************************************************************
  * GAME :: CREATE Ship
  * Create an ship according to the rules of the game.
  **************************************************************************/
-Ship* Game :: createShip()
+Ship *Game ::createShip()
 {
-   Ship* ship = NULL;
-   ship = new Ship();
+    Ship *ship = NULL;
+    ship = new Ship();
 
-   return ship;
+    return ship;
 }
 
 /**************************************************************************
  * GAME :: CREATE Bullet
  * Create an bullet according to the rules of the game.
  **************************************************************************/
-void Game :: createBullet()
+void Game ::createBullet()
 {
-   bullets.push_back(new Bullet(ship->getPoint(), ship->getOrientation(), ship->getVelocity()));
+    bullets.push_back(new Bullet(ship->getPoint(), ship->getOrientation(), ship->getVelocity()));
 }
 
 /**************************************************************************
  * GAME :: IS ON SCREEN
  * Determines if a given point is on the screen.
  **************************************************************************/
-bool Game :: isOnScreen(const Point & point)
+bool Game ::isOnScreen(const Point &point)
 {
-   return (point.getX() >= topLeft.getX() - OFF_SCREEN_BORDER_AMOUNT
-      && point.getX() <= bottomRight.getX() + OFF_SCREEN_BORDER_AMOUNT
-      && point.getY() >= bottomRight.getY() - OFF_SCREEN_BORDER_AMOUNT
-      && point.getY() <= topLeft.getY() + OFF_SCREEN_BORDER_AMOUNT);
+    return (point.getX() >= topLeft.getX() - OFF_SCREEN_BORDER_AMOUNT && point.getX() <= bottomRight.getX() + OFF_SCREEN_BORDER_AMOUNT && point.getY() >= bottomRight.getY() - OFF_SCREEN_BORDER_AMOUNT && point.getY() <= topLeft.getY() + OFF_SCREEN_BORDER_AMOUNT);
 }
 
 /**************************************************************************
  * GAME :: GETCOLLISION
  * Determines if a 2 given points have collided
  **************************************************************************/
-bool Game :: getCollision(const FlyingObject &obj1, const FlyingObject &obj2, int radius)
+bool Game ::getCollision(const FlyingObject &obj1, const FlyingObject &obj2, int radius)
 {
-   return getClosestDistance(obj1, obj2) < radius;
+    return getClosestDistance(obj1, obj2) < radius;
 }
 
 /**************************************************************************
  * GAME :: HANDLE COLLISIONS
  * Check for a collision between an asteroid and a bullet / ship
  **************************************************************************/
-void Game :: handleCollisions()
+void Game ::handleCollisions()
 {
-   // loop through asteroids
-   for (list<Asteroid *>::iterator it = asteroids.begin(); it != asteroids.end(); it++)
-   {
-      // check if asteroid has been hit by bullet
-      for (vector<Bullet *>::iterator it2 = bullets.begin() ; it2 != bullets.end(); ++it2)
-      {
-         // check if hit
-         if (getCollision(**it, **it2, (*it)->radius))
-         {
-            //check what type of rock is hit, by radius LRG = 16 MED = 8 SMLL = 4
-            switch ((*it)->radius)
+    // loop through asteroids
+    for (list<Asteroid *>::iterator it = asteroids.begin(); it != asteroids.end(); it++)
+    {
+        // check if asteroid has been hit by bullet
+        for (vector<Bullet *>::iterator it2 = bullets.begin(); it2 != bullets.end(); ++it2)
+        {
+            // check if hit
+            if (getCollision(**it, **it2, (*it)->radius))
             {
-               case 16:
-                  explodeLarge(*it, *it2);
-                  break;
-               case 8:
-                  explodeMedium(*it, *it2);
-                  break;
-               case 4:
-                  explodeSmall(*it, *it2);
-                  break;
-            }             
-         }
-      }
+                //check what type of rock is hit, by radius LRG = 16 MED = 8 SMLL = 4
+                switch ((*it)->radius)
+                {
+                case 16:
+                    explodeLarge(*it, *it2);
+                    break;
+                case 8:
+                    explodeMedium(*it, *it2);
+                    break;
+                case 4:
+                    explodeSmall(*it, *it2);
+                    break;
+                }
+            }
+        }
 
-      // check if ship has been hit
-      if(ship != NULL && ship->isAlive())
-      {
-         if (getCollision(**it, *ship, (*it)->radius))
-         {
-            ship->kill();
-         }
-      }
-
-   }
-   // get locations of objects
-   //compare points and if closetDistance is less than .04 destroy
+        // check if ship has been hit
+        if (ship != NULL && ship->isAlive())
+        {
+            if (getCollision(**it, *ship, (*it)->radius))
+            {
+                ship->kill();
+            }
+        }
+    }
+    // get locations of objects
+    //compare points and if closetDistance is less than .04 destroy
 }
 
 //If large asteroid call create meduim asteroids delete large asteroid
@@ -314,186 +303,183 @@ void Game :: handleCollisions()
  * GAME :: explodeLarge
  * Kills a large asteroid and creates 2 medium and 1 small asteroids
  **************************************************************************/
-void Game :: explodeLarge(Asteroid *asteroid, Bullet *bullet)
+void Game ::explodeLarge(Asteroid *asteroid, Bullet *bullet)
 {
-   createMediumAsteroid(asteroid->getPoint(), asteroid->getVelocity());
-   bullet->kill();
-   asteroid->kill();
+    createMediumAsteroid(asteroid->getPoint(), asteroid->getVelocity());
+    bullet->kill();
+    asteroid->kill();
 }
 
 /**************************************************************************
  * GAME :: explodeMedium
  * Kills a mediuim asteroid and creates 2 small asteroids
  **************************************************************************/
-void Game :: explodeMedium(Asteroid *asteroid, Bullet *bullet)
+void Game ::explodeMedium(Asteroid *asteroid, Bullet *bullet)
 {
-   Velocity posVelocity, negVelocity;
-   posVelocity = asteroid->getVelocity();
-   negVelocity = posVelocity;
+    Velocity posVelocity, negVelocity;
+    posVelocity = asteroid->getVelocity();
+    negVelocity = posVelocity;
 
-   //TODO: more elegant solution , If positive or negative make positive or negative???
-   posVelocity.setDy(posVelocity.getDy() + 3);
-   negVelocity.setDy(negVelocity.getDy() - 3);
+    //TODO: more elegant solution , If positive or negative make positive or negative???
+    posVelocity.setDy(posVelocity.getDy() + 3);
+    negVelocity.setDy(negVelocity.getDy() - 3);
 
-   createSmallAsteroid(asteroid->getPoint() , posVelocity);
-   createSmallAsteroid(asteroid->getPoint() , negVelocity);
+    createSmallAsteroid(asteroid->getPoint(), posVelocity);
+    createSmallAsteroid(asteroid->getPoint(), negVelocity);
 
-   bullet->kill();
-   asteroid->kill();
+    bullet->kill();
+    asteroid->kill();
 }
 
 /**************************************************************************
  * GAME :: explodeSmall
  * Kills a small asteroid and deletes the asteroid / bullet
  **************************************************************************/
-void Game :: explodeSmall(Asteroid *asteroid, Bullet *bullet)
+void Game ::explodeSmall(Asteroid *asteroid, Bullet *bullet)
 {
-   bullet->kill();
-   asteroid->kill();
+    bullet->kill();
+    asteroid->kill();
 }
 
 /**************************************************************************
  * GAME :: CLEAN UP ZOMBIES
  * Remove any dead objects (take bullets out of the list, deallocate asteroids)
  **************************************************************************/
-void Game :: cleanUpZombies()
+void Game ::cleanUpZombies()
 {
-   // Look for dead ship
+    // Look for dead ship
     if (ship != NULL && !ship->isAlive())
-   {
-      // the ship is dead, but the memory is not freed up yet
-      delete ship;
-      ship = NULL;
-   }
+    {
+        // the ship is dead, but the memory is not freed up yet
+        delete ship;
+        ship = NULL;
+    }
 
-   // Look for dead bullets
-   vector<Bullet *>::iterator bulletIt = bullets.begin();
-   while (bulletIt != bullets.end())
-   {
-      Bullet* pBullet = *bulletIt;
-      
-      if (!pBullet->isAlive())
-      {
-         // If we had a list of pointers, we would need to delete the memory here...
-         delete pBullet;
-         pBullet = NULL;
-         
-         // remove from list and advance
-         bulletIt = bullets.erase(bulletIt);
-      }
-      else
-      {
-         bulletIt++; // advance
-      }
-   }
+    // Look for dead bullets
+    vector<Bullet *>::iterator bulletIt = bullets.begin();
+    while (bulletIt != bullets.end())
+    {
+        Bullet *pBullet = *bulletIt;
 
-   //look for dead asteroids
-   list<Asteroid *>::iterator asteroidIt = asteroids.begin();
-   while (asteroidIt != asteroids.end())
-   {
-      Asteroid* pAsteroid = *asteroidIt;
-    
-      if (!pAsteroid->isAlive())
-      {
-         // If we had a list of pointers, we would need to delete the memory here...
-         delete pAsteroid;
-         pAsteroid = NULL;
-         
-         // remove from list and advance
-         asteroidIt = asteroids.erase(asteroidIt);
-      }
-      else
-      {
-         asteroidIt++; // advance
-      }
-   }
+        if (!pBullet->isAlive())
+        {
+            // If we had a list of pointers, we would need to delete the memory here...
+            delete pBullet;
+            pBullet = NULL;
+
+            // remove from list and advance
+            bulletIt = bullets.erase(bulletIt);
+        }
+        else
+        {
+            bulletIt++; // advance
+        }
+    }
+
+    //look for dead asteroids
+    list<Asteroid *>::iterator asteroidIt = asteroids.begin();
+    while (asteroidIt != asteroids.end())
+    {
+        Asteroid *pAsteroid = *asteroidIt;
+
+        if (!pAsteroid->isAlive())
+        {
+            // If we had a list of pointers, we would need to delete the memory here...
+            delete pAsteroid;
+            pAsteroid = NULL;
+
+            // remove from list and advance
+            asteroidIt = asteroids.erase(asteroidIt);
+        }
+        else
+        {
+            asteroidIt++; // advance
+        }
+    }
 }
 
 /***************************************
  * GAME :: HANDLE INPUT
  * accept input from the user
  ***************************************/
-void Game :: handleInput(const Interface & ui)
+void Game ::handleInput(const Interface &ui)
 {
-   if (ship != NULL && ship->isAlive())
-   {
-      // Change the direction of the ship left
-      if (ui.isLeft())
-      {
-         ship->moveLeft();
-      }
-      
-      // Change the direction of the ship right
-      if (ui.isRight())
-      {
-         ship->moveRight();
-      }
+    if (ship != NULL && ship->isAlive())
+    {
+        // Change the direction of the ship left
+        if (ui.isLeft())
+        {
+            ship->moveLeft();
+        }
 
-      // Check for "up" key
-      if (ui.isUp())
-      {
-         ship->moveUp();
-      }
+        // Change the direction of the ship right
+        if (ui.isRight())
+        {
+            ship->moveRight();
+        }
 
-      // Check for "Spacebar"
-      if (ui.isSpace())
-      {
-         createBullet();
-      }
+        // Check for "up" key
+        if (ui.isUp())
+        {
+            ship->moveUp();
+        }
 
-      // Check for "Y" press
-      if (ui.isY())
-      {
-         bStartGame = true;
-      }
-   }
-   
+        // Check for "Spacebar"
+        if (ui.isSpace())
+        {
+            createBullet();
+        }
+
+        // Check for "Y" press
+        if (ui.isY())
+        {
+            bStartGame = true;
+        }
+    }
 }
 
 /*********************************************
  * GAME :: DRAW
  * Draw everything on the screen
  *********************************************/
-void Game :: draw(const Interface & ui)
+void Game ::draw(const Interface &ui)
 {
-   // draw the asteroids
-   for (list<Asteroid *> :: iterator it = asteroids.begin(); it != asteroids.end(); ++it)
-   {
-      // !! is this even necessary?
-      // !! advance() calls cleanUpZombies() at the end
-      if ((*it)->isAlive())
-      {
-         (*it)->draw();
-      }
-   }
+    // draw the asteroids
+    for (list<Asteroid *>::iterator it = asteroids.begin(); it != asteroids.end(); ++it)
+    {
+        // !! is this even necessary?
+        // !! advance() calls cleanUpZombies() at the end
+        if ((*it)->isAlive())
+        {
+            (*it)->draw();
+        }
+    }
 
-   // draw the ship
-   if (ship != NULL && ship->isAlive()) 
-   {
-      ship->draw();
-   }
-   
-   // draw the bullets, if they are alive
-   for (int i = 0; i < bullets.size(); i++)
-   {
-      if (bullets[i]->isAlive())
-      {
-         bullets[i]->draw();
-         bullets[i]->setHealth();
-      }
-   }
+    // draw the ship
+    if (ship != NULL && ship->isAlive())
+    {
+        ship->draw();
+    }
 
+    // draw the bullets, if they are alive
+    for (int i = 0; i < bullets.size(); i++)
+    {
+        if (bullets[i]->isAlive())
+        {
+            bullets[i]->draw();
+            bullets[i]->setHealth();
+        }
+    }
 }
 
 /*************************************************
  * Prompt user if they want to start game
  *************************************************/
-void Game :: startGame()
+void Game ::startGame()
 {
-   Point center;
-   char userPrompt[] = "Press 'F1' to start";
-   center.setX(-50);
-   center.setY(0);
-   drawText(center, userPrompt);
-
+    Point center;
+    char userPrompt[] = "Press 'F1' to start";
+    center.setX(-50);
+    center.setY(0);
+    drawText(center, userPrompt);
 }

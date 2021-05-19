@@ -14,21 +14,20 @@
 #include "uiDraw/point.h"
 #include "flyingObject.h"
 
-class Bullet: public FlyingObject 
+class Bullet : public FlyingObject
 {
 public:
-
-   // constructors
-   Bullet();
-   Bullet(Point shipPoint, float shipOrientation, Velocity shipVelocity);
-   void draw();
-   void fire(Point point, float angle, Velocity velocity);
-   void setStartingDx();
-   int getHealth();
-   void setHealth();
+    // constructors
+    Bullet();
+    Bullet(Point shipPoint, float shipOrientation, Velocity shipVelocity);
+    void draw();
+    void fire(Point point, float angle, Velocity velocity);
+    void setStartingDx();
+    int getHealth();
+    void setHealth();
 
 private:
-   int health;
+    int health;
 };
 
 #endif

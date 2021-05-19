@@ -13,44 +13,40 @@
 #include "uiDraw/point.h"
 #include "velocity.h"
 
-/***********************************************************************
- * 
-***********************************************************************/
-
 class FlyingObject
 {
 public:
-   // Constructor
-   FlyingObject();
+    // Constructor
+    FlyingObject();
 
-   Point getPoint() const;
-   Velocity getVelocity() const;
-   bool isAlive() const;
-   void setPoint(Point point);
-   void setPoint(float x, float y);
-   void setVelocity(Velocity velocity);
-   void setVelocity(float dx, float dy);
-   void advance();
-   void kill();
-   virtual void draw();
-   virtual void setStartingDx();
-   virtual void setStartingDy();
-   int getRotation();
-   void setRotation(int rotation);
-   int radius;
+    Point getPoint() const;
+    Velocity getVelocity() const;
+    bool isAlive() const;
+    void setPoint(Point point);
+    void setPoint(float x, float y);
+    void setVelocity(Velocity velocity);
+    void setVelocity(float dx, float dy);
+    void advance();
+    void kill();
+    virtual void draw();
+    virtual void setStartingDx();
+    virtual void setStartingDy();
+    int getRotation();
+    void setRotation(int rotation);
+    int radius;
 
 protected:
-   bool alive;
-   Point currentPoint;
-   Velocity velocity;
-   Point startingPoint;
-   // gets random number for starting point
-   float startingX;
-   float startingDx;
-   float startingDy;
-   int rotation;
-   bool isWrapX;
-   bool isWrapY;
+    bool alive;
+    Point currentPoint;
+    Velocity velocity;
+    Point startingPoint;
+    // gets random number for starting point
+    float startingX;
+    float startingDx;
+    float startingDy;
+    int rotation;
+    bool isWrapX;
+    bool isWrapY;
 };
 
 #endif

@@ -12,128 +12,125 @@
 /***********************************************************************
  * default constructo
 ***********************************************************************/
-FlyingObject :: FlyingObject()
+FlyingObject ::FlyingObject()
 {
-   // Set alive and default rotation to 0
-   alive = true;
-   isWrapX = false; //!! unnecessary
-   isWrapY = false; //!! unnecessary
-   setRotation(0);
+    // Set alive and default rotation to 0
+    alive = true;
+    isWrapX = false; //!! unnecessary
+    isWrapY = false; //!! unnecessary
+    setRotation(0);
 }
 
-Point FlyingObject :: getPoint() const
+Point FlyingObject::getPoint() const
 {
-   return currentPoint;
+    return currentPoint;
 }
 
-Velocity FlyingObject:: getVelocity() const
+Velocity FlyingObject ::getVelocity() const
 {
-   return velocity;
+    return velocity;
 }
 
-bool FlyingObject :: isAlive() const
+bool FlyingObject ::isAlive() const
 {
-   return alive;
+    return alive;
 }
 
-void FlyingObject :: setPoint(Point point)
+void FlyingObject ::setPoint(Point point)
 {
-   this->currentPoint = point;
+    this->currentPoint = point;
 }
 
-void FlyingObject :: setPoint(float x, float y)
+void FlyingObject ::setPoint(float x, float y)
 {
-   currentPoint.setX(x);
-   currentPoint.setY(y);
+    currentPoint.setX(x);
+    currentPoint.setY(y);
 }
 
-void FlyingObject :: setVelocity(Velocity velocity)
+void FlyingObject ::setVelocity(Velocity velocity)
 {
-   this->velocity = velocity;
+    this->velocity = velocity;
 }
 
-void FlyingObject :: setVelocity(float dx, float dy)
+void FlyingObject ::setVelocity(float dx, float dy)
 {
-   velocity.setDx(dx);
-   velocity.setDy(dy);
+    velocity.setDx(dx);
+    velocity.setDy(dy);
 }
 
 // !! wraps the object, isWrap should become unnecessary if
 // if '=' is omitted from comparisons
-void FlyingObject :: advance()
+void FlyingObject ::advance()
 {
-   //TODO: clean up logic
-   // Checks if the flyingObject needs to wrap around 
-   // the screen
-   if (!isWrapX && (currentPoint.getX() >= 200))
-   {
-      currentPoint.setX(-200);
-      currentPoint.addX(velocity.getDx());
-      currentPoint.addY(velocity.getDy());
-      isWrapX = true;
-   }
-   else if (!isWrapX && currentPoint.getX() <= -200)
-   {
-      currentPoint.setX(200);
-      currentPoint.addX(velocity.getDx());
-      currentPoint.addY(velocity.getDy());
-      isWrapX = true;
-   }
-   else if (!isWrapY && currentPoint.getY() >= 200)
-   {
-      currentPoint.setY(-200);
-      currentPoint.addX(velocity.getDx());
-      currentPoint.addY(velocity.getDy());
-      isWrapY = true;
-   }
-   else if (!isWrapY && currentPoint.getY() <= -200)
-   {
-      currentPoint.setY(200);
-      currentPoint.addX(velocity.getDx());
-      currentPoint.addY(velocity.getDy());
-      isWrapY = true;
-   }
-   else
-   {
-      currentPoint.addX(velocity.getDx());
-      currentPoint.addY(velocity.getDy());
-      isWrapX = false;
-      isWrapY = false;
-   }
+    //TODO: clean up logic
+    // Checks if the flyingObject needs to wrap around
+    // the screen
+    if (!isWrapX && (currentPoint.getX() >= 200))
+    {
+        currentPoint.setX(-200);
+        currentPoint.addX(velocity.getDx());
+        currentPoint.addY(velocity.getDy());
+        isWrapX = true;
+    }
+    else if (!isWrapX && currentPoint.getX() <= -200)
+    {
+        currentPoint.setX(200);
+        currentPoint.addX(velocity.getDx());
+        currentPoint.addY(velocity.getDy());
+        isWrapX = true;
+    }
+    else if (!isWrapY && currentPoint.getY() >= 200)
+    {
+        currentPoint.setY(-200);
+        currentPoint.addX(velocity.getDx());
+        currentPoint.addY(velocity.getDy());
+        isWrapY = true;
+    }
+    else if (!isWrapY && currentPoint.getY() <= -200)
+    {
+        currentPoint.setY(200);
+        currentPoint.addX(velocity.getDx());
+        currentPoint.addY(velocity.getDy());
+        isWrapY = true;
+    }
+    else
+    {
+        currentPoint.addX(velocity.getDx());
+        currentPoint.addY(velocity.getDy());
+        isWrapX = false;
+        isWrapY = false;
+    }
 }
 
-void FlyingObject :: kill()
+void FlyingObject ::kill()
 {
-   alive = false;
+    alive = false;
 }
 
-void FlyingObject :: draw()
+void FlyingObject ::draw()
 {
-
 }
 
-void FlyingObject :: setStartingDx()
+void FlyingObject ::setStartingDx()
 {
-
 }
 
-void FlyingObject :: setStartingDy()
+void FlyingObject ::setStartingDy()
 {
-
 }
 
 /***********************************************************************
  * this will get the FlyingObjects rotation
 ***********************************************************************/
-int FlyingObject :: getRotation()
+int FlyingObject ::getRotation()
 {
-   return rotation;
+    return rotation;
 }
 
 /***********************************************************************
  * this will set the FlyingObjects rotation
 ***********************************************************************/
-void FlyingObject :: setRotation(int rotation)
+void FlyingObject ::setRotation(int rotation)
 {
-   this->rotation = rotation;
+    this->rotation = rotation;
 }
